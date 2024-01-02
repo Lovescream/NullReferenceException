@@ -10,27 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: Animations
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: Animations
   m_Data:
     m_SerializedData: []
-  m_GUID: 8afe15765eb1bb049b0767a34e608b4f
+  m_GUID: 1a6d5a3c20cc32a478633f9ce844096d
   m_SerializeEntries:
-  - m_GUID: 00db0a12b0529d044ae5b5a0899c1857
-    m_Address: Projectile.prefab
+  - m_GUID: 06fd64767c5992045a18990a05da854a
+    m_Address: Character_00.animController
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: afbece5d9fed4b942b8e3710983aff3d
-    m_Address: ItemData
+  - m_GUID: f2c79d5db0d0ee54f8266f57565116fb
+    m_Address: Character_01.animController
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2e9ddc6214a75cb4cb6de848ad3044cf
-    m_Address: CreatureData
+  - m_GUID: 22ef6c67291d6e846a1908b1c4c87fce
+    m_Address: Character_02.animController
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b046338d03d9d143802547229ed96a5
+    m_Address: Character_03.animController
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
@@ -39,5 +45,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 5c837c581ff82a14ab6e8462c45721f9, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 427e6aa5621a3df4fb32f4fae8110fcd, type: 2}
-    - {fileID: 11400000, guid: abeb23e4e9e70504eb4acc6de5383bd1, type: 2}
+    - {fileID: 11400000, guid: 3f6df3891b8275c4fb9bdb7465b51bb3, type: 2}
+    - {fileID: 11400000, guid: 73acd9f32837188428a0c7050e8f26c7, type: 2}
