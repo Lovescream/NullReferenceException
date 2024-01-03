@@ -17,6 +17,7 @@ public class DataTransformer : EditorWindow {
         ParseData<CreatureData>();
         //ParseData<CharacterData>();
         ParseData<ItemData>();
+        ParseData<SkillData>();
     }
 
     private static void ParseData<T>() where T : Data {

@@ -1,0 +1,92 @@
+[
+  {
+    "SkillName": "skill01",
+    "SkillUsingType": 0,
+    "SkillGetType": 0,
+    "SkillLv": 0,
+    "SkillExp": 0,
+    "CoolTime": 10.0,
+    "LvUpCollTime": 0.2,
+    "Key": "Skill_A_L_1"
+  },
+  {
+    "SkillName": "skill02",
+    "SkillUsingType": 0,
+    "SkillGetType": 0,
+    "SkillLv": 0,
+    "SkillExp": 0,
+    "CoolTime": 12.0,
+    "LvUpCollTime": 0.2,
+    "Key": "Skill_A_L_2"
+  },
+  {
+    "SkillName": "skill03",
+    "SkillUsingType": 0,
+    "SkillGetType": 0,
+    "SkillLv": 0,
+    "SkillExp": 0,
+    "CoolTime": 5.0,
+    "LvUpCollTime": 0.3,
+    "Key": "Skill_A_L_3"
+  },
+  {
+    "SkillName": "skill04",
+    "SkillUsingType": 0,
+    "SkillGetType": 0,
+    "SkillLv": 0,
+    "SkillExp": 0,
+    "CoolTime": 6.0,
+    "LvUpCollTime": 0.2,
+    "Key": "Skill_A_L_4"
+  },
+  {
+    "SkillName": "skill05",
+    "SkillUsingType": 0,
+    "SkillGetType": 1,
+    "SkillLv": 0,
+    "SkillExp": 0,
+    "CoolTime": 7.0,
+    "LvUpCollTime": 0.3,
+    "Key": "Skill_A_G_1"
+  },
+  {
+    "SkillName": "skill06",
+    "SkillUsingType": 0,
+    "SkillGetType": 1,
+    "SkillLv": 0,
+    "SkillExp": 0,
+    "CoolTime": 7.0,
+    "LvUpCollTime": 0.2,
+    "Key": "Skill_A_G_2"
+  },
+  {
+    "SkillName": "skill07",
+    "SkillUsingType": 0,
+    "SkillGetType": 1,
+    "SkillLv": 0,
+    "SkillExp": 0,
+    "CoolTime": 5.0,
+    "LvUpCollTime": 0.3,
+    "Key": "Skill_A_G_3"
+  },
+  {
+    "SkillName": "skill08",
+    "SkillUsingType": 0,
+    "SkillGetType": 1,
+    "SkillLv": 0,
+    "SkillExp": 0,
+    "CoolTime": 5.0,
+    "LvUpCollTime": 0.1,
+    "Key": "Skill_A_G_4"
+  },
+  {
+    "SkillName": "skill09",
+    "SkillUsingType": 0,
+    "SkillGetType": 1,
+    "SkillLv": 0,
+    "SkillExp": 0,
+    "CoolTime": 5.0,
+    "LvUpCollTime": 0.1,
+    "Key": "Skill_A_G_5"
+  }
+]
