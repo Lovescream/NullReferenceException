@@ -8,7 +8,7 @@ public class EquipSkillSlots : SkillSlot
 
     private void Update()
     {
-        if (Main.Skill.selectSolot == index)
+        if (Main.Instance.Skill.selectSolot == index)
         {
             marsk.SetActive(true);
         }
@@ -20,6 +20,6 @@ public class EquipSkillSlots : SkillSlot
 
     protected override void OnClick()
     {
-        Main.Skill.selectSolot = index;
+        Main.Instance.Skill.selectSolot = index;
     }
 }

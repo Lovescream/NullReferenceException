@@ -9,7 +9,15 @@ public class SkillSlot : MonoBehaviour
     protected virtual void SetDefaultSkillData(SkillData data)
     {
         skillData = data;
-        SkillIconSprite.sprite = Resources.Load<Sprite>("Sprites/SkillIcon/" + data.Key);
+        
+        if (skillData.Key != "")
+        {
+            SkillIconSprite.sprite = Resources.Load<Sprite>("Sprite/SkillIcon/" + skillData.Key);
+        }
+        else
+        {
+            SkillIconSprite.sprite = Resources.Load<Sprite>("Sprite/SkillIcon/Null");
+        }
     }
 
     protected virtual void OnClick()

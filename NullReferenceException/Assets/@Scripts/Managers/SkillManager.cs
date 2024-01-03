@@ -3,14 +3,11 @@ using UnityEngine;
 public class SkillManager : MonoBehaviour
 {
     public int selectSolot = 0;
-    public SkillSlotUI[] skillSlots;
+    public SkillSlotUI[] skillSlots = new SkillSlotUI[10];
 
     public void Awake()
     {
-        for (int i = 0; i < skillSlots.Length; i++)
-        {
-            skillSlots[i] = GameObject.Find("Slot" + i).GetComponent<SkillSlotUI>();
-        }
+        Main.Instance.Skill = gameObject.GetComponent<SkillManager>();
     }
 
     public void Start()
@@ -22,7 +19,7 @@ public class SkillManager : MonoBehaviour
             if (Main.Data.Skils.ContainsKey(skillKey))
             {
                 Main.Data.PlayerSkils[skillKey] = Main.Data.Skils[skillKey];
-                Debug.Log(Main.Data.PlayerSkils[skillKey]);
+                Debug.Log(Main.Data.PlayerSkils[skillKey].SkillName);
             }
             else
             {
@@ -34,14 +31,18 @@ public class SkillManager : MonoBehaviour
 
     private void InitializeSkillSlots()
     {
+        int j = 1;
         for (int i = 0; i < skillSlots.Length; i++)
         {
             if (i < Main.Data.PlayerSkils.Count)
             {
-                skillSlots[i].SetSkillData(Main.Data.PlayerSkils["Skill_A_L_" + i+1]);
+                skillSlots[i].SetSkillData(Main.Data.PlayerSkils["Skill_A_L_" + j]);
+                j++;
+                Debug.Log(skillSlots[j].skillData.SkillName);
             }
             else
             {
+                Debug.Log("¼¼ÆÃÀÌ¾ÈµÊ");
                 skillSlots[i].SetSkillData(null);
             }
         }

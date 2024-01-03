@@ -18,7 +18,7 @@ public class SkillSlotUI : SkillSlot
     protected override void OnClick()
     {
 
-        int selectedSlotIndex = Main.Skill.selectSolot;
+        int selectedSlotIndex = Main.Instance.Skill.selectSolot;
         if (skillData.SkillLv == 0 || string.IsNullOrEmpty(skillData.Key))
         {
             Debug.Log("빈 슬롯 혹은 스킬이 해금되지 않은 상태입니다.");
@@ -56,6 +56,6 @@ public class SkillSlotUI : SkillSlot
         {
             skillNameText.text = "Name: -";
             skillCollTxt.text = "Coll: -";
-        }
+        }     
     }
 }
