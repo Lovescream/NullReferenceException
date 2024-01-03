@@ -7,17 +7,12 @@ public class QuickSlot : SkillSlot
     public TMP_Text coolTimeTxt;
     public GameObject panelMarsk;
 
-    public int index;
-
     bool _isCoolTime = false;
     float _coolTime = 0;
     float _maxCoolTime;
-
     private void Start()
     {
-        equipSkillSlots = GameObject.Find("SEqSlot" + index).GetComponent<EquipSkillSlots>();
     }
-
     private void Update()
     {
         _maxCoolTime = skillData.CoolTime;

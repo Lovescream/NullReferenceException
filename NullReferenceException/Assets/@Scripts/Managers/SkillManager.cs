@@ -15,9 +15,19 @@ public class SkillManager : MonoBehaviour
 
     public void Start()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 1; i < 5; i++)
         {
-            Main.Data.PlayerSkils["Skill_A_L_"+i] = Main.Data.Skils["Skill_A_L_" + i];
+            string skillKey = "Skill_A_L_" + i;
+
+            if (Main.Data.Skils.ContainsKey(skillKey))
+            {
+                Main.Data.PlayerSkils[skillKey] = Main.Data.Skils[skillKey];
+                Debug.Log(Main.Data.PlayerSkils[skillKey]);
+            }
+            else
+            {
+                Debug.LogWarning($"Skill key not found: {skillKey}");
+            }
         }
         InitializeSkillSlots();
     }
@@ -28,7 +38,7 @@ public class SkillManager : MonoBehaviour
         {
             if (i < Main.Data.PlayerSkils.Count)
             {
-                skillSlots[i].SetSkillData(Main.Data.PlayerSkils["Skill_A_L_" + i]);
+                skillSlots[i].SetSkillData(Main.Data.PlayerSkils["Skill_A_L_" + i+1]);
             }
             else
             {
