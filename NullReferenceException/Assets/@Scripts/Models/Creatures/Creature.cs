@@ -33,6 +33,8 @@ public class Creature : Thing {
     public Vector2 LookDirection { get; protected set; }
     public float LookAngle => Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;
 
+    public UI_HpBar HpBar { get; set; }
+
     #endregion
 
     #region Fields
@@ -102,6 +104,9 @@ public class Creature : Thing {
     protected virtual void SetStatus(bool isFullHp = true) {
         this.Status = new(Data);
         Hp = Status[StatType.HpMax].Value;
+
+        OnChangedHp -= ShowHpBar;
+        OnChangedHp += ShowHpBar;
     }
     protected virtual void SetStateEvent() {
         State = new();
@@ -135,6 +140,13 @@ public class Creature : Thing {
 
     #endregion
 
+    private void ShowHpBar(float hp) {
+        if (HpBar != null) {
+            HpBar.ResetInfo();
+            return;
+        }
+        HpBar = Main.UI.ShowHpBar(this);
+    }
 }
 
 public enum CreatureState {
