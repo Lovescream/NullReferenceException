@@ -37,7 +37,7 @@ public class ObjectManager {
         Enemies.Remove(obj);
         Despawn(obj);
     }
-    public Projectile SpawnProjectile(Vector2 position) {
+    public Projectile SpawnProjectile(Vector2 position) {   
         Projectile projectile = Spawn<Projectile>("", position);
         Projectiles.Add(projectile);
         return projectile;

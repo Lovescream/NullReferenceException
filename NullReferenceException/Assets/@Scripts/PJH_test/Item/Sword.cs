@@ -1,0 +1,50 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public interface IWeapon
+{
+    void Attack();
+    WeaponType WeponType { get; }
+}
+public enum WeaponType
+{
+    Sword,
+    Bow,
+}
+public class Sword : MonoBehaviour, IWeapon
+{
+    private AudioSource _audioSource;
+    [SerializeField]
+    private Transform _pos;
+    [SerializeField]
+    private Vector2 _colSize;
+    private WeaponType _type = WeaponType.Sword;
+
+    public WeaponType WeponType => _type;
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
+
+    public void Attack()
+    {
+        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(_pos.position, _colSize, 0);
+        foreach (Collider2D collider in collider2Ds)
+        {
+            if (collider.CompareTag("Enemy"))
+            {
+                //적 체력 감소 함수 넣기
+                _audioSource.Play();
+                Debug.Log("적 체력 감소");
+            }
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(_pos.position, _colSize);
+    }
+}
