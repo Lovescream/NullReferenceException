@@ -34,7 +34,7 @@ public class Sword : MonoBehaviour, IWeapon
         Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(_pos.position, _colSize, 0);
         foreach (Collider2D collider in collider2Ds)
         {
-            if (collider.CompareTag("Enemy"))
+            if (collider.CompareTag("Finish"))
             {
                 //적 체력 감소 함수 넣기
                 _audioSource.Play();
@@ -46,5 +46,13 @@ public class Sword : MonoBehaviour, IWeapon
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(_pos.position, _colSize);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerInput>().ChangePlayerWeapon(this, this.GetComponent<SpriteRenderer>().sprite);
+            Debug.Log("작동");
+        }
     }
 }

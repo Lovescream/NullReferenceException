@@ -5,8 +5,6 @@ using UnityEngine;
 public class Bow : MonoBehaviour, IWeapon
 {
     private AudioSource _audioSource;
-    [SerializeField]
-    private Transform _pos;
 
     private WeaponType _type = WeaponType.Bow;
     private void Awake()
@@ -19,5 +17,13 @@ public class Bow : MonoBehaviour, IWeapon
     {
         _audioSource.Play();
         //발사체 발사 하기
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerInput>().ChangePlayerWeapon(this, this.GetComponent<SpriteRenderer>().sprite);
+            Debug.Log("작동");
+        }
     }
 }
