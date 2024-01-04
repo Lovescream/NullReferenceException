@@ -1,0 +1,5 @@
+﻿Key,Name,HpMax,HpRegen,Damage,Defense,MoveSpeed,AttackSpeed,Range,ExistPowerMax
+Character_00,Chara00,100,1,10,5,4,2,5,100
+Character_01,Chara01,50,0,2,0,2,1,5,100
+Character_02,Chara02,60,0.1,4,0.5,2.25,1.25,5,100
+Character_03,Chara03,70,0.2,6,1,2.5,1.5,5,100

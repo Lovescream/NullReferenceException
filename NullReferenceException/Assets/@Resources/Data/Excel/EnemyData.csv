@@ -1,0 +1,5 @@
+﻿Key,Name,HpMax,HpRegen,Damage,Defense,MoveSpeed,AttackSpeed,Range,ExistPowerMax,DetectingRange,Exp
+Enemy_00,E00,100,1,10,5,4,2,5,100,5,10
+Enemy_01,E01,50,0,2,0,2,1,5,100,5,10
+Enemy_02,E02,60,0.1,4,0.5,2.25,1.25,5,100,5,10
+Enemy_03,E03,70,0.2,6,1,2.5,1.5,5,100,5,10
