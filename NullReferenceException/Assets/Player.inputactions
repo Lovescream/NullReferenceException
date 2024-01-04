@@ -1,5 +1,5 @@
 {
-    "name": "CreateANewRepository",
+    "name": "Player",
     "maps": [
         {
             "name": "Player",
@@ -72,6 +72,42 @@
                     "name": "Key_V",
                     "type": "Button",
                     "id": "60ffcd82-ecea-4035-9c23-1d18b00cb39e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Key_K",
+                    "type": "Button",
+                    "id": "f0d49387-eee3-491a-b21c-99a74df51033",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Key_Skill1",
+                    "type": "Button",
+                    "id": "3afe0260-3c2c-4cc5-9e35-99e2be79b4d9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Key_Skill2",
+                    "type": "Button",
+                    "id": "6822aa51-d44e-4a9c-95b3-7947b4fb0fd2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Key_Skill3",
+                    "type": "Button",
+                    "id": "0a29f866-cb41-4416-8b39-985b3a422544",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -329,6 +365,50 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Key_V",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43c2daaf-8a6d-4dfe-ab6b-f64c3c9255e1",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Key_K",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9449663-9657-4171-9b63-b8f838be1170",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Key_Skill1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "de0e5c12-6903-4bc9-b53a-17074d3ba927",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Key_Skill2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e9e92661-ad20-4061-848b-c4b97588ca15",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Key_Skill3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

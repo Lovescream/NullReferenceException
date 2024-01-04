@@ -53,4 +53,13 @@ public class QuickSlot : SkillSlot
             _isCoolTime = true;
         }
     }
+
+    public void UsingQuick()
+    {
+        if (!_isCoolTime)
+        {
+            _coolTime = _maxCoolTime;
+            _isCoolTime = true;
+        }
+    }
 }
