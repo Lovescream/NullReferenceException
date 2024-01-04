@@ -44,12 +44,14 @@ MonoBehaviour:
   - m_GUID: 0176f6242ad8cde41b431ac9e3a6dace
     m_Address: PlayerData
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 75876aa424017ee4e83d64da547eb418
     m_Address: EnemyData
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5c837c581ff82a14ab6e8462c45721f9, type: 2}

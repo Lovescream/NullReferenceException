@@ -80,17 +80,25 @@ public class Player : Creature {
         }
     }
 
-    protected void OnKey_Skill1()
+    protected void OnQuick_Skill_Slot()
     {
-        Main.Instance.Skill.qSlot[0].GetComponent<QuickSlot>().UsingQuick();
-    }
-    protected void OnKey_Skill2()
-    {
-        Main.Instance.Skill.qSlot[1].GetComponent<QuickSlot>().UsingQuick();
-    }
-    protected void OnKey_Skill3()
-    {
-        Main.Instance.Skill.qSlot[2].GetComponent<QuickSlot>().UsingQuick();
+        if (Keyboard.current.fKey.wasPressedThisFrame)
+        {
+            Main.Instance.Skill.qSlot[0].GetComponent<QuickSlot>().UsingQuick();
+            Debug.Log("F 키가 눌렸습니다.");
+        }
+
+        if (Keyboard.current.gKey.wasPressedThisFrame)
+        {
+            Main.Instance.Skill.qSlot[1].GetComponent<QuickSlot>().UsingQuick();
+            Debug.Log("G 키가 눌렸습니다.");
+        }
+
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            Main.Instance.Skill.qSlot[2].GetComponent<QuickSlot>().UsingQuick();
+            Debug.Log("R 키가 눌렸습니다.");
+        }
     }
     #endregion
 

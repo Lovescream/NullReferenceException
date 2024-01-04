@@ -5,6 +5,7 @@ public class SkillSlotUI : SkillSlot
 {
     public TMP_Text skillNameText;
     public TMP_Text skillCollTxt;
+    public TMP_Text skillExpTxt;
 
     public GameObject marsk;
 
@@ -49,13 +50,16 @@ public class SkillSlotUI : SkillSlot
     {
         if (skillData.Key != null)
         {
-            skillNameText.text = "Name: " + skillData.SkillName + " Lv." + skillData.SkillLv;
+            string[] nameParts = skillData.SkillName.Split('_');
+            skillNameText.text = "Name: " + nameParts[0] + " Lv." + skillData.SkillLv;
             skillCollTxt.text = "Coll: " + skillData.CoolTime;
+            skillExpTxt.text = $"Exp :{skillData.SkillExp}/100 ({skillData.SkillExp % 100}%)";
         }
         else
         {
             skillNameText.text = "Name: -";
             skillCollTxt.text = "Coll: -";
+            skillExpTxt.text = "Exp : -";
         }
         
         if( skillData.SkillLv == 0)
