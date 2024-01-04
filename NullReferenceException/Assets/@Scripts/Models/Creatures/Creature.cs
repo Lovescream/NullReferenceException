@@ -61,7 +61,7 @@ public class Creature : Thing {
 
     protected virtual void FixedUpdate() {
         State.OnStay();
-        //_spriter.flipX = LookDirection.x < 0;
+        _spriter.flipX = LookDirection.x < 0;
         _rigidbody.velocity = Velocity;
         _animator.SetFloat(AnimatorParameterHash_Speed, Velocity.magnitude);
     }
@@ -77,11 +77,6 @@ public class Creature : Thing {
         _collider = this.GetComponent<Collider2D>();
         _rigidbody = this.GetComponent<Rigidbody2D>();
         _animator = this.GetComponent<Animator>();
-        if (_animator == null && _spriter == null)
-        {
-            _animator = this.GetComponentInChildren<Animator>();
-            _spriter = this.GetComponentInChildren<SpriteRenderer>();
-        }
 
         return true;
     }

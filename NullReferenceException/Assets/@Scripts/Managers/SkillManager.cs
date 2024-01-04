@@ -9,7 +9,7 @@ public class SkillManager : MonoBehaviour
 
     public void Awake()
     {
-        Main.Instance.Skill = gameObject.GetComponent<SkillManager>();
+       // Main.Instance.Skill = gameObject.GetComponent<SkillManager>();
     }
 
     public void Start()

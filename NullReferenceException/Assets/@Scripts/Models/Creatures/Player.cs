@@ -14,8 +14,9 @@ public class Player : Creature {
     [SerializeField] private Transform _armPivot;
     [SerializeField] private Transform _weponRotate;
     [SerializeField] private SpriteRenderer _weponSprite;
+    [SerializeField] private Transform _bullet;
 
-    private float _time;
+    private float _time = 1;
     private float _coolTime = float.MaxValue;
 
     protected override void Awake()
@@ -37,11 +38,12 @@ public class Player : Creature {
     protected void OnFire() {
         if (_coolTime >= _time && _currentWeapon != null)
         {
+            _coolTime = 0;
             _anim.SetTrigger(_currentWeapon.WeponType.ToString());
             _currentWeapon.Attack();
             if (_currentWeapon.WeponType == WeaponType.Bow)
             {
-                Projectile projectile = Main.Object.SpawnProjectile(this.transform.position).SetInfo(this);
+                Projectile projectile = Main.Object.SpawnProjectile(_bullet.position).SetInfo(this);
                 projectile.Velocity = LookDirection.normalized * 10f; // TODO::
             }
         }
@@ -71,10 +73,8 @@ public class Player : Creature {
     public void AimDirection()
     {
         float rotZ = Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;
-        _chracter.rotation = (Mathf.Abs(rotZ) > 90) ? Quaternion.Euler(0, 180f, 0) : Quaternion.Euler(0, 0, 0);
         _armPivot.rotation = Quaternion.Euler(0, 0, rotZ);
-        _weponRotate.rotation = (Mathf.Abs(rotZ) > 90) ? Quaternion.Euler(180f, 0, 0) : Quaternion.Euler(0, 0, 0);
-        _anim.SetBool("FlipX", (Mathf.Abs(rotZ) > 90) ? true : false);
+        _weponSprite.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
     }
     private void AttackCoolTime() //공격 딜레이
     {
