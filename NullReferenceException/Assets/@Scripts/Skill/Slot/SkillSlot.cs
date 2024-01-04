@@ -10,7 +10,7 @@ public class SkillSlot : MonoBehaviour
     {
         skillData = data;
         
-        if (skillData.Key != null)
+        if (skillData != null && skillData.Key != null)
         {
             SkillIconSprite.sprite = Resources.Load<Sprite>("Sprite/SkillIcon/" + skillData.Key);
         }

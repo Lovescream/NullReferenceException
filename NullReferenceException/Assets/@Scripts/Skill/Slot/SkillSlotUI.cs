@@ -47,15 +47,18 @@ public class SkillSlotUI : SkillSlot
 
     public void UpdateUI()
     {
-        if (skillData.Key != "")
+        if (skillData != null)
         {
-            skillNameText.text = "Name: " + skillData.SkillName + " Lv." + skillData.SkillLv;
-            skillCollTxt.text = "Coll: " + skillData.CoolTime;
+            if (skillData.Key != "")
+            {
+                skillNameText.text = "Name: " + skillData.SkillName + " Lv." + skillData.SkillLv;
+                skillCollTxt.text = "Coll: " + skillData.CoolTime;
+            }
+            else
+            {
+                skillNameText.text = "Name: -";
+                skillCollTxt.text = "Coll: -";
+            }
         }
-        else
-        {
-            skillNameText.text = "Name: -";
-            skillCollTxt.text = "Coll: -";
-        }     
     }
 }
