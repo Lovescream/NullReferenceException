@@ -4,6 +4,8 @@ public class SkillManager : MonoBehaviour
 {
     public int selectSolot = 0;
     public SkillSlotUI[] skillSlots = new SkillSlotUI[10];
+    public GameObject SkillUI;
+    public GameObject SkillList;
 
     public void Awake()
     {
@@ -26,6 +28,8 @@ public class SkillManager : MonoBehaviour
                 Debug.LogWarning($"Skill key not found: {skillKey}");
             }
         }
+        SkillUI.SetActive(true);
+        SkillList.SetActive(false);
         InitializeSkillSlots();
     }
 
@@ -37,8 +41,8 @@ public class SkillManager : MonoBehaviour
             if (i < Main.Data.PlayerSkils.Count)
             {
                 skillSlots[i].SetSkillData(Main.Data.PlayerSkils["Skill_A_L_" + j]);
-                j++;
                 Debug.Log(skillSlots[j].skillData.SkillName);
+                j++;
             }
             else
             {

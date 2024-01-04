@@ -42,5 +42,22 @@ public class Main : MonoBehaviour {
     public static UIManager UI => Instance?._ui;
     public static SceneManagerEx Scene => Instance?._scene;
     public static ObjectManager Object => Instance?._object;
+
     public SkillManager Skill;
+
+    IEnumerator Start()
+    {
+        yield return null;
+
+        GameObject skillSystemPrefab = Resources.Load<GameObject>("Prefabs/Skill/SkillSystem");
+
+        if (skillSystemPrefab != null)
+        {
+            GameObject skillSystemInstance = Instantiate(skillSystemPrefab);
+        }
+        else
+        {
+            Debug.LogError("경로를 확인필요.");
+        }
+    }
 }
