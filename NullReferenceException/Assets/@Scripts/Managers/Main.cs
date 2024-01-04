@@ -45,19 +45,19 @@ public class Main : MonoBehaviour {
 
     public SkillManager Skill;
 
-    IEnumerator Start()
-    {
-        yield return null;
+    //IEnumerator Start()
+    //{
+    //    yield return null;
 
-        GameObject skillSystemPrefab = Resources.Load<GameObject>("Prefabs/Skill/SkillSystem");
+    //    GameObject skillSystemPrefab = Resources.Load<GameObject>("Prefabs/Skill/SkillSystem");
 
-        if (skillSystemPrefab != null)
-        {
-            GameObject skillSystemInstance = Instantiate(skillSystemPrefab);
-        }
-        else
-        {
-            Debug.LogError("경로를 확인필요.");
-        }
-    }
+    //    if (skillSystemPrefab != null)
+    //    {
+    //        GameObject skillSystemInstance = Instantiate(skillSystemPrefab);
+    //    }
+    //    else
+    //    {
+    //        Debug.LogError("경로를 확인필요.");
+    //    }
+    //}
 }

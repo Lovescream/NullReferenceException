@@ -149,7 +149,7 @@
     "Type": 1,
     "Name": "철검",
     "Description": "철로 만든 검",
-    "MaxStack": 1,
+    "MaxStack": 10,
     "Recipe": null,
     "EquipType": 1,
     "Modifiers": [

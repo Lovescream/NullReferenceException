@@ -7,7 +7,7 @@ StoneShield,Equipments,돌방패,돌로 만든 방패,1,,OneHanded,Defense_Add_5
 StoneHelmet,Equipments,돌머리,멍청한 머리,1,,Armor,Defense_Add_5,
 StoneArmor,Equipments,돌갑옷,돌로 만든 갑옷,1,,Armor,HpMax_Add_20,
 StoneBoots,Equipments,돌부츠,돌로 만든 신발,1,,Armor,MoveSpeed_Add_1,
-IronSword,Equipments,철검,철로 만든 검,1,,OneHanded,Damage_Add_10|AttackSpeed_Add_0.25,
+IronSword,Equipments,철검,철로 만든 검,10,,OneHanded,Damage_Add_10|AttackSpeed_Add_0.25,
 IronAxe,Equipments,철도끼,철로 만든 도끼,1,,TwoHanded,Damage_Add_12.5,
 IronHammer,Equipments,철망치,철로 만든 망치,1,,TwoHanded,Damage_Add_15|AttackSpeed_Add_-0.21,
 IronShield,Equipments,철방패,철로 만든 방패,1,,OneHanded,Defense_Add_10,

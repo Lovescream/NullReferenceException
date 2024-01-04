@@ -22,7 +22,7 @@ public class UI_Popup_Inventory : UI_Popup {
 
     private CreatureInventory _inventory;
 
-    private readonly List<UI_ItemSlot_Inventory> _slots = new();
+    private readonly List<UI_InventorySlot> _slots = new();
 
     private Transform _content;
 
@@ -62,22 +62,25 @@ public class UI_Popup_Inventory : UI_Popup {
         Initialize();
 
         this._inventory = inventory;
-
-        _inventory.OnChanged += Refresh;
         Refresh();
+
+        if (_inventory != null) {
+            _inventory.OnChanged -= Refresh;
+            _inventory.OnChanged += Refresh;
+        }
     }
 
     #endregion
 
-    private void Refresh() {
-        float ratio = _inventory.Count / (float)_inventory.MaxCount;
+    public void Refresh() {
+        float ratio = _inventory.NotEmptyCount / (float)_inventory.Count;
         string color = ratio >= 0.75f ? (ratio >= 0.9f ? "red" : "yellow") : "white";
-        GetText((int)Texts.txtCount).text = $"<color={color}>{_inventory.Count}</color> / {_inventory.MaxCount}";
+        GetText((int)Texts.txtCount).text = $"<color={color}>{_inventory.NotEmptyCount}</color> / {_inventory.Count}";
 
         for (int i = 0; i < _inventory.Count; i++) {
-            UI_ItemSlot_Inventory slot;
+            UI_InventorySlot slot;
             if (i >= _slots.Count) {
-                slot = Main.UI.CreateSubItem<UI_ItemSlot_Inventory>(_content);
+                slot = Main.UI.CreateSubItem<UI_InventorySlot>(_content);
                 _slots.Add(slot);
             }
             else slot = _slots[i];
@@ -85,7 +88,7 @@ public class UI_Popup_Inventory : UI_Popup {
         }
         if (_slots.Count > _inventory.Count) {
             for (int i = _slots.Count - 1; i >= _inventory.Count; i--) {
-                UI_ItemSlot_Inventory slot = _slots[i];
+                UI_InventorySlot slot = _slots[i];
                 _slots.Remove(slot);
                 Main.Resource.Destroy(slot.gameObject);
             }
