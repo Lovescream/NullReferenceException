@@ -32,7 +32,7 @@ public class PlayerInput : MonoBehaviour
 
     public void OnFire()  //마우스 왼쪽 클릭 시 해당 무기의 Animation재생, 공격
     {
-        if (_coolTime >= _time)
+        if (_coolTime >= _time && _currentWeapon != null)
         {
             _anim.SetTrigger(_currentWeapon.WeponType.ToString());
             _currentWeapon.Attack();

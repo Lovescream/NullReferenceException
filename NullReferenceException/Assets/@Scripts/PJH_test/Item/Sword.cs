@@ -21,6 +21,7 @@ public class Sword : MonoBehaviour, IWeapon
     [SerializeField]
     private Vector2 _colSize;
     private WeaponType _type = WeaponType.Sword;
+    private float _attackDamage;
 
     public WeaponType WeponType => _type;
 
@@ -40,6 +41,10 @@ public class Sword : MonoBehaviour, IWeapon
                 _audioSource.Play();
                 Debug.Log("적 체력 감소");
             }
+            if (collider.GetComponent<IHarvestable>() != null)
+            {
+                collider.GetComponent<IHarvestable>().Harvest(_type);
+            }
         }
     }
     private void OnDrawGizmos()
@@ -51,7 +56,7 @@ public class Sword : MonoBehaviour, IWeapon
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerInput>().ChangePlayerWeapon(this, this.GetComponent<SpriteRenderer>().sprite);
+            collision.GetComponent<Player>().ChangePlayerWeapon(this, this.GetComponent<SpriteRenderer>().sprite);
             Debug.Log("작동");
         }
     }
