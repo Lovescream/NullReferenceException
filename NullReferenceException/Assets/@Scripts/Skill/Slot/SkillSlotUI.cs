@@ -6,7 +6,7 @@ public class SkillSlotUI : SkillSlot
     public TMP_Text skillNameText;
     public TMP_Text skillCollTxt;
 
-    bool skillLock = true;
+    public GameObject marsk;
 
     public EquipSkillSlots[] equipSkillSlots;
 
@@ -47,7 +47,7 @@ public class SkillSlotUI : SkillSlot
 
     public void UpdateUI()
     {
-        if (skillData.Key != "")
+        if (skillData.Key != null)
         {
             skillNameText.text = "Name: " + skillData.SkillName + " Lv." + skillData.SkillLv;
             skillCollTxt.text = "Coll: " + skillData.CoolTime;
@@ -56,6 +56,15 @@ public class SkillSlotUI : SkillSlot
         {
             skillNameText.text = "Name: -";
             skillCollTxt.text = "Coll: -";
-        }     
+        }
+        
+        if( skillData.SkillLv == 0)
+        {
+            marsk.SetActive(true);
+        }
+        else
+        {
+            marsk.SetActive(false);
+        }
     }
 }

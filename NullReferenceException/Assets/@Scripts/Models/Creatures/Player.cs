@@ -66,6 +66,32 @@ public class Player : Creature {
         Inventory.Add(new(Main.Data.Items["IronBoots"]));
     }
 
+    protected void OnKey_K(){
+        if(Main.Instance.Skill.isSkillList == true)
+        {
+           Main.Instance.Skill.SkillList.SetActive(false);
+           Main.Instance.Skill.isSkillList = !Main.Instance.Skill.isSkillList;
+        }
+        else
+        {
+            Main.Instance.Skill.UpdateSkillSlotUI();
+            Main.Instance.Skill.SkillList.SetActive(true);
+            Main.Instance.Skill.isSkillList = !Main.Instance.Skill.isSkillList;
+        }
+    }
+
+    protected void OnKey_Skill1()
+    {
+        Main.Instance.Skill.qSlot[0].GetComponent<QuickSlot>().UsingQuick();
+    }
+    protected void OnKey_Skill2()
+    {
+        Main.Instance.Skill.qSlot[1].GetComponent<QuickSlot>().UsingQuick();
+    }
+    protected void OnKey_Skill3()
+    {
+        Main.Instance.Skill.qSlot[2].GetComponent<QuickSlot>().UsingQuick();
+    }
     #endregion
 
     protected override void SetStatus(bool isFullHp = true) {

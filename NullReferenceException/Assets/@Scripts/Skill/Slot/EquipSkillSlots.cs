@@ -5,6 +5,7 @@ public class EquipSkillSlots : SkillSlot
 {
     public int index;
     public GameObject marsk;
+    public GameObject returnIndex;
 
     private void Update()
     {
@@ -20,6 +21,6 @@ public class EquipSkillSlots : SkillSlot
 
     protected override void OnClick()
     {
-        Main.Instance.Skill.selectSolot = index;
+        returnIndex.GetComponent<SkillManager>().selectSolot = index;
     }
 }
