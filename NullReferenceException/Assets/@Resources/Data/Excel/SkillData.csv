@@ -1,0 +1,10 @@
+Key,SkillName,SkillUsingType,SkillGetType,SkillLv,SkillExp,CoolTime,LvUpCollTime
+Skill_A_L_1,skill01,Active,Lvup,0,0,10,0.2
+Skill_A_L_2,skill02,Active,Lvup,0,0,12,0.2
+Skill_A_L_3,skill03,Active,Lvup,0,0,5,0.3
+Skill_A_L_4,skill04,Active,Lvup,0,0,6,0.2
+Skill_A_G_1,skill05,Active,Pickup,0,0,7,0.3
+Skill_A_G_2,skill06,Active,Pickup,0,0,7,0.2
+Skill_A_G_3,skill07,Active,Pickup,0,0,5,0.3
+Skill_A_G_4,skill08,Active,Pickup,0,0,5,0.1
+Skill_A_G_5,skill09,Active,Pickup,0,0,5,0.1
