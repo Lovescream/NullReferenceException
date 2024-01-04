@@ -6,13 +6,17 @@ using UnityEngine;
 
 public class DataManager {
 
-    public Dictionary<string, CreatureData> Creatures = new();
+    //public Dictionary<string, CreatureData> Creatures = new();
+    public Dictionary<string, PlayerData> Players = new();
+    public Dictionary<string, EnemyData> Enemies = new();
     public Dictionary<string, ItemData> Items = new();
     public Dictionary<string, SkillData> Skils = new();
     public Dictionary<string, SkillData> PlayerSkils = new();
 
     public void Initialize() {
-        Creatures = LoadJson<CreatureData>();
+        //Creatures = LoadJson<CreatureData>();
+        Players = LoadJson<PlayerData>();
+        Enemies = LoadJson<EnemyData>();
         Items = LoadJson<ItemData>();
         Skils = LoadJson<SkillData>();
     }

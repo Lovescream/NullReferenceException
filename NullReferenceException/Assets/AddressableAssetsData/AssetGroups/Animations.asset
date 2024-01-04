@@ -18,25 +18,31 @@ MonoBehaviour:
   m_GUID: 1a6d5a3c20cc32a478633f9ce844096d
   m_SerializeEntries:
   - m_GUID: 06fd64767c5992045a18990a05da854a
-    m_Address: Character_00.animController
+    m_Address: Enemy_00.animController
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f2c79d5db0d0ee54f8266f57565116fb
-    m_Address: Character_01.animController
+    m_Address: Enemy_01.animController
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 22ef6c67291d6e846a1908b1c4c87fce
-    m_Address: Character_02.animController
+    m_Address: Enemy_02.animController
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8b046338d03d9d143802547229ed96a5
-    m_Address: Character_03.animController
+    m_Address: Enemy_03.animController
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06aff981ac9ce9a4d9e1ce1ec5e306c1
+    m_Address: Player_00.animController
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad

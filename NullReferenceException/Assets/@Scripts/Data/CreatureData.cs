@@ -9,4 +9,6 @@ public class CreatureData : Data {
     public float Defense { get; set; }
     public float MoveSpeed { get; set; }
     public float AttackSpeed { get; set; }
+    public float Range { get; set; }
+    public float ExistPowerMax { get; set; }
 }

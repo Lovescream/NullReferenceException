@@ -10,7 +10,7 @@ public class Creature : Thing {
     public CreatureData Data { get; private set; }
 
     public State<CreatureState> State { get; private set; }
-    public Status Status { get; private set; }
+    public Status Status { get; protected set; }
     public CreatureInventory Inventory { get; private set; }
 
     public float Hp {
@@ -20,13 +20,27 @@ public class Creature : Thing {
             if (value <= 0) {
                 _hp = 0;
                 State.Current = CreatureState.Dead;
-
             }
             else if (value >= Status[StatType.HpMax].Value) {
                 _hp = Status[StatType.HpMax].Value;
             }
             else _hp = value;
             OnChangedHp?.Invoke(_hp);
+        }
+    }
+    public float ExistPower {
+        get => _existPower;
+        set {
+            if (_existPower == value) return;
+            if (value <= 0) {
+                _existPower = 0;
+                State.Current = CreatureState.Dead;
+            }
+            else if (value >= Status[StatType.ExistPowerMax].Value) {
+                _existPower = Status[StatType.ExistPowerMax].Value;
+            }
+            else _existPower = value;
+            OnChangedExistPower?.Invoke(_existPower);
         }
     }
     public Vector2 Velocity { get; protected set; }
@@ -45,6 +59,7 @@ public class Creature : Thing {
 
     // State, Status.
     private float _hp;
+    private float _existPower;
 
     // Components.
     protected SpriteRenderer _spriter;
@@ -54,6 +69,7 @@ public class Creature : Thing {
 
     // Callbacks.
     public event Action<float> OnChangedHp;
+    public event Action<float> OnChangedExistPower;
 
     #endregion
 
@@ -103,7 +119,10 @@ public class Creature : Thing {
     }
     protected virtual void SetStatus(bool isFullHp = true) {
         this.Status = new(Data);
-        Hp = Status[StatType.HpMax].Value;
+        if (isFullHp) {
+            Hp = Status[StatType.HpMax].Value;
+            ExistPower = Status[StatType.ExistPowerMax].Value;
+        }
 
         OnChangedHp -= ShowHpBar;
         OnChangedHp += ShowHpBar;
@@ -140,7 +159,7 @@ public class Creature : Thing {
 
     #endregion
 
-    private void ShowHpBar(float hp) {
+    protected void ShowHpBar(float hp) {
         if (HpBar != null) {
             HpBar.ResetInfo();
             return;

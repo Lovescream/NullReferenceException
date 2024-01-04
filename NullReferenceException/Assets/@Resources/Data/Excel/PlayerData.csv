@@ -1,0 +1,2 @@
+﻿Key,Name,HpMax,HpRegen,Damage,Defense,MoveSpeed,AttackSpeed,Range,ExistPowerMax,HungerMax
+Player_00,Player,100,1,10,5,4,2,5,100,100
