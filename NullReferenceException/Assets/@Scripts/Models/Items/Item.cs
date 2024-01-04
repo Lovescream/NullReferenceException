@@ -13,8 +13,10 @@ public class Item {
     public ItemType Type => Data.Type;
     public string Name => Data.Name;
     public string Description => Data.Description;
-    public float Cost => Data.Cost;
-    
+    public int MaxStack => Data.MaxStack;
+    public string Recipe => Data.Recipe;
+    public EquipType EquipType => Data.EquipType;
+    public string Effect => Data.Effect;
     public List<StatModifier> Modifiers { get; protected set; }
 
     #endregion

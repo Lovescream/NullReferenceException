@@ -6,12 +6,22 @@ public class ItemData : Data {
     public ItemType Type { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
-    public float Cost { get; set; }
+    public int MaxStack { get; set; }
+    public string Recipe { get; set; }
+    public EquipType EquipType { get; set; }
     public List<StatModifier> Modifiers { get; set; }
+    public string Effect { get; set; }
 }
 
 public enum ItemType {
-    Weapon,
+    Materials,
+    Equipments,
+    Consumables,
+    Etc,
+}
+public enum EquipType {
+    None,
+    OneHanded,
+    TwoHanded,
     Armor,
-    COUNT,
 }
