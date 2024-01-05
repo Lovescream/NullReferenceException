@@ -13,6 +13,8 @@ public class EnemyBasicBT : MonoBehaviour
     protected float _attackDistance;
     [SerializeField]
     protected float _actionDistance;
+    [SerializeField]
+    protected float _patrolDistance;
 
     // Movement
     [Header("Move")]
@@ -24,6 +26,8 @@ public class EnemyBasicBT : MonoBehaviour
     protected bool _isCoolTime = true;
     [SerializeField]
     protected float coolTime = 0;
+    [SerializeField]
+    protected float patrolReadyTime = 3f;
 
     // Components
     protected BehaviourTreeRunner _BTRunner = null;
@@ -35,6 +39,8 @@ public class EnemyBasicBT : MonoBehaviour
     // Position
     protected Transform _detectedPlayer = null;
     protected Vector3 _originPos = default;
+    protected Vector2 randomPatrolPos = default;
+    protected bool _patrolMoveCheck = false;
 
     // Animations
     protected const string _ATTACK_ANIM_STATE_NAME = "Attack";
@@ -94,7 +100,23 @@ public class EnemyBasicBT : MonoBehaviour
                             new ActionNode(MoveToDetectEnemy) // 적한테 이동
                         }
                     ),
-                    new ActionNode(MoveToOriginPosition) // 원래 자리로
+                    new SelectorNode
+                    (
+                        new List<INode>()
+                        {
+                            new ActionNode(MoveToOriginPosition), // 원래 자리로
+                            /*
+                            new SequenceNode
+                            (
+                                new List<INode>()
+                                {
+                                    new ActionNode(RandomPatrolPositionCheck),
+                                    new ActionNode(MoveToPatrolPosition)
+                                }
+                            )
+                            */
+                        }
+                    )
                 }
             );
     }
@@ -117,7 +139,6 @@ public class EnemyBasicBT : MonoBehaviour
         {
             if (Vector3.SqrMagnitude(_detectedPlayer.position - transform.position) < (_attackDistance * _attackDistance))
             {
-                Debug.Log("발동");
                 return INode.ENodeState.ENS_Success;
             }
         }
@@ -182,6 +203,9 @@ public class EnemyBasicBT : MonoBehaviour
     #endregion
 
     #region Move Origin Position & Patrol Node
+    // 제자리로 복귀하는 bool값을 만든다.
+    // 몬스터가 제자리로 돌아오면 bool값은 false가 된다. (false상태 에서는 제자리로 돌아오지 않는다. Patrol노드로 바로 가게한다.)
+    // 몬스터가 플레이어를 감지 하면 true로 바뀐다. (true상태는 우선 제자리로 돌아온다)
     protected INode.ENodeState MoveToOriginPosition()
     {
         if (Vector3.SqrMagnitude(_originPos - transform.position) <= float.Epsilon * float.Epsilon)
@@ -199,6 +223,57 @@ public class EnemyBasicBT : MonoBehaviour
     }
 
     // Patrol Node Method
+    // 랜덤 방향(0 ~ 360)으로 Ray를 쏜다. (Ray의 길이도 랜덤거리(움직일 만큼만 쏜다))
+    // Ray에 걸리는 오브젝트가 없다면 그 방향으로 움직인다. (움직이는 도중에 플레이어가 감지되면 추적 해야함)
+    // Ray에 걸리는 오브젝트가 있다면 다시 랜덤으로 방향을 돌려서 쏜다.
+    // 위 내용을 반복.
+
+    // 랜덤 좌표를 갱신하고 그 좌표로 레이를 쏴서 맞는게 없는지 확인
+
+    /*
+     * 
+    protected INode.ENodeState RandomPatrolPositionCheck()
+    {
+        if(!_patrolMoveCheck)
+        {
+            Vector2 randomPos = Random.insideUnitCircle;
+            randomPatrolPos = randomPos * _patrolDistance;
+            hitData = Physics2D.RaycastAll(transform.position, randomPatrolPos, _patrolDistance);
+            _patrolMoveCheck = true;
+        }
+        Debug.DrawRay(transform.position, randomPatrolPos, new Color(1, 0, 0));
+
+        if (hitData.Length <= 1)
+        {
+            return INode.ENodeState.ENS_Success;
+        }
+
+        _patrolMoveCheck = false;
+        return INode.ENodeState.ENS_Failure;
+    }
+
+    protected INode.ENodeState MoveToPatrolPosition()
+    {
+        if (_patrolMoveCheck)
+        {
+            if (Vector3.SqrMagnitude((Vector3)randomPatrolPos - transform.position) <= float.Epsilon * float.Epsilon)
+            {
+                IdleAnimCheck();
+                StartCoroutine(PatrolReadTime());
+
+                return INode.ENodeState.ENS_Failure;
+            }
+
+            RunAnimCheck();
+            FlipSprite(transform.position, randomPatrolPos);
+            transform.position = Vector3.MoveTowards(transform.position, randomPatrolPos, Time.deltaTime * _movementSpeed);
+            return INode.ENodeState.ENS_Running;
+        }
+
+        return INode.ENodeState.ENS_Failure;
+    }
+
+    */
 
     #endregion
 
@@ -232,6 +307,22 @@ public class EnemyBasicBT : MonoBehaviour
 
         coolTime = 20f;
         _isCoolTime = true;
+    }
+
+    protected IEnumerator PatrolReadTime()
+    {
+        WaitForFixedUpdate waitFrame = new WaitForFixedUpdate();
+
+        while (patrolReadyTime > 0.1f)
+        {
+            Debug.Log(patrolReadyTime);
+            patrolReadyTime -= Time.deltaTime;
+            yield return waitFrame;
+        }
+
+        patrolReadyTime = 10f;
+
+        _patrolMoveCheck = false;
     }
 
     protected void CheckPlayerRay()

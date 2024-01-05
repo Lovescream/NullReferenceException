@@ -50,7 +50,23 @@ public class NearEnemyBT : EnemyBasicBT
                             new ActionNode(MoveToDetectEnemy) // 적한테 이동
                         }
                     ),
-                    new ActionNode(MoveToOriginPosition) // 원래 자리로
+                    new SelectorNode
+                    (
+                        new List<INode>()
+                        {
+                            new ActionNode(MoveToOriginPosition), // 원래 자리로
+                            /*
+                            new SequenceNode
+                            (
+                                new List<INode>()
+                                {
+                                    new ActionNode(RandomPatrolPositionCheck),
+                                    new ActionNode(MoveToPatrolPosition)
+                                }
+                            )
+                            */
+                        }
+                    )
                 }
             );
     }
