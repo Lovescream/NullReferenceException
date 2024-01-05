@@ -35,7 +35,6 @@ public class Main : MonoBehaviour {
     private UIManager _ui = new();
     private SceneManagerEx _scene = new();
     private ObjectManager _object = new();
-    private GameManager _game = new();
 
     public static PoolManager Pool => Instance?._pool;
     public static ResourceManager Resource => Instance?._resource;
@@ -43,23 +42,22 @@ public class Main : MonoBehaviour {
     public static UIManager UI => Instance?._ui;
     public static SceneManagerEx Scene => Instance?._scene;
     public static ObjectManager Object => Instance?._object;
-    public static GameManager Game => Instance?._game;
 
     public SkillManager Skill;
 
-    //IEnumerator Start()
-    //{
-    //    yield return null;
+    IEnumerator Start()
+    {
+        yield return new WaitForSeconds(0.5f);
 
-    //    GameObject skillSystemPrefab = Resources.Load<GameObject>("Prefabs/Skill/SkillSystem");
+        GameObject skillSystemPrefab = Resources.Load<GameObject>("Prefabs/Skill/SkillSystem");
 
-    //    if (skillSystemPrefab != null)
-    //    {
-    //        GameObject skillSystemInstance = Instantiate(skillSystemPrefab);
-    //    }
-    //    else
-    //    {
-    //        Debug.LogError("경로를 확인필요.");
-    //    }
-    //}
+        if (skillSystemPrefab != null)
+        {
+            GameObject skillSystemInstance = Instantiate(skillSystemPrefab);
+        }
+        else
+        {
+            Debug.LogError("경로를 확인필요.");
+        }
+    }
 }

@@ -11,7 +11,7 @@ public class SkillManager : MonoBehaviour
     public bool isSkillList = false;
 
     int maxLS = 4;
-    int maxGS = 5;
+    int maxGS = 6;
 
     public void Awake()
     {

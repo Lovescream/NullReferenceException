@@ -3,6 +3,7 @@ using System;
 [Serializable]
 public class CreatureData : Data {
     public string Name { get; set; }
+    public int Lv { get; set; } = 1;
     public float HpMax { get; set; }
     public float HpRegen { get; set; }
     public float Damage { get; set; }
