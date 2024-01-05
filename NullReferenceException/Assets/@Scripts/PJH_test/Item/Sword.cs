@@ -10,6 +10,9 @@ public interface IWeapon
 }
 public enum WeaponType
 {
+    Axe,
+    Pick,
+    Hand,
     Sword,
     Bow,
 }
@@ -27,7 +30,7 @@ public class Sword : MonoBehaviour, IWeapon
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Player>().ChangePlayerWeapon(this, this.GetComponent<SpriteRenderer>().sprite);
+            //collision.GetComponent<Player>().ChangePlayerWeapon(this, this.GetComponent<SpriteRenderer>().sprite);
             Debug.Log("¿€µø");
         }
     }

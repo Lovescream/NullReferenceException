@@ -36,17 +36,7 @@ public class Player : Creature {
         AimDirection();
     }
     protected void OnFire() {
-        if (_coolTime >= _time && _currentWeapon != null)
-        {
-            _coolTime = 0;
-            _anim.SetTrigger(_currentWeapon.WeponType.ToString());
-            _currentWeapon.Attack();
-            if (_currentWeapon.WeponType == WeaponType.Bow)
-            {
-                Projectile projectile = Main.Object.SpawnProjectile(_bullet.position).SetInfo(this);
-                projectile.Velocity = LookDirection.normalized * 10f; // TODO::
-            }
-        }
+        
     }
     protected void OnInteraction() {
         Debug.Log($"[Player] OnInteraction()");
@@ -63,13 +53,7 @@ public class Player : Creature {
     protected void OnKey_V() {
         Inventory.Add(new(Main.Data.Items["IronBoots"]));
     }
-    public void ChangePlayerWeapon(IWeapon newWeapon, Sprite weaponImage)  //무기 변경
-    {
-        _currentWeapon = newWeapon;
-        _weponSprite.sprite = weaponImage;
-        //여기에 무기별 딜레이 타임 전달
-        //_time = newWeapon.coolTime;
-    }
+
     public void AimDirection()
     {
         float rotZ = Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;

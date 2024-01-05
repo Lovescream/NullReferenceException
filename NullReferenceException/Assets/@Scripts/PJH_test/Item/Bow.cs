@@ -17,7 +17,7 @@ public class Bow : MonoBehaviour, IWeapon
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Player>().ChangePlayerWeapon(this, this.GetComponent<SpriteRenderer>().sprite);
+            //collision.GetComponent<Player>().ChangePlayerWeapon(this, this.GetComponent<SpriteRenderer>().sprite);
             Debug.Log("¿€µø");
         }
     }
