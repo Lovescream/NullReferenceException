@@ -6,6 +6,12 @@ public class Fireball : SkillLogic
 {
     protected override void UsingSkill(SkillData skill)
     {
-        Main.Object.Player.isFireball = true;
+        if (player == null)
+        {
+            FindPlayer();
+        }
+        player.isFireball = true;
+        dmg = 10 + (skill.SkillLv * 8);
+        player.fireBallDmg = dmg;
     }
 }

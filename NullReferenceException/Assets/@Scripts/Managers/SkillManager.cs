@@ -3,12 +3,13 @@ using UnityEngine;
 public class SkillManager : MonoBehaviour
 {
     public int selectSolot = 0;
+
     public SkillSlotUI[] skillSlots;
+
     public GameObject SkillUI;
     public GameObject SkillList;
     public GameObject[] qSlot;
     public GameObject[] screenMarsk;
-
     public bool isSkillList = false;
 
     int maxLS = 4;

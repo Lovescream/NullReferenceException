@@ -7,7 +7,9 @@ public class SkillLogic : MonoBehaviour
     public Player player;
     public Enemy enemy;
 
-    private void Start()
+    public float dmg = 0;
+
+    protected void Start()
     {
         FindPlayer();
     }
@@ -28,8 +30,7 @@ public class SkillLogic : MonoBehaviour
     {
         UsingSkill(skill);
     }
-
-    private void FindPlayer()
+    protected void FindPlayer()
     {
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
@@ -51,6 +52,8 @@ public class SkillLogic : MonoBehaviour
         yield return new WaitForSeconds(duration);
         MarskOff(num);
     }
-
-
+    protected virtual IEnumerator SkillEf(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+    }
 }

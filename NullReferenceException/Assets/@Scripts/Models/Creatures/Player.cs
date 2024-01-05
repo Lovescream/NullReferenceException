@@ -47,6 +47,7 @@ public class Player : Creature {
         get { return _isStealth; }
         set { _isStealth = value; }
     }
+    public float fireBallDmg;
 
     #endregion
 
@@ -73,11 +74,15 @@ public class Player : Creature {
     protected void OnFire() {
         if (_isFireball)
         {
+            FireBallPRJ fireballProjectile = Main.Object.SpawnFireBall(this.transform.position).SetInfo(this, fireBallDmg) as FireBallPRJ;
+            fireballProjectile.Velocity = LookDirection.normalized * 10f; // 필요에 따라 속도 조절
+            fireBallDmg = 0;
+            Debug.Log("파이어볼 발사");
             isFireball = false;
         }
         else
         {
-            Projectile projectile = Main.Object.SpawnProjectile(this.transform.position).SetInfo(this);
+            Projectile projectile = Main.Object.SpawnProjectile(this.transform.position).SetInfo(this, 10f);
             projectile.Velocity = LookDirection.normalized * 10f; // 필요에 따라 속도 조절
         }
     }
