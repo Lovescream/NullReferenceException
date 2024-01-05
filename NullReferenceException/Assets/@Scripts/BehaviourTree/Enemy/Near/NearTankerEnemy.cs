@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class NearTankerEnemy : NearEnemyBT
 {
-    private bool isSpecialAttacking = false;
-
     private const string _CRASH_ANIM_TRIGGER_NAME = "IsCrash";
 
     protected override void Awake()
@@ -33,6 +31,7 @@ public class NearTankerEnemy : NearEnemyBT
     {
         if (_isCoolTime && _detectedPlayer != null)
         {
+            IdleAnimCheck();
             CheckPlayerRay();
             if (hitData.Length > 1 && hitData[1].collider.CompareTag("Player"))
             {
@@ -55,6 +54,9 @@ public class NearTankerEnemy : NearEnemyBT
         _animator.SetTrigger(_CRASH_ANIM_TRIGGER_NAME);
         yield return new WaitForSeconds(1.5f);
 
+        // 처음 IsCrash트리거가 발동될 때, 좌표를 기준으로 그쪽으로 돌진할지 - 1
+        // 준비가 끝나고 나서 플레이어 좌표를 기준으로 돌진을 할지 - 2 (현재 방법)
+        FlipSprite(transform.position, _detectedPlayer.position);
         _rigid.AddForce((_detectedPlayer.position - transform.position) * 5, ForceMode2D.Impulse);
 
         // Stun
@@ -65,4 +67,21 @@ public class NearTankerEnemy : NearEnemyBT
         isSpecialAttacking = false;
     }
     #endregion
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (isSpecialAttacking)
+        {
+            if (collision.gameObject.CompareTag("Wall"))
+            {
+                _rigid.velocity = new Vector2(0, 0);
+            }
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                _rigid.velocity = new Vector2(0, 0);
+                // 데미지를 주는 로직
+                // 넉백 적용
+            }
+        }
+    }
 }

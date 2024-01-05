@@ -6,21 +6,30 @@ public class EnemyBasicBT : MonoBehaviour
 {
     #region Global Variable
     // Distance
+    [Header("Distance")]
+    [SerializeField]
     protected float _detectDistance;
+    [SerializeField]
     protected float _attackDistance;
+    [SerializeField]
     protected float _actionDistance;
 
     // Movement
+    [Header("Move")]
+    [SerializeField]
     protected float _movementSpeed;
 
     // CoolTime
+    [Header("CoolTime")]
     protected bool _isCoolTime = true;
+    [SerializeField]
     protected float coolTime = 0;
 
     // Components
     protected BehaviourTreeRunner _BTRunner = null;
     protected Rigidbody2D _rigid;
     protected Animator _animator = null;
+    protected SpriteRenderer _sprite;
     protected RaycastHit2D[] hitData;
 
     // Position
@@ -30,6 +39,8 @@ public class EnemyBasicBT : MonoBehaviour
     // Animations
     protected const string _ATTACK_ANIM_STATE_NAME = "Attack";
     protected const string _ATTACK_ANIM_TIRGGER_NAME = "IsAttack";
+    protected const string _RUN_ANIM_STATE_NAME = "Run";
+    protected const string _RUN_ANIM_BOOL_NAME = "IsRun";
     #endregion
 
     #region Init Method
@@ -38,9 +49,10 @@ public class EnemyBasicBT : MonoBehaviour
         _BTRunner = new BehaviourTreeRunner(SettingBT());
         _animator = GetComponentInChildren<Animator>();
         _rigid = GetComponent<Rigidbody2D>();
+        _sprite = GetComponentInChildren<SpriteRenderer>();
         _originPos = transform.position;
 
-        InitStates();
+        //InitStates();
     }
 
     protected void Update()
@@ -105,6 +117,7 @@ public class EnemyBasicBT : MonoBehaviour
         {
             if (Vector3.SqrMagnitude(_detectedPlayer.position - transform.position) < (_attackDistance * _attackDistance))
             {
+                Debug.Log("¹ßµ¿");
                 return INode.ENodeState.ENS_Success;
             }
         }
@@ -151,9 +164,13 @@ public class EnemyBasicBT : MonoBehaviour
             {
                 if (Vector3.SqrMagnitude(_detectedPlayer.position - transform.position) < (_attackDistance * _attackDistance))
                 {
+                    IdleAnimCheck();
+
                     return INode.ENodeState.ENS_Running;
                 }
 
+                RunAnimCheck();
+                FlipSprite(transform.position, _detectedPlayer.position);
                 transform.position = Vector3.MoveTowards(transform.position, _detectedPlayer.position, Time.deltaTime * _movementSpeed);
 
                 return INode.ENodeState.ENS_Running;
@@ -169,10 +186,13 @@ public class EnemyBasicBT : MonoBehaviour
     {
         if (Vector3.SqrMagnitude(_originPos - transform.position) <= float.Epsilon * float.Epsilon)
         {
+            IdleAnimCheck();
             return INode.ENodeState.ENS_Success;
         }
         else
         {
+            RunAnimCheck();
+            FlipSprite(transform.position, _originPos);
             transform.position = Vector3.MoveTowards(transform.position, _originPos, Time.deltaTime * _movementSpeed);
             return INode.ENodeState.ENS_Running;
         }
@@ -219,6 +239,29 @@ public class EnemyBasicBT : MonoBehaviour
         hitData = Physics2D.RaycastAll(_rigid.position, _detectedPlayer.position - transform.position, _detectDistance);
         Debug.DrawRay(transform.position, _detectedPlayer.position - transform.position, new Color(1, 0, 0));
 
+    }
+
+    protected void RunAnimCheck()
+    {
+        if (!_animator.GetBool(_RUN_ANIM_BOOL_NAME))
+        {
+            _animator.SetBool(_RUN_ANIM_BOOL_NAME, true);
+        }
+    }
+
+    protected void IdleAnimCheck()
+    {
+        if (_animator.GetBool(_RUN_ANIM_BOOL_NAME))
+        {
+            _animator.SetBool(_RUN_ANIM_BOOL_NAME, false);
+        }
+    }
+
+    protected void FlipSprite(Vector3 myPos, Vector3 targetPos)
+    {
+        Vector3 distance = (targetPos - myPos).normalized;
+
+        _sprite.flipX = distance.x < 0f;
     }
     #endregion
 

@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class NearEnemyBT : EnemyBasicBT
 {
-    private bool isSpecialAttacking = false;
-
-    private const string _CRASH_ANIM_TRIGGER_NAME = "IsCrash";
+    protected bool isSpecialAttacking = false;
 
     protected override void Awake()
     {
@@ -82,31 +80,11 @@ public class NearEnemyBT : EnemyBasicBT
 
     protected virtual INode.ENodeState SpecialAttack()
     {
-/*        if (_isCoolTime && _detectedPlayer != null)
-        {
-            CheckPlayerRay();
-            if (hitData.Length > 1 && hitData[1].collider.CompareTag("Player"))
-            {
-                StartCoroutine(CoolTime());
-                StartCoroutine(SpecialAttackLogic());
-            }
-
-            return INode.ENodeState.ENS_Running;
-        }*/
         return INode.ENodeState.ENS_Failure;
     }
     #endregion
 
     #region Near_Attack Node
-/*    protected override INode.ENodeState CheckAttacking()
-    {
-        if (IsAnimationRunning(_ATTACK_ANIM_STATE_NAME) || isSpecialAttacking)
-        {
-            return INode.ENodeState.ENS_Running;
-        }
-
-        return INode.ENodeState.ENS_Success;
-    }*/
 
     protected override INode.ENodeState DoAttack()
     {
@@ -117,6 +95,7 @@ public class NearEnemyBT : EnemyBasicBT
                 return INode.ENodeState.ENS_Failure;
             }
 
+            Debug.Log("공격 시전");
             _animator.SetTrigger(_ATTACK_ANIM_TIRGGER_NAME);
             return INode.ENodeState.ENS_Success;
         }
@@ -124,22 +103,4 @@ public class NearEnemyBT : EnemyBasicBT
         return INode.ENodeState.ENS_Failure;
     }
     #endregion
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (isSpecialAttacking)
-        {
-            if (collision.gameObject.CompareTag("Wall"))
-            {
-                _rigid.velocity = new Vector2(0, 0);
-            }
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                _rigid.velocity = new Vector2(0, 0);
-                // 데미지를 주는 로직
-                // 넉백 적용
-            }
-        }
-    }
 }
