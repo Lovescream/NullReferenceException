@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class InventorySlot {
 
@@ -12,10 +13,16 @@ public class InventorySlot {
         set {
             if (value == _item) return;
             if (value == null) {
+                _item.OnChangedStack -= OnChangedStack;
+                _item.OnStackZero -= OnStackZero;
                 _item = null;
             }
             else {
                 _item = value;
+                _item.OnChangedStack -= OnChangedStack;
+                _item.OnStackZero -= OnStackZero;
+                _item.OnChangedStack += OnChangedStack;
+                _item.OnStackZero += OnStackZero;
             }
             OnChanged?.Invoke(this);
         }
@@ -40,9 +47,6 @@ public class InventorySlot {
     public bool SetItem(Item item) {
         if (Item != null) return false;
         Item = item;
-
-        Item.OnChangedStack += OnChangedStack;
-        Item.OnStackZero += OnStackZero;
 
         return true;
     }
@@ -87,19 +91,29 @@ public class InventorySlot {
         return this.Item.TryRemoveStack(stack);
     }
 
+    public void SwapSlot(InventorySlot slot) {
+        (this.Item, slot.Item) = (slot.Item, this.Item);
+    }
     public Item PopItem(int stack = 1) {
         if (this.Item == null || this.Stack < stack) return null;
-        return Item.Copy(stack);
+        Item popItem;
+        if (this.Stack == stack) {
+            popItem = this.Item;
+            Item = null;
+        }
+        else {
+            popItem = Item.Copy(stack);
+            Item.Stack -= stack;
+        }
+        return popItem;
     }
 
-    #region Callbacks.
+    #region Callbacks
 
     private void OnChangedStack(int stack) {
         OnChanged?.Invoke(this);
     }
     private void OnStackZero(Item item) {
-        item.OnChangedStack -= OnChangedStack;
-        item.OnStackZero -= OnStackZero;
         Item = null;
     }
 

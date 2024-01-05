@@ -60,7 +60,7 @@ public class Player : Creature {
         Inventory.TryAdd(new(Main.Data.Items["IronHammer"]));
     }
     protected void OnKey_C() {
-        Inventory.TryAdd(new(Main.Data.Items["IronHelmet"]));
+        Main.Game.CraftingInventory.TryAdd(new(Main.Data.Items["IronSword"], stack: 3));
     }
     protected void OnKey_V() {
         Inventory.TryAdd(new(Main.Data.Items["IronBoots"]));

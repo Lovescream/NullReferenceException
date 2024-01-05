@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class UI_InventorySlot : UI_Base, IPointerDownHandler {
 
@@ -22,8 +23,9 @@ public class UI_InventorySlot : UI_Base, IPointerDownHandler {
 
     #region Properties
 
-    public CreatureInventory Inventory { get; protected set; }
+    public Inventory Inventory { get; protected set; }
     public InventorySlot Slot { get; protected set; }
+    public UI_CursorSlot CursorSlotUI => (Main.Scene.CurrentScene as GameScene).CursorSlotUI;
 
     #endregion
 
@@ -55,7 +57,7 @@ public class UI_InventorySlot : UI_Base, IPointerDownHandler {
         return true;
     }
 
-    public void SetInfo(CreatureInventory inventory, InventorySlot slot) {
+    public void SetInfo(Inventory inventory, InventorySlot slot) {
         Initialize();
 
         this.Inventory = inventory;
@@ -78,7 +80,7 @@ public class UI_InventorySlot : UI_Base, IPointerDownHandler {
         }
         else {
             GetImage((int)Images.imgItem).sprite = Main.Resource.LoadSprite($"{Slot.Item.Key}.sprite");
-            GetObject((int)Objects.EquipMark).SetActive(Inventory.IsEquip(Slot.Item));
+            GetObject((int)Objects.EquipMark).SetActive(Inventory is CreatureInventory c && c.IsEquip(Slot.Item));
             GetText((int)Texts.txtCount).text = $"{(Slot.Stack <= 1 ? "" : Slot.Stack)}";
         }
     }
@@ -86,6 +88,29 @@ public class UI_InventorySlot : UI_Base, IPointerDownHandler {
     #endregion
 
     private void OnClickSlot() {
+        bool isShiftPressed = Keyboard.current.leftShiftKey.isPressed;
+
+        if (!Slot.IsEmpty() && CursorSlotUI.CursorSlot.IsEmpty()) {
+            if (isShiftPressed) {
+                CursorSlotUI.SetNewSlot(Slot.PopItem(Slot.Item.Stack / 2));
+            }
+            else {
+                CursorSlotUI.SelectSlot(this.Slot);
+            }
+        }
+        else if (Slot.IsEmpty() && !CursorSlotUI.CursorSlot.IsEmpty()) {
+            CursorSlotUI.PlaceToEmptySlot(this.Slot);
+        }
+        else if (!Slot.IsEmpty() && !CursorSlotUI.CursorSlot.IsEmpty()) {
+            if (Slot.Item.Data == CursorSlotUI.CursorSlot.Item.Data) {
+                CursorSlotUI.PlaceToSlot(this.Slot);
+            }
+            else {
+                CursorSlotUI.SwapSlot(Slot);
+            }
+        }
+
+
         // Inventory Slot Click.
     }
 
