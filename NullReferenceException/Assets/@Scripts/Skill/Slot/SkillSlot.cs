@@ -9,16 +9,27 @@ public class SkillSlot : MonoBehaviour
     protected virtual void SetDefaultSkillData(SkillData data)
     {
         skillData = data;
-        
-        if (skillData != null && skillData.Key != null)
+
+        if (skillData != null)
         {
-            SkillIconSprite.sprite = Resources.Load<Sprite>("Sprite/SkillIcon/" + skillData.Key);
+            if (skillData.Key != null)
+            {
+                SkillIconSprite.sprite = Resources.Load<Sprite>("Sprite/SkillIcon/" + skillData.Key);
+            }
+            else
+            {
+                SkillIconSprite.sprite = Resources.Load<Sprite>("Sprite/SkillIcon/Null");
+            }
+        }
+        else
+        {
+            SkillIconSprite.sprite = Resources.Load<Sprite>("Sprite/SkillIcon/Null");
+            Debug.LogWarning("SetDefaultSkillData: skillData is null");
         }
     }
 
     protected virtual void OnClick()
     {
-
     }
 
     public void SetSkillData(SkillData data)
@@ -30,5 +41,7 @@ public class SkillSlot : MonoBehaviour
     {
         OnClick();
     }
-
 }
+
+
+

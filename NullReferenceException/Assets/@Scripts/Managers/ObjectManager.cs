@@ -24,13 +24,13 @@ public class ObjectManager {
 
     public Player SpawnPlayer(string key, Vector2 position) {
         Player = Spawn<Player>(key, position);
-        Player.SetInfo(Main.Data.Creatures[key]);
+        Player.SetInfo(Main.Data.Players[key]);
         return Player;
     }
     public Enemy SpawnEnemy(string key, Vector2 position) {
         Enemy enemy = Spawn<Enemy>(key, position);
         Enemies.Add(enemy);
-        enemy.SetInfo(Main.Data.Creatures[key]);
+        enemy.SetInfo(Main.Data.Enemies[key]);
         return enemy;
     }
     public void DespawnEnemy(Enemy obj) {

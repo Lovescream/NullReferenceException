@@ -1,5 +1,5 @@
 {
-    "name": "CreateANewRepository",
+    "name": "Player",
     "maps": [
         {
             "name": "Player",
@@ -72,6 +72,24 @@
                     "name": "Key_V",
                     "type": "Button",
                     "id": "60ffcd82-ecea-4035-9c23-1d18b00cb39e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Key_K",
+                    "type": "Button",
+                    "id": "f0d49387-eee3-491a-b21c-99a74df51033",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Quick_Skill_Slot",
+                    "type": "Button",
+                    "id": "4dc6f671-1d0f-491b-9b44-53949610f05e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -329,6 +347,50 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Key_V",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43c2daaf-8a6d-4dfe-ab6b-f64c3c9255e1",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Key_K",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c82c6479-f73a-44de-8d21-2fe5061250ca",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Quick_Skill_Slot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b7900373-b283-4543-86a0-4071accb3525",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Quick_Skill_Slot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bc590ae5-8f4c-407a-8459-9499589cfc85",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Quick_Skill_Slot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -14,10 +14,11 @@ GameObject:
   - component: {fileID: 9182372037166454470}
   - component: {fileID: 7543975874018028299}
   - component: {fileID: 455361493257301125}
+  - component: {fileID: 8565354451978246702}
   - component: {fileID: 9150152172108255976}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,12 +79,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c4ed3c793858a32469c4a333c47648ba, type: 3}
+  m_Sprite: {fileID: 1378562880, guid: 99a24620d31e5ce4e823c32d11e17c2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.19, y: 0.3}
+  m_Size: {x: 1, y: 1.1111112}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -145,9 +146,9 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.5555556}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5625, y: 0.625}
-    newSize: {x: 0.19, y: 0.3}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1, y: 1.1111112}
+    newSize: {x: 1, y: 1.1111112}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -194,10 +195,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ce32f774dd2d540bcc522635019964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chracter: {fileID: 0}
-  _armPivot: {fileID: 0}
-  _weponRotate: {fileID: 0}
-  _weponSprite: {fileID: 0}
+  lvSkill: {fileID: 0}
+--- !u!114 &8565354451978246702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098960285450617347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c492687291bb924ab7589d42f3e7b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getLock: 050000000a0000000f00000014000000
+  skillLvUp: 050000000a0000000f00000014000000
 --- !u!114 &9150152172108255976
 MonoBehaviour:
   m_ObjectHideFlags: 0

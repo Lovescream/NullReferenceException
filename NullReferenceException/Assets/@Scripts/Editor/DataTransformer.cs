@@ -14,8 +14,10 @@ public class DataTransformer : EditorWindow {
 
     [MenuItem("Tools/ParseExcel")]
     public static void ParseExcel() {
-        ParseData<CreatureData>();
+        //ParseData<CreatureData>();
         //ParseData<CharacterData>();
+        ParseData<PlayerData>();
+        ParseData<EnemyData>();
         ParseData<ItemData>();
         ParseData<SkillData>();
     }
@@ -58,6 +60,8 @@ public class DataTransformer : EditorWindow {
     }
 
     private static object ConvertValue(Type type, string value) {
+        if (string.IsNullOrEmpty(value)) return default;
+
         // #1. 기본 값 자료인 경우 변환.
         TypeConverter converter = TypeDescriptor.GetConverter(type);
         if (converter != null && converter.CanConvertFrom(typeof(string))) return converter.ConvertFromString(value);

@@ -23,6 +23,34 @@ public class Status {
             [StatType.Defense] = new(StatType.Defense, data.Defense),
             [StatType.MoveSpeed] = new(StatType.MoveSpeed, data.MoveSpeed),
             [StatType.AttackSpeed] = new(StatType.AttackSpeed, data.AttackSpeed),
+            [StatType.Range] = new(StatType.Range, data.Range),
+            [StatType.ExistPowerMax] = new(StatType.ExistPowerMax, data.ExistPowerMax),
+        };
+    }
+    public Status(PlayerData data) {
+        _stats = new() {
+            [StatType.HpMax] = new(StatType.HpMax, data.HpMax),
+            [StatType.HpRegen] = new(StatType.HpRegen, data.HpRegen),
+            [StatType.Damage] = new(StatType.Damage, data.Damage),
+            [StatType.Defense] = new(StatType.Defense, data.Defense),
+            [StatType.MoveSpeed] = new(StatType.MoveSpeed, data.MoveSpeed),
+            [StatType.AttackSpeed] = new(StatType.AttackSpeed, data.AttackSpeed),
+            [StatType.Range] = new(StatType.Range, data.Range),
+            [StatType.ExistPowerMax] = new(StatType.ExistPowerMax, data.ExistPowerMax),
+            [StatType.HungerMax] = new(StatType.HungerMax, data.HungerMax),
+        };
+    }
+    public Status(EnemyData data) {
+        _stats = new() {
+            [StatType.HpMax] = new(StatType.HpMax, data.HpMax),
+            [StatType.HpRegen] = new(StatType.HpRegen, data.HpRegen),
+            [StatType.Damage] = new(StatType.Damage, data.Damage),
+            [StatType.Defense] = new(StatType.Defense, data.Defense),
+            [StatType.MoveSpeed] = new(StatType.MoveSpeed, data.MoveSpeed),
+            [StatType.AttackSpeed] = new(StatType.AttackSpeed, data.AttackSpeed),
+            [StatType.Range] = new(StatType.Range, data.Range),
+            [StatType.ExistPowerMax] = new(StatType.ExistPowerMax, data.ExistPowerMax),
+            [StatType.DetectingRange] = new(StatType.DetectingRange, data.DetectingRange),
         };
     }
 
@@ -45,6 +73,10 @@ public enum StatType {
     Defense,
     MoveSpeed,
     AttackSpeed,
+    Range,
+    ExistPowerMax,
+    HungerMax,
+    DetectingRange,
     COUNT,
 }
 public enum StatModifierType {

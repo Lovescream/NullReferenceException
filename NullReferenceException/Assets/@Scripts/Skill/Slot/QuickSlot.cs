@@ -47,6 +47,11 @@ public class QuickSlot : SkillSlot
 
     protected override void OnClick()
     {
+        UsingQuick();
+    }
+
+    public void UsingQuick()
+    {
         if (!_isCoolTime)
         {
             _coolTime = _maxCoolTime;

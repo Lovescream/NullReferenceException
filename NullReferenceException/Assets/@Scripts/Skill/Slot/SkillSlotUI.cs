@@ -5,8 +5,9 @@ public class SkillSlotUI : SkillSlot
 {
     public TMP_Text skillNameText;
     public TMP_Text skillCollTxt;
+    public TMP_Text skillExpTxt;
 
-    bool skillLock = true;
+    public GameObject marsk;
 
     public EquipSkillSlots[] equipSkillSlots;
 
@@ -21,7 +22,7 @@ public class SkillSlotUI : SkillSlot
         int selectedSlotIndex = Main.Instance.Skill.selectSolot;
         if (skillData.SkillLv == 0 || string.IsNullOrEmpty(skillData.Key))
         {
-            Debug.Log("ºó ½½·Ô È¤Àº ½ºÅ³ÀÌ ÇØ±ÝµÇÁö ¾ÊÀº »óÅÂÀÔ´Ï´Ù.");
+            Debug.Log("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È¤ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ ï¿½Ø±Ýµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
         }
         else
         {
@@ -34,11 +35,11 @@ public class SkillSlotUI : SkillSlot
             }
             else if (equipSkillSlots[selectedSlotIndex].skillData.Key == skillData.Key)
             {
-                Debug.Log("µ¿ÀÏÇÑ ½ºÅ³ µ¥ÀÌÅÍ");
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
             }
             else
             {
-                Debug.Log("´Ù¸¥ ½½·Ô¿¡¼­ ÀÌ¹Ì µ¿ÀÏÇÑ ½ºÅ³ µ¥ÀÌÅÍ¸¦ »ç¿ë ÁßÀÔ´Ï´Ù.");
+                Debug.Log("ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
             }
         }
 
@@ -47,18 +48,35 @@ public class SkillSlotUI : SkillSlot
 
     public void UpdateUI()
     {
-        if (skillData != null)
+        if (skillData.Key != null)
         {
-            if (skillData.Key != "")
+            string[] nameParts = skillData.SkillName.Split('_');
+            string[] keyParts = skillData.Key.Split('_');
+            skillNameText.text = "Name: " + nameParts[0] + " Lv." + skillData.SkillLv;
+            skillCollTxt.text = "Coll: " + skillData.CoolTime.ToString("F2");
+            if (skillData.SkillGetType == SkillGetType.Pickup)
             {
-                skillNameText.text = "Name: " + skillData.SkillName + " Lv." + skillData.SkillLv;
-                skillCollTxt.text = "Coll: " + skillData.CoolTime;
+                skillExpTxt.text = $"Exp :{skillData.SkillExp}/100 ({skillData.SkillExp % 100}%)";
             }
             else
             {
-                skillNameText.text = "Name: -";
-                skillCollTxt.text = "Coll: -";
+                skillExpTxt.text = $"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ {Main.Object.Player.lvSkill.skillLvUp[int.Parse(keyParts[3]) - 1] - Main.Object.Player.Data.Lv % Main.Object.Player.lvSkill.skillLvUp[int.Parse(keyParts[3])-1]}";
             }
+        }
+        else
+        {
+            skillNameText.text = "Name: -";
+            skillCollTxt.text = "Coll: -";
+            skillExpTxt.text = "Exp : -";
+        }
+        
+        if( skillData.SkillLv == 0)
+        {
+            marsk.SetActive(true);
+        }
+        else
+        {
+            marsk.SetActive(false);
         }
     }
 }
