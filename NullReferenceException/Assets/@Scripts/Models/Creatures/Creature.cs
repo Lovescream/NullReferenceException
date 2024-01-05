@@ -137,10 +137,7 @@ public class Creature : Thing {
         });
     }
     protected virtual void SetInventory() {
-        Inventory = new(this, new() {
-            [ItemType.Weapon] = 3,
-            [ItemType.Armor] = 3,
-        }, 20);
+        Inventory = new(this, 20);
     }
 
     #endregion
