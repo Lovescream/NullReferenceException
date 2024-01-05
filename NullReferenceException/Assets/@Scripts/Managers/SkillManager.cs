@@ -7,11 +7,12 @@ public class SkillManager : MonoBehaviour
     public GameObject SkillUI;
     public GameObject SkillList;
     public GameObject[] qSlot;
+    public GameObject[] screenMarsk;
 
     public bool isSkillList = false;
 
     int maxLS = 4;
-    int maxGS = 5;
+    int maxGS = 6;
 
     public void Awake()
     {

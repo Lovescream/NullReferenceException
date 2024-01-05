@@ -47,7 +47,7 @@ public class Main : MonoBehaviour {
 
     IEnumerator Start()
     {
-        yield return null;
+        yield return new WaitForSeconds(0.5f);
 
         GameObject skillSystemPrefab = Resources.Load<GameObject>("Prefabs/Skill/SkillSystem");
 

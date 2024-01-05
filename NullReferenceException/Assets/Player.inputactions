@@ -87,27 +87,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Key_Skill1",
+                    "name": "Quick_Skill_Slot",
                     "type": "Button",
-                    "id": "3afe0260-3c2c-4cc5-9e35-99e2be79b4d9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Key_Skill2",
-                    "type": "Button",
-                    "id": "6822aa51-d44e-4a9c-95b3-7947b4fb0fd2",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Key_Skill3",
-                    "type": "Button",
-                    "id": "0a29f866-cb41-4416-8b39-985b3a422544",
+                    "id": "4dc6f671-1d0f-491b-9b44-53949610f05e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -381,34 +363,34 @@
                 },
                 {
                     "name": "",
-                    "id": "c9449663-9657-4171-9b63-b8f838be1170",
+                    "id": "c82c6479-f73a-44de-8d21-2fe5061250ca",
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Key_Skill1",
+                    "action": "Quick_Skill_Slot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "de0e5c12-6903-4bc9-b53a-17074d3ba927",
+                    "id": "b7900373-b283-4543-86a0-4071accb3525",
                     "path": "<Keyboard>/g",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Key_Skill2",
+                    "action": "Quick_Skill_Slot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "e9e92661-ad20-4061-848b-c4b97588ca15",
+                    "id": "bc590ae5-8f4c-407a-8459-9499589cfc85",
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Key_Skill3",
+                    "action": "Quick_Skill_Slot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

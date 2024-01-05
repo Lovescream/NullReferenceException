@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class QuickSlot : SkillSlot
 {
@@ -7,21 +8,20 @@ public class QuickSlot : SkillSlot
     public TMP_Text coolTimeTxt;
     public GameObject panelMarsk;
 
+    public SkillLogic skills;
+
     bool _isCoolTime = false;
     float _coolTime = 0;
     float _maxCoolTime;
-    private void Start()
-    {
-    }
     private void Update()
     {
         _maxCoolTime = skillData.CoolTime;
-
         SetSkillData(equipSkillSlots.skillData);
 
         if (_coolTime <= 0)
         {
             _isCoolTime = false;
+            equipSkillSlots.isCool = false;
             panelMarsk.SetActive(false);
         }
         else
@@ -47,11 +47,7 @@ public class QuickSlot : SkillSlot
 
     protected override void OnClick()
     {
-        if (!_isCoolTime)
-        {
-            _coolTime = _maxCoolTime;
-            _isCoolTime = true;
-        }
+        UsingQuick();
     }
 
     public void UsingQuick()
@@ -60,6 +56,25 @@ public class QuickSlot : SkillSlot
         {
             _coolTime = _maxCoolTime;
             _isCoolTime = true;
+            equipSkillSlots.isCool = true;
+            UpdateSkills();
+            skills.UsingSkills(skillData);
+        }
+    }
+
+    public void UpdateSkills()
+    {
+        string[] nameParts = skillData.SkillName.Split('_');
+        Type skillLogicType = Type.GetType(nameParts[1]);
+
+        if (skillLogicType != null && skillLogicType.IsSubclassOf(typeof(SkillLogic)))
+        {
+            SkillLogic skillLogicComponent = gameObject.AddComponent(skillLogicType) as SkillLogic;
+            skills = skillLogicComponent;
+        }
+        else
+        {
+            Debug.LogError($"Failed to find or add specific SkillLogic: {nameParts[1]}");
         }
     }
 }

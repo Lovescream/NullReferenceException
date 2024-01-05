@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2916785400266599918}
   - component: {fileID: 3264345240979752150}
   m_Layer: 6
-  m_Name: Skill01-Skill_A_G_1
+  m_Name: Healing-Skill_A_G_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
