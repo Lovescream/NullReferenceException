@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9182372037166454470}
   - component: {fileID: 7543975874018028299}
   - component: {fileID: 455361493257301125}
+  - component: {fileID: 8565354451978246702}
   - component: {fileID: 9150152172108255976}
   m_Layer: 0
   m_Name: Player
@@ -35,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3075401533445434772
 SpriteRenderer:
@@ -194,6 +195,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ce32f774dd2d540bcc522635019964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvSkill: {fileID: 0}
+--- !u!114 &8565354451978246702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098960285450617347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c492687291bb924ab7589d42f3e7b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getLock: 050000000a0000000f00000014000000
+  skillLvUp: 050000000a0000000f00000014000000
 --- !u!114 &9150152172108255976
 MonoBehaviour:
   m_ObjectHideFlags: 0

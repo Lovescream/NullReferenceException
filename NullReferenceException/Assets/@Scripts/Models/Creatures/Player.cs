@@ -9,6 +9,7 @@ public class Player : Creature {
     #region Properties
 
     public new PlayerData Data => base.Data as PlayerData;
+    public LevelUpSkill lvSkill;
 
     public float Hunger {
         get => _hunger;
@@ -25,16 +26,26 @@ public class Player : Creature {
             OnChangedHunger?.Invoke(_hunger);
         }
     }
+    public float Exp {
+        get { return _exp; }
+        set { _exp = value; }
+    }
+    public float MaxExp {
+        get { return _maxExp; }
+        set { _maxExp = value; }
+    }
 
     #endregion
 
     #region Fields
-
     // State, Status.
     private float _hunger;
+    private float _exp = 0;
+    private float _maxExp =100;
 
     // Callbacks.
     public event Action<float> OnChangedHunger;
+    public event Action<float> OnChangedExp;
 
     #endregion
 
@@ -85,23 +96,19 @@ public class Player : Creature {
         if (Keyboard.current.fKey.wasPressedThisFrame)
         {
             Main.Instance.Skill.qSlot[0].GetComponent<QuickSlot>().UsingQuick();
-            Debug.Log("F 키가 눌렸습니다.");
         }
 
         if (Keyboard.current.gKey.wasPressedThisFrame)
         {
             Main.Instance.Skill.qSlot[1].GetComponent<QuickSlot>().UsingQuick();
-            Debug.Log("G 키가 눌렸습니다.");
         }
 
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
             Main.Instance.Skill.qSlot[2].GetComponent<QuickSlot>().UsingQuick();
-            Debug.Log("R 키가 눌렸습니다.");
         }
     }
     #endregion
-
     protected override void SetStatus(bool isFullHp = true) {
         this.Status = new(Data);
         if (isFullHp) {
@@ -113,4 +120,15 @@ public class Player : Creature {
         OnChangedHp += ShowHpBar;
     }
 
+    public void AddExp(int exp)
+    {
+        _exp = _exp + exp;
+        while(_exp >= _maxExp)
+        {
+            _exp -= _maxExp;
+            _maxExp *= 1.5f;
+            Data.Lv++;
+            lvSkill.LvUpSkillEvent(Data.Lv);
+        }
+    }
 }

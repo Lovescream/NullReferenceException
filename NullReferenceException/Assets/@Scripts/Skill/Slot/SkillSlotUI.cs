@@ -51,9 +51,17 @@ public class SkillSlotUI : SkillSlot
         if (skillData.Key != null)
         {
             string[] nameParts = skillData.SkillName.Split('_');
+            string[] keyParts = skillData.Key.Split('_');
             skillNameText.text = "Name: " + nameParts[0] + " Lv." + skillData.SkillLv;
-            skillCollTxt.text = "Coll: " + skillData.CoolTime;
-            skillExpTxt.text = $"Exp :{skillData.SkillExp}/100 ({skillData.SkillExp % 100}%)";
+            skillCollTxt.text = "Coll: " + skillData.CoolTime.ToString("F2");
+            if (skillData.SkillGetType == SkillGetType.Pickup)
+            {
+                skillExpTxt.text = $"Exp :{skillData.SkillExp}/100 ({skillData.SkillExp % 100}%)";
+            }
+            else
+            {
+                skillExpTxt.text = $"다음 스킬 레벨업 {Main.Object.Player.lvSkill.skillLvUp[int.Parse(keyParts[3]) - 1] - Main.Object.Player.Data.Lv % Main.Object.Player.lvSkill.skillLvUp[int.Parse(keyParts[3])-1]}";
+            }
         }
         else
         {
