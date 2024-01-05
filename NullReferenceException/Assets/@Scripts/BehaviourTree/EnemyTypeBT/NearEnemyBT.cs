@@ -54,8 +54,7 @@ public class NearEnemyBT : EnemyBasicBT
                     (
                         new List<INode>()
                         {
-                            new ActionNode(MoveToOriginPosition), // 원래 자리로
-                            /*
+                            // new ActionNode(MoveToOriginPosition), // 원래 자리로
                             new SequenceNode
                             (
                                 new List<INode>()
@@ -64,7 +63,6 @@ public class NearEnemyBT : EnemyBasicBT
                                     new ActionNode(MoveToPatrolPosition)
                                 }
                             )
-                            */
                         }
                     )
                 }
@@ -110,8 +108,7 @@ public class NearEnemyBT : EnemyBasicBT
             {
                 return INode.ENodeState.ENS_Failure;
             }
-
-            Debug.Log("공격 시전");
+            Debug.Log("공격");
             _animator.SetTrigger(_ATTACK_ANIM_TIRGGER_NAME);
             return INode.ENodeState.ENS_Success;
         }

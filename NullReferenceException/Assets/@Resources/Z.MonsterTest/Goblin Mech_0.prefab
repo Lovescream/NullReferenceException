@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 249014355093364217}
   - component: {fileID: 3302630250078197632}
   - component: {fileID: 4420100307022291871}
-  - component: {fileID: 5300227581045446670}
+  - component: {fileID: 2077953693846779730}
   m_Layer: 0
   m_Name: Goblin Mech_0
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8405197014309310571
 SpriteRenderer:
@@ -171,7 +171,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 4.625, y: 3.0625}
   m_Direction: 0
---- !u!114 &5300227581045446670
+--- !u!114 &2077953693846779730
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,10 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f116ce0eea73740ba9476a7e63c996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _detectDistance: 4
+  _detectDistance: 5
   _attackDistance: 1
   _actionDistance: 3
   _patrolDistance: 5
   _movementSpeed: 3
-  coolTime: 30
-  patrolReadyTime: 10
+  coolTime: 60
+  patrolReadyTime: 0

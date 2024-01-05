@@ -27,7 +27,7 @@ public class EnemyBasicBT : MonoBehaviour
     [SerializeField]
     protected float coolTime = 0;
     [SerializeField]
-    protected float patrolReadyTime = 3f;
+    protected float patrolReadyTime;
 
     // Components
     protected BehaviourTreeRunner _BTRunner = null;
@@ -59,6 +59,7 @@ public class EnemyBasicBT : MonoBehaviour
         _originPos = transform.position;
 
         //InitStates();
+        patrolReadyTime = Random.Range(2f, 5f);
     }
 
     protected void Update()
@@ -104,8 +105,7 @@ public class EnemyBasicBT : MonoBehaviour
                     (
                         new List<INode>()
                         {
-                            new ActionNode(MoveToOriginPosition), // 원래 자리로
-                            /*
+                            //new ActionNode(MoveToOriginPosition), // 원래 자리로                         
                             new SequenceNode
                             (
                                 new List<INode>()
@@ -114,7 +114,6 @@ public class EnemyBasicBT : MonoBehaviour
                                     new ActionNode(MoveToPatrolPosition)
                                 }
                             )
-                            */
                         }
                     )
                 }
@@ -227,22 +226,20 @@ public class EnemyBasicBT : MonoBehaviour
     // Ray에 걸리는 오브젝트가 없다면 그 방향으로 움직인다. (움직이는 도중에 플레이어가 감지되면 추적 해야함)
     // Ray에 걸리는 오브젝트가 있다면 다시 랜덤으로 방향을 돌려서 쏜다.
     // 위 내용을 반복.
-
+    protected bool _patrolFirstCheck = true;    // 임시 방편... (리팩토링 필수)(Patrol부분 전체 다 다시 리팩토링 해야함.)
     // 랜덤 좌표를 갱신하고 그 좌표로 레이를 쏴서 맞는게 없는지 확인
-
-    /*
-     * 
     protected INode.ENodeState RandomPatrolPositionCheck()
     {
+        // 랜덤 경로 포지션 설정
         if(!_patrolMoveCheck)
         {
-            Vector2 randomPos = Random.insideUnitCircle;
-            randomPatrolPos = randomPos * _patrolDistance;
+            randomPatrolPos = Random.insideUnitCircle * patrolReadyTime;
             hitData = Physics2D.RaycastAll(transform.position, randomPatrolPos, _patrolDistance);
             _patrolMoveCheck = true;
         }
         Debug.DrawRay(transform.position, randomPatrolPos, new Color(1, 0, 0));
 
+        // 경로상에 물체가 있는지 검사
         if (hitData.Length <= 1)
         {
             return INode.ENodeState.ENS_Success;
@@ -254,26 +251,23 @@ public class EnemyBasicBT : MonoBehaviour
 
     protected INode.ENodeState MoveToPatrolPosition()
     {
-        if (_patrolMoveCheck)
+        if (Vector3.SqrMagnitude((Vector3)randomPatrolPos - transform.position) <= float.Epsilon * float.Epsilon)
         {
-            if (Vector3.SqrMagnitude((Vector3)randomPatrolPos - transform.position) <= float.Epsilon * float.Epsilon)
-            {
-                IdleAnimCheck();
-                StartCoroutine(PatrolReadTime());
+            IdleAnimCheck();
+            // 제자리 머무르는 시간 코루틴
+            // 코루틴이 한번만 작동해야 하기에 임시 방편으로 bool변수로 막아둠;(나중에 리팩토링 필요)
+            if (_patrolFirstCheck) StartCoroutine(PatrolReadTime());
 
-                return INode.ENodeState.ENS_Failure;
-            }
-
+            return INode.ENodeState.ENS_Failure;
+        }
+        else
+        {
             RunAnimCheck();
             FlipSprite(transform.position, randomPatrolPos);
             transform.position = Vector3.MoveTowards(transform.position, randomPatrolPos, Time.deltaTime * _movementSpeed);
             return INode.ENodeState.ENS_Running;
         }
-
-        return INode.ENodeState.ENS_Failure;
     }
-
-    */
 
     #endregion
 
@@ -311,17 +305,18 @@ public class EnemyBasicBT : MonoBehaviour
 
     protected IEnumerator PatrolReadTime()
     {
-        WaitForFixedUpdate waitFrame = new WaitForFixedUpdate();
+        _patrolFirstCheck = false;
+        WaitForFixedUpdate waitFrames = new WaitForFixedUpdate();
 
         while (patrolReadyTime > 0.1f)
         {
-            Debug.Log(patrolReadyTime);
             patrolReadyTime -= Time.deltaTime;
-            yield return waitFrame;
+            yield return waitFrames;
         }
 
-        patrolReadyTime = 10f;
+        patrolReadyTime = Random.Range(2f, 5f);
 
+        _patrolFirstCheck = true;
         _patrolMoveCheck = false;
     }
 
