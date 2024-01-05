@@ -7,9 +7,6 @@ using UnityEngine.TextCore.Text;
 public class Player : Creature {
 
     #region Input
-    private IWeapon _currentWeapon;
-    private Animator _anim;
-
     [SerializeField] private Transform _chracter;
     [SerializeField] private Transform _armPivot;
     [SerializeField] private Transform _weponRotate;
@@ -19,11 +16,6 @@ public class Player : Creature {
     private float _time = 1;
     private float _coolTime = float.MaxValue;
 
-    protected override void Awake()
-    {
-        _anim = GetComponentInChildren<Animator>();
-        _currentWeapon = GetComponent<Sword>();
-    }
     private void Update()
     {
         AttackCoolTime();

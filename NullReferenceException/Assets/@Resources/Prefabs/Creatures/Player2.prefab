@@ -271,7 +271,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5254535872392488685}
   - component: {fileID: 1407406887377588989}
-  - component: {fileID: 6470084385665941276}
   m_Layer: 0
   m_Name: WeaponImage
   m_TagString: Untagged
@@ -346,51 +345,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6470084385665941276
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8966914672518271492}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.3, y: 0.01}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.3, y: 0.6}
-    oldSize: {x: 1, y: 0.5}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.18, y: 0.35}
-  m_EdgeRadius: 0
 --- !u!1 &9027745529484841270
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,9 +422,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.3, y: 0.82}
+    - - {x: -0.3, y: 0.4}
       - {x: -1, y: 0}
-      - {x: -0.3, y: -0.82}
+      - {x: -0.3, y: -0.45}
   m_UseDelaunayMesh: 0
 --- !u!1 &9030325720526476117
 GameObject:
@@ -579,7 +533,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 143021600, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+  m_Sprite: {fileID: -1064095001, guid: 23dba50763f97894f92176248016defa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
