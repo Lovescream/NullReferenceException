@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 389384752563586823}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.419, y: 0.07, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2180949797119906150}
@@ -62,12 +62,12 @@ Transform:
   m_GameObject: {fileID: 7635043107102787523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1886419371963153549}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3675257216588883541
 SpriteRenderer:
@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ce32f774dd2d540bcc522635019964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvSkill: {fileID: 0}
   _chracter: {fileID: 2626010514309660420}
   _armPivot: {fileID: 1886419371963153549}
   _weponRotate: {fileID: 2959518918812519367}
@@ -287,7 +288,7 @@ Transform:
   m_GameObject: {fileID: 8966914672518271492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2180949797119906150}
@@ -486,7 +487,7 @@ Transform:
   m_GameObject: {fileID: 9157065480312983249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2180949797119906150}
