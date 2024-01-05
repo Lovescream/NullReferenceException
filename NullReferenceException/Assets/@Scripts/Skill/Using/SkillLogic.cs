@@ -11,7 +11,6 @@ public class SkillLogic : MonoBehaviour
     {
         FindPlayer();
     }
-
     protected virtual void UsingSkill(SkillData skill)
     {
         string[] nameParts = skill.SkillName.Split('_');
@@ -21,7 +20,6 @@ public class SkillLogic : MonoBehaviour
     {
         Main.Instance.Skill.screenMarsk[num].SetActive(true);
     }
-
     protected void MarskOff(int num)
     {
         Main.Instance.Skill.screenMarsk[num].SetActive(false);

@@ -16,12 +16,12 @@ public class QuickSlot : SkillSlot
     private void Update()
     {
         _maxCoolTime = skillData.CoolTime;
-
         SetSkillData(equipSkillSlots.skillData);
 
         if (_coolTime <= 0)
         {
             _isCoolTime = false;
+            equipSkillSlots.isCool = false;
             panelMarsk.SetActive(false);
         }
         else
@@ -56,6 +56,7 @@ public class QuickSlot : SkillSlot
         {
             _coolTime = _maxCoolTime;
             _isCoolTime = true;
+            equipSkillSlots.isCool = true;
             UpdateSkills();
             skills.UsingSkills(skillData);
         }
