@@ -49,7 +49,7 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         {
             for (int x = -1; x < 2; x++)
             {
-                for (int y = 1; y < 2; y++)
+                for (int y = -1; y < 2; y++)
                 {
                     newCorridor.Add(corridor[i - 1] + new Vector2Int(x, y));
                 }

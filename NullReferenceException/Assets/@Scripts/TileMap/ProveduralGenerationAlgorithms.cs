@@ -40,13 +40,11 @@ public static class ProveduralGenerationAlgorithms
     {
         Queue<BoundsInt> roomsQueue = new Queue<BoundsInt>();
         List<BoundsInt> roomsList = new List<BoundsInt>();
-        roomsQueue.Equals(spaceToSprit);
-
-
+        roomsQueue.Enqueue(spaceToSprit);
         while (roomsQueue.Count > 0)
         {
             var room = roomsQueue.Dequeue();
-            if (room.size.y > minHeigth && room.size.x > minWidth)
+            if (room.size.y >= minHeigth && room.size.x >= minWidth)
             {
                 if (Random.value < 0.5f)
                 {
@@ -86,7 +84,7 @@ public static class ProveduralGenerationAlgorithms
     private static void SpiltVertically(int minWidth, Queue<BoundsInt> roomsQueue, BoundsInt room)
     {
         var xSplit = Random.Range(1, room.size.x);
-        BoundsInt room1 = new BoundsInt(room.min, new Vector3Int(xSplit, room.min.y, room.min.z));
+        BoundsInt room1 = new BoundsInt(room.min, new Vector3Int(xSplit, room.size.y, room.size.z));
         BoundsInt room2 = new BoundsInt(new Vector3Int(room.min.x + xSplit, room.min.y, room.min.z),
             new Vector3Int(room.size.x - xSplit, room.size.y, room.size.z));
         roomsQueue.Enqueue(room1);
