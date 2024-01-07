@@ -14,6 +14,7 @@ public class NearTankerEnemy : NearEnemyBT
         this._movementSpeed = 3;
         this._actionDistance = 3;
         this.coolTime = 20f;
+        this._originCoolTime = this.coolTime;
     }
 
     #region override Node Method
@@ -49,6 +50,9 @@ public class NearTankerEnemy : NearEnemyBT
     private IEnumerator CrashAttack()
     {
         isSpecialAttacking = true;
+
+        // Attack Stop
+        _animator.SetBool(_ATTACK_ANIM_Bool_NAME, false);
 
         // Crash Ready
         _animator.SetTrigger(_CRASH_ANIM_TRIGGER_NAME);

@@ -108,8 +108,7 @@ public class NearEnemyBT : EnemyBasicBT
             {
                 return INode.ENodeState.ENS_Failure;
             }
-            Debug.Log("АјАн");
-            _animator.SetTrigger(_ATTACK_ANIM_TIRGGER_NAME);
+            _animator.SetBool(_ATTACK_ANIM_Bool_NAME, true);
             return INode.ENodeState.ENS_Success;
         }
 

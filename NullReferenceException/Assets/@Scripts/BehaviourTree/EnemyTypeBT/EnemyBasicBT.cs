@@ -26,6 +26,7 @@ public class EnemyBasicBT : MonoBehaviour
     protected bool _isCoolTime = true;
     [SerializeField]
     protected float coolTime = 0;
+    protected float _originCoolTime = 0;
     [SerializeField]
     protected float patrolReadyTime;
 
@@ -44,7 +45,7 @@ public class EnemyBasicBT : MonoBehaviour
 
     // Animations
     protected const string _ATTACK_ANIM_STATE_NAME = "Attack";
-    protected const string _ATTACK_ANIM_TIRGGER_NAME = "IsAttack";
+    protected const string _ATTACK_ANIM_Bool_NAME = "IsAttack";
     protected const string _RUN_ANIM_STATE_NAME = "Run";
     protected const string _RUN_ANIM_BOOL_NAME = "IsRun";
     #endregion
@@ -149,7 +150,7 @@ public class EnemyBasicBT : MonoBehaviour
     {
         if (_detectedPlayer != null)
         {
-            _animator.SetTrigger(_ATTACK_ANIM_TIRGGER_NAME);
+            _animator.SetBool(_ATTACK_ANIM_Bool_NAME, true);
             return INode.ENodeState.ENS_Success;
         }
 
@@ -189,6 +190,7 @@ public class EnemyBasicBT : MonoBehaviour
                     return INode.ENodeState.ENS_Running;
                 }
 
+                _animator.SetBool(_ATTACK_ANIM_Bool_NAME, false);
                 RunAnimCheck();
                 FlipSprite(transform.position, _detectedPlayer.position);
                 transform.position = Vector3.MoveTowards(transform.position, _detectedPlayer.position, Time.deltaTime * _movementSpeed);
@@ -251,6 +253,7 @@ public class EnemyBasicBT : MonoBehaviour
 
     protected INode.ENodeState MoveToPatrolPosition()
     {
+        _animator.SetBool(_ATTACK_ANIM_Bool_NAME, false); // 공격 애니메이션이 실행되고 있었다면 정지시켜줌.
         if (Vector3.SqrMagnitude((Vector3)randomPatrolPos - transform.position) <= float.Epsilon * float.Epsilon)
         {
             IdleAnimCheck();
@@ -299,7 +302,7 @@ public class EnemyBasicBT : MonoBehaviour
             yield return waitFrame;
         }
 
-        coolTime = 20f;
+        coolTime = _originCoolTime;
         _isCoolTime = true;
     }
 
