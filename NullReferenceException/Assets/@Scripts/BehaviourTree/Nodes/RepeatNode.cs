@@ -2,17 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RepeatNode : MonoBehaviour
+public class RepeatNode : INode
 {
-    // Start is called before the first frame update
-    void Start()
+    private readonly List<INode> _childs;
+
+    public RepeatNode(List<INode> childs)
     {
-        
+        _childs = childs;
     }
 
-    // Update is called once per frame
-    void Update()
+    public INode.ENodeState Evaluate()
     {
-        
+        if (_childs == null || _childs.Count == 0)
+            return INode.ENodeState.ENS_Failure;
+
+        foreach (var child in _childs)
+        {
+            switch (child.Evaluate())
+            {
+                case INode.ENodeState.ENS_Running:
+                    return INode.ENodeState.ENS_Running;
+                case INode.ENodeState.ENS_Success:
+                    return INode.ENodeState.ENS_Failure;
+                case INode.ENodeState.ENS_Failure:
+                    return INode.ENodeState.ENS_Success;
+            }
+        }
+
+        return INode.ENodeState.ENS_Running;
     }
 }

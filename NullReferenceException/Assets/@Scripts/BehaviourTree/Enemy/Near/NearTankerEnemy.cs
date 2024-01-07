@@ -17,7 +17,7 @@ public class NearTankerEnemy : NearEnemyBT
         this._originCoolTime = this.coolTime;
     }
 
-    #region override Node Method
+    #region Override Node Method
     protected override INode.ENodeState CheckAttacking()
     {
         if (IsAnimationRunning(_ATTACK_ANIM_STATE_NAME) || isSpecialAttacking)
