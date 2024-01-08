@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rock : BaseNature, IHarvestable
 {
-    [SerializeField] private float _maxHealth = 7f;
+    [SerializeField] private float _maxHealth = 8f;
     protected override void Awake()
     {
         base.Awake();

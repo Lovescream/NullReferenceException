@@ -2,24 +2,26 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerAttackWepon : MonoBehaviour
 {
     private WeaponType _currentWeapon;
-    [SerializeField] private SpriteRenderer _currentSprite;
-    [SerializeField] private Transform _bulletPosition;
-
     private Animator _animator;
+    private Player _player;
+    [SerializeField] private SpriteRenderer _currentSprite; //현재 무기
+    [SerializeField] private float _time = 1; //쿨타임
+    private float _coolTime = float.MaxValue;
+
     private static readonly int Gun = Animator.StringToHash("Gun");
     private static readonly int Hand = Animator.StringToHash("Hand");
     private static readonly int Axe = Animator.StringToHash("Axe");
     private static readonly int Pick = Animator.StringToHash("Pick");
-    [SerializeField] private float _time = 1;
-    private float _coolTime = float.MaxValue;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _player = GetComponent<Player>();
         _currentWeapon = WeaponType.Hand;
     }
     public void OnFire()
@@ -27,6 +29,10 @@ public class PlayerAttackWepon : MonoBehaviour
         if (_coolTime >= _time)
         {
             Attack();
+            if (_currentWeapon == WeaponType.Gun)
+            {
+                _player.Projectile();
+            }
             _coolTime = 0;
         }
     }
@@ -76,8 +82,6 @@ public class PlayerAttackWepon : MonoBehaviour
     
     private void CheckAttackType(Collider2D collider) 
     {
-        //무기의 데이터에 들어있는 타입으로 조건 추가해주기
-        //나무는 5번 때리기, 돌은 7번 때리기
         if (collider != null)
         {
             if (collider.CompareTag("Enemy"))
