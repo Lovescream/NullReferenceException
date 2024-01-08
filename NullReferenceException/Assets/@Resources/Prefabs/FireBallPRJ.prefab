@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7050279372560271274}
   - component: {fileID: 6185126192426459879}
   - component: {fileID: 4418693721627742250}
-  - component: {fileID: 5186280827043709105}
+  - component: {fileID: 727443265057238100}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: FireBallPRJ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 154122315, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 529998ae62ad93f4ab72245eada45dca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5186280827043709105
+--- !u!114 &727443265057238100
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,6 +158,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7006603304688735267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a604b4e2f1395504c9434d07fc35bdb5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fb3d752484e97649bed630278a8f337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

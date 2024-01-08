@@ -37,6 +37,12 @@ public class ObjectManager {
         Enemies.Remove(obj);
         Despawn(obj);
     }
+    public Projectile SpawnFireBall(Vector2 position)
+    {
+        FireBallPRJ fireBallPRJ = Spawn<FireBallPRJ>("", position);
+        Projectiles.Add(fireBallPRJ);
+        return fireBallPRJ;
+    }
     public Projectile SpawnProjectile(Vector2 position) {
         Projectile projectile = Spawn<Projectile>("", position);
         Projectiles.Add(projectile);
