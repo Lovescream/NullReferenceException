@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameScene : BaseScene {
 
     public Player Player { get; private set; }
-    public UI_CursorSlot CursorSlotUI { get; set; }
 
     protected override bool Initialize() {
         if (!base.Initialize()) return false;
@@ -14,7 +13,6 @@ public class GameScene : BaseScene {
         Main.Object.SpawnEnemy("Enemy_00", new(4, 0));
         Main.Object.SpawnEnemy("Enemy_01", new(0, 4));
 
-        CursorSlotUI = Main.UI.ShowSceneUI<UI_CursorSlot>();
         UI = Main.UI.ShowSceneUI<UI_GameScene>();
 
         return true;

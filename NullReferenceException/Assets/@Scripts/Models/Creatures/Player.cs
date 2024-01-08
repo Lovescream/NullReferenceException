@@ -1,10 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.TextCore.Text;
 
 public class Player : Creature {
 
@@ -12,7 +10,15 @@ public class Player : Creature {
 
     public new PlayerData Data => base.Data as PlayerData;
     public LevelUpSkill lvSkill;
+    
+    bool _isFireball = false;
+    bool _isStealth = false;
 
+
+    public bool isFireball{
+        get { return _isFireball; }
+        set { _isFireball = value; }
+    }
     public float Hunger {
         get => _hunger;
         set {
@@ -36,6 +42,12 @@ public class Player : Creature {
         get { return _maxExp; }
         set { _maxExp = value; }
     }
+    public bool isStealth
+    {
+        get { return _isStealth; }
+        set { _isStealth = value; }
+    }
+    public float fireBallDmg;
 
     #endregion
 
@@ -52,38 +64,42 @@ public class Player : Creature {
     #endregion
 
     #region Input
-    [SerializeField] private Transform _armPivot;
-    [SerializeField] private SpriteRenderer _weaponAnimation;
-    [SerializeField] private SpriteRenderer _weaponSprite;
 
     protected void OnMove(InputValue value) {
         Velocity = value.Get<Vector2>().normalized * Status[StatType.MoveSpeed].Value;
     }
     protected void OnLook(InputValue value) {
         LookDirection = (Camera.main.ScreenToWorldPoint(value.Get<Vector2>()) - this.transform.position).normalized;
-        AimDirection();
+    }
+    protected void OnFire() {
+        if (_isFireball)
+        {
+            FireBallPRJ fireballProjectile = Main.Object.SpawnFireBall(this.transform.position).SetInfo(this, fireBallDmg) as FireBallPRJ;
+            fireballProjectile.Velocity = LookDirection.normalized * 10f; // 필요에 따라 속도 조절
+            fireBallDmg = 0;
+            Debug.Log("파이어볼 발사");
+            isFireball = false;
+        }
+        else
+        {
+            Projectile projectile = Main.Object.SpawnProjectile(this.transform.position).SetInfo(this, 10f);
+            projectile.Velocity = LookDirection.normalized * 10f; // 필요에 따라 속도 조절
+        }
     }
     protected void OnInteraction() {
         Debug.Log($"[Player] OnInteraction()");
     }
     protected void OnKey_Z() {
-        Inventory.TryAdd(new(Main.Data.Items["IronSword"], stack: 3));
+        Inventory.Add(new(Main.Data.Items["IronSword"]));
     }
     protected void OnKey_X() {
-        Inventory.TryAdd(new(Main.Data.Items["IronHammer"]));
+        Inventory.Add(new(Main.Data.Items["IronHammer"]));
     }
     protected void OnKey_C() {
-        Main.Game.CraftingInventory.TryAdd(new(Main.Data.Items["IronSword"], stack: 3));
+        Inventory.Add(new(Main.Data.Items["IronHelmet"]));
     }
     protected void OnKey_V() {
-        Inventory.TryAdd(new(Main.Data.Items["IronBoots"]));
-    }
-    private void AimDirection()
-    {
-        float rotZ = Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;
-        _armPivot.rotation = Quaternion.Euler(0, 0, rotZ);
-        _weaponSprite.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
-        _weaponAnimation.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
+        Inventory.Add(new(Main.Data.Items["IronBoots"]));
     }
 
     protected void OnKey_K(){
