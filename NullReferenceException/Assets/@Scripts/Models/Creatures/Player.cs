@@ -1,10 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.TextCore.Text;
 
 public class Player : Creature {
 
@@ -12,7 +10,15 @@ public class Player : Creature {
 
     public new PlayerData Data => base.Data as PlayerData;
     public LevelUpSkill lvSkill;
+    
+    bool _isFireball = false;
+    bool _isStealth = false;
 
+
+    public bool isFireball{
+        get { return _isFireball; }
+        set { _isFireball = value; }
+    }
     public float Hunger {
         get => _hunger;
         set {
@@ -36,6 +42,12 @@ public class Player : Creature {
         get { return _maxExp; }
         set { _maxExp = value; }
     }
+    public bool isStealth
+    {
+        get { return _isStealth; }
+        set { _isStealth = value; }
+    }
+    public float fireBallDmg;
 
     #endregion
 
@@ -56,41 +68,58 @@ public class Player : Creature {
     [SerializeField] private SpriteRenderer _weaponAnimation;
     [SerializeField] private SpriteRenderer _weaponSprite;
     [SerializeField] private Transform _bulletPosition;
-
     protected void OnMove(InputValue value) {
         Velocity = value.Get<Vector2>().normalized * Status[StatType.MoveSpeed].Value;
     }
     protected void OnLook(InputValue value) {
         LookDirection = (Camera.main.ScreenToWorldPoint(value.Get<Vector2>()) - this.transform.position).normalized;
-        AimDirection();
+    }
+    protected void OnFire() {
+        if (_isFireball)
+        {
+            FireBallPRJ fireballProjectile = Main.Object.SpawnFireBall(this.transform.position).SetInfo(this, fireBallDmg) as FireBallPRJ;
+            fireballProjectile.Velocity = LookDirection.normalized * 10f; // ï¿½Ê¿ä¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
+            fireBallDmg = 0;
+            Debug.Log("ï¿½ï¿½ï¿½Ì¾îº¼ ï¿½ß»ï¿½");
+            isFireball = false;
+        }
+        else
+        {
+            Projectile projectile = Main.Object.SpawnProjectile(this.transform.position).SetInfo(this, 10f);
+            projectile.Velocity = LookDirection.normalized * 10f; // ï¿½Ê¿ä¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
+        }
     }
     protected void OnInteraction() {
-        Debug.Log($"[Player] OnInteraction()");
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, 2f);
+        foreach (Collider2D collider in colliders) {
+            if (!collider.TryGetComponent(out IInteractable interactable)) continue;
+            interactable.Interact();
+        }
     }
     protected void OnKey_Z() {
-        Inventory.TryAdd(new(Main.Data.Items["IronSword"], stack: 3));
+        Inventory.Add(new(Main.Data.Items["IronSword"]));
     }
     protected void OnKey_X() {
-        Inventory.TryAdd(new(Main.Data.Items["IronHammer"]));
+        Inventory.Add(new(Main.Data.Items["IronHammer"]));
     }
     protected void OnKey_C() {
-        Main.Game.CraftingInventory.TryAdd(new(Main.Data.Items["IronSword"], stack: 3));
+        Inventory.Add(new(Main.Data.Items["IronHelmet"]));
     }
     protected void OnKey_V() {
         Inventory.TryAdd(new(Main.Data.Items["IronBoots"]));
     }
     private void AimDirection()
     {
-        float rotZ = Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;
-        _armPivot.rotation = Quaternion.Euler(0, 0, rotZ);
-        _weaponSprite.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
-        _weaponAnimation.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
+        //float rotZ = Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;
+        //_armPivot.rotation = Quaternion.Euler(0, 0, rotZ);
+        //_weaponSprite.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
+        //_weaponAnimation.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
     }
 
     public void Projectile() 
     {
         Projectile projectile = Main.Object.SpawnProjectile(_bulletPosition.position).SetInfo(this);
-        projectile.Velocity = LookDirection.normalized * 10f; // ÇÊ¿ä¿¡ µû¶ó ¼Óµµ Á¶Àý
+        projectile.Velocity = LookDirection.normalized * 10f; // ï¿½Ê¿ä¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     protected void OnKey_K(){

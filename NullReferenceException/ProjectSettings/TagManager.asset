@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Nature
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Water
   - UI
   - SkillOBJ
-  - 
+  - Player
   - 
   - 
   - 
