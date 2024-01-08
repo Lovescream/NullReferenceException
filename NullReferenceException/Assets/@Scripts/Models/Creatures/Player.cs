@@ -67,16 +67,16 @@ public class Player : Creature {
         Debug.Log($"[Player] OnInteraction()");
     }
     protected void OnKey_Z() {
-        Inventory.Add(new(Main.Data.Items["IronSword"]));
+        Inventory.TryAdd(new(Main.Data.Items["IronSword"], stack: 3));
     }
     protected void OnKey_X() {
-        Inventory.Add(new(Main.Data.Items["IronHammer"]));
+        Inventory.TryAdd(new(Main.Data.Items["IronHammer"]));
     }
     protected void OnKey_C() {
-        Inventory.Add(new(Main.Data.Items["IronHelmet"]));
+        Main.Game.CraftingInventory.TryAdd(new(Main.Data.Items["IronSword"], stack: 3));
     }
     protected void OnKey_V() {
-        Inventory.Add(new(Main.Data.Items["IronBoots"]));
+        Inventory.TryAdd(new(Main.Data.Items["IronBoots"]));
     }
     private void AimDirection()
     {

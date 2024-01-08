@@ -54,6 +54,8 @@ public class Status {
         };
     }
 
+    public bool IsContain(StatType statType) => _stats.ContainsKey(statType);
+
     public void AddModifiers(List<StatModifier> modifiers) {
         for (int i = 0; i < modifiers.Count; i++) {
             this[modifiers[i].Stat].AddModifier(modifiers[i]);
