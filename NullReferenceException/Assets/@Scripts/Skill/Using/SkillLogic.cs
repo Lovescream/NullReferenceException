@@ -9,7 +9,6 @@ public class SkillLogic : MonoBehaviour
     public Enemy enemy;
 
     protected float skillDuration;
-
     public float dmg = 0;
 
     protected void Start()

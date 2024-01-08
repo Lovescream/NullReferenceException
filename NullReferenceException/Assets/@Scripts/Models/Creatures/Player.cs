@@ -64,7 +64,10 @@ public class Player : Creature {
     #endregion
 
     #region Input
-
+    [SerializeField] private Transform _armPivot;
+    [SerializeField] private SpriteRenderer _weaponAnimation;
+    [SerializeField] private SpriteRenderer _weaponSprite;
+    [SerializeField] private Transform _bulletPosition;
     protected void OnMove(InputValue value) {
         Velocity = value.Get<Vector2>().normalized * Status[StatType.MoveSpeed].Value;
     }
@@ -75,15 +78,15 @@ public class Player : Creature {
         if (_isFireball)
         {
             FireBallPRJ fireballProjectile = Main.Object.SpawnFireBall(this.transform.position).SetInfo(this, fireBallDmg) as FireBallPRJ;
-            fireballProjectile.Velocity = LookDirection.normalized * 10f; // ÇÊ¿ä¿¡ µû¶ó ¼Óµµ Á¶Àý
+            fireballProjectile.Velocity = LookDirection.normalized * 10f; // ï¿½Ê¿ä¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
             fireBallDmg = 0;
-            Debug.Log("ÆÄÀÌ¾îº¼ ¹ß»ç");
+            Debug.Log("ï¿½ï¿½ï¿½Ì¾îº¼ ï¿½ß»ï¿½");
             isFireball = false;
         }
         else
         {
             Projectile projectile = Main.Object.SpawnProjectile(this.transform.position).SetInfo(this, 10f);
-            projectile.Velocity = LookDirection.normalized * 10f; // ÇÊ¿ä¿¡ µû¶ó ¼Óµµ Á¶Àý
+            projectile.Velocity = LookDirection.normalized * 10f; // ï¿½Ê¿ä¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
         }
     }
     protected void OnInteraction() {
@@ -100,6 +103,12 @@ public class Player : Creature {
     }
     protected void OnKey_V() {
         Inventory.Add(new(Main.Data.Items["IronBoots"]));
+    }
+
+    public void Projectile() 
+    {
+        Projectile projectile = Main.Object.SpawnProjectile(_bulletPosition.position).SetInfo(this);
+        projectile.Velocity = LookDirection.normalized * 10f; // ï¿½Ê¿ä¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     protected void OnKey_K(){

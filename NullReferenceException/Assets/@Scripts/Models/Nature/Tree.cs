@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tree : BaseNature, IHarvestable
 {
-    [SerializeField] private float _maxHealth = 5f;
+    [SerializeField] private float _maxHealth = 6f;
     [SerializeField] private Animator _animator;
     private static readonly int Attcak = Animator.StringToHash("Attack");
     protected override void Awake()
