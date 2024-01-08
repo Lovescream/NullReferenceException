@@ -33,6 +33,11 @@ public class ObjectManager {
         enemy.SetInfo(Main.Data.Enemies[key]);
         return enemy;
     }
+    public ChestObject SpawnChest(Vector2 position, int maxCount = 10, Item[] items = null) {
+        ChestObject chestObj = Spawn<ChestObject>("ChestObject", position);
+        chestObj.SetInfo(new(maxCount, items));
+        return chestObj;
+    }
     public void DespawnEnemy(Enemy obj) {
         Enemies.Remove(obj);
         Despawn(obj);
@@ -58,7 +63,7 @@ public class ObjectManager {
         }
         if (string.IsNullOrEmpty(prefabName)) prefabName = "Thing.prefab";
 
-        GameObject obj = Main.Resource.Instantiate($"{prefabName}2.prefab", pooling: true);
+        GameObject obj = Main.Resource.Instantiate($"{prefabName}.prefab", pooling: true);
         obj.transform.position = position;
 
         return obj.GetOrAddComponent<T>();
