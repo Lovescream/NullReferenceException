@@ -65,7 +65,11 @@ public class Player : Creature {
         AimDirection();
     }
     protected void OnInteraction() {
-        Debug.Log($"[Player] OnInteraction()");
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, 1f);
+        foreach (Collider2D collider in colliders) {
+            if (!collider.TryGetComponent(out IInteractable interactable)) return;
+            interactable.Interact();
+        }
     }
     protected void OnKey_Z() {
         Inventory.TryAdd(new(Main.Data.Items["IronSword"], stack: 3));

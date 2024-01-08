@@ -33,6 +33,11 @@ public class ObjectManager {
         enemy.SetInfo(Main.Data.Enemies[key]);
         return enemy;
     }
+    public ChestObject SpawnChest(Vector2 position, int maxCount = 10, Item[] items = null) {
+        ChestObject chestObj = Spawn<ChestObject>("ChestObject", position);
+        chestObj.SetInfo(new(maxCount, items));
+        return chestObj;
+    }
     public void DespawnEnemy(Enemy obj) {
         Enemies.Remove(obj);
         Despawn(obj);

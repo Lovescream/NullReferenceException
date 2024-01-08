@@ -20,6 +20,7 @@ public class UI_GameScene : UI_Scene {
     #region Properties
 
     public UI_Popup_Inventory Popup_Inventory { get; set; }
+    public UI_Popup_ChestInventory Popup_ChestInventory { get; set; }
     public UI_Popup_Crafting Popup_Crafting { get; set; }
     public UI_Popup_ConfirmEquip Popup_ConfirmEquip { get; set; }
 
