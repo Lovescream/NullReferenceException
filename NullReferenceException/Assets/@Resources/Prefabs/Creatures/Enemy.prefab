@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 9157140450612273916}
   - component: {fileID: 8405217947383427077}
   - component: {fileID: 3697221580266422989}
-  m_Layer: 0
+  - component: {fileID: 9076324275551800521}
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,3 +194,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a485cd834fca1c489ea98666bbc68d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9076324275551800521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328610736515388460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f8bff16ca2e844b88476fef5ff0e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropOBJ:
+  - {fileID: 8888677756859936016, guid: 9f8ebce3e8de34146af1178d7e97a277, type: 3}
+  - {fileID: 8888677756859936016, guid: 9a4ac9749f51cf441a5d8ecea9272ed3, type: 3}
+  - {fileID: 8888677756859936016, guid: 7e706f25987fe3f43961f2b07c0c1898, type: 3}
+  - {fileID: 8888677756859936016, guid: e440177dff214594cb6a202dcfb89946, type: 3}
+  - {fileID: 8888677756859936016, guid: fc3c294ef590a1b46975e1c3fe4fd592, type: 3}
+  - {fileID: 8888677756859936016, guid: c977ca10614c75843b5ed562af70259b, type: 3}
+  dropChance: 140000001400000014000000140000001400000014000000

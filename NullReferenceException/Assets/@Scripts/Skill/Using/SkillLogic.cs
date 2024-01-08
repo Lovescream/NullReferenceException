@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class SkillLogic : MonoBehaviour
 {
+    public GameObject playerOBJ;
     public Player player;
     public Enemy enemy;
+
+    protected float skillDuration;
 
     public float dmg = 0;
 
@@ -32,10 +35,10 @@ public class SkillLogic : MonoBehaviour
     }
     protected void FindPlayer()
     {
-        GameObject playerObject = GameObject.FindWithTag("Player");
-        if (playerObject != null)
+        playerOBJ = GameObject.FindWithTag("Player");
+        if (playerOBJ != null)
         {
-            player = playerObject.GetComponent<Player>();
+            player = playerOBJ.GetComponent<Player>();
         }
         else
         {
