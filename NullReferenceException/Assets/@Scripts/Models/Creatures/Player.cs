@@ -65,9 +65,9 @@ public class Player : Creature {
         AimDirection();
     }
     protected void OnInteraction() {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, 1f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, 2f);
         foreach (Collider2D collider in colliders) {
-            if (!collider.TryGetComponent(out IInteractable interactable)) return;
+            if (!collider.TryGetComponent(out IInteractable interactable)) continue;
             interactable.Interact();
         }
     }
@@ -85,10 +85,10 @@ public class Player : Creature {
     }
     private void AimDirection()
     {
-        float rotZ = Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;
-        _armPivot.rotation = Quaternion.Euler(0, 0, rotZ);
-        _weaponSprite.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
-        _weaponAnimation.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
+        //float rotZ = Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;
+        //_armPivot.rotation = Quaternion.Euler(0, 0, rotZ);
+        //_weaponSprite.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
+        //_weaponAnimation.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
     }
 
     public void Projectile() 
