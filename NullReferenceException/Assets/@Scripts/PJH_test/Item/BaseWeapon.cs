@@ -20,6 +20,10 @@ public class BaseWeapon : MonoBehaviour, IWeapon
 
     public WeaponType WeponType => WeaponType.Gun;
 
+    public Sprite Image()
+    {
+        return WeaponImage;
+    }
     public void Attack()
     {
         throw new System.NotImplementedException();

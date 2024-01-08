@@ -29,7 +29,10 @@ public class Campfire : MonoBehaviour
         while (isPlayer)
         {
             yield return new WaitForSeconds(hungerIncreaseTime);
-            Debug.Log("플레이어의 배고픔 능력치와 체력이 증가합니다.");
+            Debug.Log("플레이어의 배고픔과 체력이 증가합니다.");
+            var player = collider2D.GetComponent<Player>();
+            player.Hp += 10;
+            player.Hunger += 2;
         }
     }
 }

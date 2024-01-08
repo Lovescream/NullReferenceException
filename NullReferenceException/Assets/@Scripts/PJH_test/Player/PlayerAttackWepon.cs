@@ -1,9 +1,9 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerChangeWepon : MonoBehaviour
+public class PlayerAttackWepon : MonoBehaviour
 {
     private IWeapon _currentWeapon;
     private Animator _animator;
@@ -11,7 +11,10 @@ public class PlayerChangeWepon : MonoBehaviour
     private static readonly int Hand = Animator.StringToHash("Hand");
     private static readonly int Axe = Animator.StringToHash("Axe");
     private static readonly int Pick = Animator.StringToHash("Pick");
-    //ÀÎº¥Åä¸®¿¡¼­ ¹«±âÀÇ µ¥ÀÌÅÍ¸¦ ¹ŞÀ½
+    private float _time = 1;
+    private float _coolTime = float.MaxValue;
+
+    //ì¸ë²¤í† ë¦¬ì—ì„œ ë¬´ê¸°ì˜ ë°ì´í„°ë¥¼ ë°›ìŒ
 
     private void Awake()
     {
@@ -21,11 +24,37 @@ public class PlayerChangeWepon : MonoBehaviour
     }
     public void OnFire()
     {
-        Attack();
+        if (_coolTime >= _time)
+        {
+            Attack();
+            _coolTime = 0;
+        }
+    }
+    private void Update()
+    {
+        AttackCoolTime();
+    }
+    public void ChangeWeapon(GameObject weaponObject)
+    {
+        //í”Œë ˆì´ì–´ì˜ ê³µê²©ë ¥ -= _playerAttackWeapon.;
+        //_weaponSprite = weaponObject.sprite;
+        //_time = weaponObject.coolTime;
+        //í”Œë ˆì´ì–´ì˜ ê³µê²©ë ¥ += weaponObject;
+    }
+    private void AttackCoolTime() //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    {
+        if (_coolTime >= _time)
+        {
+            _coolTime = float.MaxValue;
+        }
+        else
+        {
+            _coolTime += Time.deltaTime;
+        }
     }
     public void Attack()
     {
-        //Å¸ÀÔº° Çàµ¿ÇÒ Animation ÀÛµ¿
+        //íƒ€ì…ë³„ í–‰ë™í•  Animation ì‘ë™
         switch (_currentWeapon.WeponType) 
         {
             case WeaponType.Axe:
@@ -45,20 +74,18 @@ public class PlayerChangeWepon : MonoBehaviour
     
     private void CheckAttackType(Collider2D collider) 
     {
-        //¹«±âÀÇ µ¥ÀÌÅÍ¿¡ µé¾îÀÖ´Â Å¸ÀÔÀ¸·Î Á¶°Ç Ãß°¡ÇØÁÖ±â
-        //³ª¹«´Â 5¹ø ¶§¸®±â, µ¹Àº 7¹ø ¶§¸®±â
+        //ë¬´ê¸°ì˜ ë°ì´í„°ì— ë“¤ì–´ìˆëŠ” íƒ€ì…ìœ¼ë¡œ ì¡°ê±´ ì¶”ê°€í•´ì£¼ê¸°
+        //ë‚˜ë¬´ëŠ” 5ë²ˆ ë•Œë¦¬ê¸°, ëŒì€ 7ë²ˆ ë•Œë¦¬ê¸°
         if (collider != null)
         {
-            Debug.Log("AttackTypeÀÛµ¿");
             if (collider.CompareTag("Enemy"))
             {
-                //PlayerÀÇ °ø°İ·Â µ¥ÀÌÅÍ¿¡ Á¢±ÙÇØ¼­ °ª °¡Á®¿À±â
-                //ÀûÀÇ Ã¼·Â --
-                Debug.Log("Àû");
+                //Playerì˜ ê³µê²©ë ¥ ë°ì´í„°ì— ì ‘ê·¼í•´ì„œ ê°’ ê°€ì ¸ì˜¤ê¸°
+                //ì ì˜ ì²´ë ¥ --
+                Debug.Log("ì ì²´ë ¥ ê°ì†Œ");
             }
-            else if (collider.CompareTag("Nature") && collider.isTrigger != true)//¹«±â Å¸ÀÔÀº Axe µµ³¢ Ãß°¡, ¹«±â Å¸ÀÔÀº Pick °î±ªÀÌ Ãß°¡
+            else if (collider.CompareTag("Nature") && collider.isTrigger != true)
             {
-                //Å¸ÀÔÀ» ¾î¶²½ÄÀ¸·Î °¡Á®¿ÃÁö
                 collider.GetComponent<IHarvestable>().HPDecrease(_currentWeapon.WeponType);
             }
         }
