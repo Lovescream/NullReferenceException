@@ -8,11 +8,7 @@ public class SkillLogic : MonoBehaviour
     public Player player;
     public Enemy enemy;
 
-<<<<<<< HEAD
     protected float skillDuration;
-
-=======
->>>>>>> parent of 74d4a14 (Revert "Merge branch 'Develop1.0' into PJH_Weapon")
     public float dmg = 0;
 
     protected void Start()
