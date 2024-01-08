@@ -43,6 +43,11 @@ public class Creature : Thing {
             OnChangedExistPower?.Invoke(_existPower);
         }
     }
+    public bool Invincibility
+    {
+        get { return _invincibility; }
+        set { _invincibility = value; }
+    }
     public Vector2 Velocity { get; protected set; }
     public Vector2 LookDirection { get; protected set; }
     public float LookAngle => Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;
@@ -60,6 +65,7 @@ public class Creature : Thing {
     // State, Status.
     private float _hp;
     private float _existPower;
+    private bool _invincibility = false;
 
     // Components.
     protected SpriteRenderer _spriter;
@@ -107,9 +113,11 @@ public class Creature : Thing {
         _collider.enabled = true;
         if (_collider is BoxCollider2D boxCollider) {
             Sprite sprite = _spriter.sprite;
-            float x = sprite.textureRect.width / sprite.pixelsPerUnit;
-            float y = sprite.textureRect.height / sprite.pixelsPerUnit;
-            boxCollider.size = new(x, y);
+            if (sprite != null) {
+                float x = sprite.textureRect.width / sprite.pixelsPerUnit;
+                float y = sprite.textureRect.height / sprite.pixelsPerUnit;
+                boxCollider.size = new(x, y);
+            }
         }
         _rigidbody.simulated = true;
 
@@ -134,6 +142,12 @@ public class Creature : Thing {
             _collider.enabled = false;
             _rigidbody.simulated = false;
             _animator.SetBool(AnimatorParameterHash_Dead, true);
+
+            DropOBJ dropSkill = GetComponent<DropOBJ>();
+            if (dropSkill != null)
+            {
+                dropSkill.MobDrop();
+            }
         });
     }
     protected virtual void SetInventory() {
@@ -145,12 +159,16 @@ public class Creature : Thing {
     #region State
 
     public virtual void OnHit(Creature attacker, float damage = 0, KnockbackInfo knockbackInfo = default) {
-        Hp -= damage;
+        if (Invincibility == false)
+        {
+            Hp -= damage;
 
-        if (knockbackInfo.time > 0) {
-            State.Current = CreatureState.Hit;
-            Velocity = knockbackInfo.KnockbackVelocity;
-            State.SetStateAfterTime(CreatureState.Idle, knockbackInfo.time);
+            if (knockbackInfo.time > 0)
+            {
+                State.Current = CreatureState.Hit;
+                Velocity = knockbackInfo.KnockbackVelocity;
+                State.SetStateAfterTime(CreatureState.Idle, knockbackInfo.time);
+            }
         }
     }
 

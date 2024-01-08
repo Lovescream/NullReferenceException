@@ -1,6 +1,6 @@
 [
   {
-    "SkillName": "강타_Strong Hit",
+    "SkillName": "강�?_Strong Hit",
     "SkillUsingType": 0,
     "SkillGetType": 0,
     "SkillLv": 0,
@@ -10,7 +10,7 @@
     "Key": "Skill_A_L_1"
   },
   {
-    "SkillName": "카운터_Counter",
+    "SkillName": "카운??Counter",
     "SkillUsingType": 0,
     "SkillGetType": 0,
     "SkillLv": 0,
@@ -20,7 +20,7 @@
     "Key": "Skill_A_L_2"
   },
   {
-    "SkillName": "가드_Guard",
+    "SkillName": "가??Guard",
     "SkillUsingType": 0,
     "SkillGetType": 0,
     "SkillLv": 0,
@@ -30,7 +30,7 @@
     "Key": "Skill_A_L_3"
   },
   {
-    "SkillName": "투척_Throw",
+    "SkillName": "?�척_Throw",
     "SkillUsingType": 0,
     "SkillGetType": 0,
     "SkillLv": 0,
@@ -40,7 +40,7 @@
     "Key": "Skill_A_L_4"
   },
   {
-    "SkillName": "은신_Stealth",
+    "SkillName": "?�??Stealth",
     "SkillUsingType": 0,
     "SkillGetType": 1,
     "SkillLv": 0,
@@ -60,7 +60,7 @@
     "Key": "Skill_A_G_2"
   },
   {
-    "SkillName": "힐링_Healing",
+    "SkillName": "?�링_Healing",
     "SkillUsingType": 0,
     "SkillGetType": 1,
     "SkillLv": 0,
@@ -70,7 +70,7 @@
     "Key": "Skill_A_G_3"
   },
   {
-    "SkillName": "영혼 흡수_Soul Absorption",
+    "SkillName": "?�혼 ?�수_SoulAbsorption",
     "SkillUsingType": 0,
     "SkillGetType": 1,
     "SkillLv": 0,
@@ -80,7 +80,7 @@
     "Key": "Skill_A_G_4"
   },
   {
-    "SkillName": "파이어 볼_Fireball",
+    "SkillName": "?�이??�?Fireball",
     "SkillUsingType": 0,
     "SkillGetType": 1,
     "SkillLv": 0,
@@ -90,7 +90,7 @@
     "Key": "Skill_A_G_5"
   },
   {
-    "SkillName": "널_Nullreferenceexception",
+    "SkillName": "??Nullreferenceexception",
     "SkillUsingType": 0,
     "SkillGetType": 1,
     "SkillLv": 0,

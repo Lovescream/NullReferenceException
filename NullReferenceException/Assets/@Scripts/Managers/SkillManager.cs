@@ -7,7 +7,6 @@ public class SkillManager : MonoBehaviour
     public GameObject SkillUI;
     public GameObject SkillList;
     public GameObject[] qSlot;
-    public GameObject[] screenMarsk;
 
     public bool isSkillList = false;
 
@@ -16,7 +15,7 @@ public class SkillManager : MonoBehaviour
 
     public void Awake()
     {
-        Main.Instance.Skill = gameObject.GetComponent<SkillManager>();
+       // Main.Instance.Skill = gameObject.GetComponent<SkillManager>();
     }
 
     public void Start()

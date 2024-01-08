@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 9157140450612273916}
   - component: {fileID: 8405217947383427077}
   - component: {fileID: 3697221580266422989}
-  m_Layer: 0
+  - component: {fileID: 9076324275551800521}
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,15 +78,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1378562880, guid: 99a24620d31e5ce4e823c32d11e17c2c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1.1111112}
+  m_Size: {x: 0.19, y: 0.29}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &6250085298265826722
@@ -145,8 +146,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1, y: 1.1111112}
-    newSize: {x: 1, y: 1.1111112}
+    oldSize: {x: 0.19, y: 0.29}
+    newSize: {x: 0.19, y: 0.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -193,3 +194,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a485cd834fca1c489ea98666bbc68d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9076324275551800521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328610736515388460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f8bff16ca2e844b88476fef5ff0e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropOBJ:
+  - {fileID: 8888677756859936016, guid: 9f8ebce3e8de34146af1178d7e97a277, type: 3}
+  - {fileID: 8888677756859936016, guid: 9a4ac9749f51cf441a5d8ecea9272ed3, type: 3}
+  - {fileID: 8888677756859936016, guid: 7e706f25987fe3f43961f2b07c0c1898, type: 3}
+  - {fileID: 8888677756859936016, guid: e440177dff214594cb6a202dcfb89946, type: 3}
+  - {fileID: 8888677756859936016, guid: fc3c294ef590a1b46975e1c3fe4fd592, type: 3}
+  - {fileID: 8888677756859936016, guid: c977ca10614c75843b5ed562af70259b, type: 3}
+  dropChance: 140000001400000014000000140000001400000014000000

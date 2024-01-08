@@ -4,10 +4,14 @@ public class TestScene : BaseScene {
 
     public Player Player { get; private set; }
 
+
     public Enemy GoblinMech;
     public Enemy Adventurer;
     public Enemy GiantFly;
     public Enemy RatfolkAxe;
+
+    // Ex
+    public Enemy EnemyPrefab;
 
     protected override bool Initialize() {
         if (!base.Initialize()) return false;
@@ -27,6 +31,10 @@ public class TestScene : BaseScene {
 
         Enemy newRatfolkAxe = Instantiate(RatfolkAxe);
         newRatfolkAxe.SetInfo(Main.Data.Enemies["RatfolkAxe"]);
+
+        // Ex
+        Enemy newEnemy = Instantiate(EnemyPrefab);
+        newEnemy.SetInfo(Main.Data.Enemies["Enemy_00"]);
 
         return true;
     }

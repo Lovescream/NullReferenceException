@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.TextCore.Text;
 
 public class Player : Creature {
 
@@ -10,15 +12,7 @@ public class Player : Creature {
 
     public new PlayerData Data => base.Data as PlayerData;
     public LevelUpSkill lvSkill;
-    
-    bool _isFireball = false;
-    bool _isStealth = false;
 
-
-    public bool isFireball{
-        get { return _isFireball; }
-        set { _isFireball = value; }
-    }
     public float Hunger {
         get => _hunger;
         set {
@@ -42,11 +36,6 @@ public class Player : Creature {
         get { return _maxExp; }
         set { _maxExp = value; }
     }
-    public bool isStealth
-    {
-        get { return _isStealth; }
-        set { _isStealth = value; }
-    }
 
     #endregion
 
@@ -63,38 +52,49 @@ public class Player : Creature {
     #endregion
 
     #region Input
+    [SerializeField] private Transform _armPivot;
+    [SerializeField] private SpriteRenderer _weaponAnimation;
+    [SerializeField] private SpriteRenderer _weaponSprite;
+    [SerializeField] private Transform _bulletPosition;
 
     protected void OnMove(InputValue value) {
         Velocity = value.Get<Vector2>().normalized * Status[StatType.MoveSpeed].Value;
     }
     protected void OnLook(InputValue value) {
         LookDirection = (Camera.main.ScreenToWorldPoint(value.Get<Vector2>()) - this.transform.position).normalized;
-    }
-    protected void OnFire() {
-        if (_isFireball)
-        {
-            isFireball = false;
-        }
-        else
-        {
-            Projectile projectile = Main.Object.SpawnProjectile(this.transform.position).SetInfo(this);
-            projectile.Velocity = LookDirection.normalized * 10f; // 필요에 따라 속도 조절
-        }
+        AimDirection();
     }
     protected void OnInteraction() {
-        Debug.Log($"[Player] OnInteraction()");
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, 2f);
+        foreach (Collider2D collider in colliders) {
+            if (!collider.TryGetComponent(out IInteractable interactable)) continue;
+            interactable.Interact();
+        }
     }
     protected void OnKey_Z() {
-        Inventory.Add(new(Main.Data.Items["IronSword"]));
+        Inventory.TryAdd(new(Main.Data.Items["IronSword"], stack: 3));
     }
     protected void OnKey_X() {
-        Inventory.Add(new(Main.Data.Items["IronHammer"]));
+        Inventory.TryAdd(new(Main.Data.Items["IronHammer"]));
     }
     protected void OnKey_C() {
-        Inventory.Add(new(Main.Data.Items["IronHelmet"]));
+        Main.Game.CraftingInventory.TryAdd(new(Main.Data.Items["IronSword"], stack: 3));
     }
     protected void OnKey_V() {
-        Inventory.Add(new(Main.Data.Items["IronBoots"]));
+        Inventory.TryAdd(new(Main.Data.Items["IronBoots"]));
+    }
+    private void AimDirection()
+    {
+        //float rotZ = Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;
+        //_armPivot.rotation = Quaternion.Euler(0, 0, rotZ);
+        //_weaponSprite.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
+        //_weaponAnimation.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
+    }
+
+    public void Projectile() 
+    {
+        Projectile projectile = Main.Object.SpawnProjectile(_bulletPosition.position).SetInfo(this);
+        projectile.Velocity = LookDirection.normalized * 10f; // 필요에 따라 속도 조절
     }
 
     protected void OnKey_K(){

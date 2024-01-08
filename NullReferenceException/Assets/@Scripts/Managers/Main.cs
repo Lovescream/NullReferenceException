@@ -35,6 +35,7 @@ public class Main : MonoBehaviour {
     private UIManager _ui = new();
     private SceneManagerEx _scene = new();
     private ObjectManager _object = new();
+    private GameManager _game = new();
 
     public static PoolManager Pool => Instance?._pool;
     public static ResourceManager Resource => Instance?._resource;
@@ -42,6 +43,7 @@ public class Main : MonoBehaviour {
     public static UIManager UI => Instance?._ui;
     public static SceneManagerEx Scene => Instance?._scene;
     public static ObjectManager Object => Instance?._object;
+    public static GameManager Game => Instance?._game;
 
     public SkillManager Skill;
 
