@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerAttackWepon : MonoBehaviour
 {
     private WeaponType _currentWeapon;
-    [SerializeField] private SpriteRenderer _currentSprite;
-    [SerializeField] private Transform _bulletPosition;
-
     private Animator _animator;
-    [SerializeField] private float _time = 1;
+    private Player _player;
+    [SerializeField] private SpriteRenderer _currentSprite; //현재 무기
+    [SerializeField] private float _time = 1; //쿨타임
     private float _coolTime = float.MaxValue;
 
     private static readonly int Gun = Animator.StringToHash("Gun");
@@ -21,6 +21,7 @@ public class PlayerAttackWepon : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _player = GetComponent<Player>();
         _currentWeapon = WeaponType.Hand;
     }
     public void OnFire()
@@ -30,7 +31,7 @@ public class PlayerAttackWepon : MonoBehaviour
             Attack();
             if (_currentWeapon == WeaponType.Gun)
             {
-                //발사체 발사
+                _player.Projectile();
             }
             _coolTime = 0;
         }
