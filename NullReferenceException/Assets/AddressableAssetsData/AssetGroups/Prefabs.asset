@@ -31,8 +31,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 15dcd849f5cb074458d159fa3157201e
     m_Address: Adventurer.prefab
-  - m_GUID: bf4d8d05f601a35448a148feee0be5a9
-    m_Address: Player2.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
@@ -51,8 +49,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d69063e945796a346a98a8e8d276a311
     m_Address: RatfolkAxe.prefab
-  - m_GUID: 1ce6c4917b2f20c4f85c0cc89d8f1ed8
-    m_Address: ChestObject.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad

@@ -96,11 +96,7 @@ GameObject:
   - component: {fileID: 2916785400266599918}
   - component: {fileID: 3264345240979752150}
   m_Layer: 6
-<<<<<<<< HEAD:NullReferenceException/Assets/@Resources/Prefabs/SkillOBJ/Stealth-Skill_A_G_1.prefab
   m_Name: Stealth-Skill_A_G_1
-========
-  m_Name: Fireball-Skill_A_G_5
->>>>>>>> Develop1.0:NullReferenceException/Assets/@Resources/Prefabs/SkillOBJ/Fireball-Skill_A_G_5.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class SkillLogic : MonoBehaviour
 {
-    public GameObject playerOBJ;
     public Player player;
     public Enemy enemy;
 
-    protected float skillDuration;
-
-    public float dmg = 0;
-
-    protected void Start()
+    private void Start()
     {
         FindPlayer();
     }
@@ -23,22 +18,23 @@ public class SkillLogic : MonoBehaviour
     }
     protected void MarskOn(int num)
     {
-        //Main.Instance.Skill.screenMarsk[num].SetActive(true);
+        Main.Instance.Skill.screenMarsk[num].SetActive(true);
     }
     protected void MarskOff(int num)
     {
-        //Main.Instance.Skill.screenMarsk[num].SetActive(false);
+        Main.Instance.Skill.screenMarsk[num].SetActive(false);
     }
     public void UsingSkills(SkillData skill)
     {
         UsingSkill(skill);
     }
-    protected void FindPlayer()
+
+    private void FindPlayer()
     {
-        playerOBJ = GameObject.FindWithTag("Player");
-        if (playerOBJ != null)
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        if (playerObject != null)
         {
-            player = playerOBJ.GetComponent<Player>();
+            player = playerObject.GetComponent<Player>();
         }
         else
         {
@@ -55,8 +51,6 @@ public class SkillLogic : MonoBehaviour
         yield return new WaitForSeconds(duration);
         MarskOff(num);
     }
-    protected virtual IEnumerator SkillEf(float duration)
-    {
-        yield return new WaitForSeconds(duration);
-    }
+
+
 }

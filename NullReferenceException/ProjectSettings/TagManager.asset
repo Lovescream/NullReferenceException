@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - Nature
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -14,7 +13,7 @@ TagManager:
   - Water
   - UI
   - SkillOBJ
-  - 
+  - Player
   - 
   - 
   - 

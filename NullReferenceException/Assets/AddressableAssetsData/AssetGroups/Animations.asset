@@ -79,8 +79,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f06c44acb1e1df34eadc2654ed5b0aea
     m_Address: Ratfolk.animController
-  - m_GUID: 2c4de1b837aec7e499d643e91988b41f
-    m_Address: Player.animController
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
