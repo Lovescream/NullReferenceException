@@ -13,6 +13,14 @@ public class Player : Creature {
     public new PlayerData Data => base.Data as PlayerData;
     public LevelUpSkill lvSkill;
 
+    bool _isFireball = false;
+    bool _isStealth = false;
+    public bool isFireball
+    {
+        get { return _isFireball; }
+        set { _isFireball = value; }
+    }
+
     public float Hunger {
         get => _hunger;
         set {
@@ -35,6 +43,11 @@ public class Player : Creature {
     public float MaxExp {
         get { return _maxExp; }
         set { _maxExp = value; }
+    }
+    public bool isStealth
+    {
+        get { return _isStealth; }
+        set { _isStealth = value; }
     }
 
     #endregion
@@ -63,6 +76,21 @@ public class Player : Creature {
     protected void OnLook(InputValue value) {
         LookDirection = (Camera.main.ScreenToWorldPoint(value.Get<Vector2>()) - this.transform.position).normalized;
         AimDirection();
+    }
+    protected void OnFire()
+    {
+        if (_isFireball)
+        {
+            FireBallPRJ fireballProjectile = Main.Object.SpawnFireBall(this.transform.position).SetInfo(this, fireBallDmg) as FireBallPRJ;
+            fireballProjectile.Velocity = LookDirection.normalized * 10f; // 필요에 따라 속도 조절
+            fireBallDmg = 0;
+            Debug.Log("파이어볼 발사");
+            isFireball = false;
+        }
+        else
+        {
+            Projectile();
+        }
     }
     protected void OnInteraction() {
         Debug.Log($"[Player] OnInteraction()");
