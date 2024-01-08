@@ -20,10 +20,10 @@ public class Stealth : SkillLogic
         {
             FindPlayer();
         }
-        player.isStealth = true;
+        //player.isStealth = true;
         Debug.Log("은신 On");
         yield return base.SkillEf(duration);
-        player.isStealth = false;
+        //player.isStealth = false;
         Debug.Log("은신 Off");
     }
 }

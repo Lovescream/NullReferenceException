@@ -113,9 +113,11 @@ public class Creature : Thing {
         _collider.enabled = true;
         if (_collider is BoxCollider2D boxCollider) {
             Sprite sprite = _spriter.sprite;
-            float x = sprite.textureRect.width / sprite.pixelsPerUnit;
-            float y = sprite.textureRect.height / sprite.pixelsPerUnit;
-            boxCollider.size = new(x, y);
+            if (sprite != null) {
+                float x = sprite.textureRect.width / sprite.pixelsPerUnit;
+                float y = sprite.textureRect.height / sprite.pixelsPerUnit;
+                boxCollider.size = new(x, y);
+            }
         }
         _rigidbody.simulated = true;
 

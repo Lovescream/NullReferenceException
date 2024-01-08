@@ -22,11 +22,11 @@ public class SkillLogic : MonoBehaviour
     }
     protected void MarskOn(int num)
     {
-        Main.Instance.Skill.screenMarsk[num].SetActive(true);
+        //Main.Instance.Skill.screenMarsk[num].SetActive(true);
     }
     protected void MarskOff(int num)
     {
-        Main.Instance.Skill.screenMarsk[num].SetActive(false);
+        //Main.Instance.Skill.screenMarsk[num].SetActive(false);
     }
     public void UsingSkills(SkillData skill)
     {
