@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RatfolkAxe
+  m_Controller: {fileID: 9100000, guid: f06c44acb1e1df34eadc2654ed5b0aea, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 6476a749213f14a47acfdc05a320b227, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8a2b7c6152654a8418a5625e22882c5a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a25acb8ccbdb04c46ade4aa311d200ef, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e781712ad012fbe4999de129b68ae3f7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 327a128110c62b54d84cc67c6061fcc0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ed49317248cf8da4cb1d016d5734cbb2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d66cab5a5b5edfd4bbbee7fc8563e94b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0b285cfc5422de54684500d77b3dad94, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9bbe39caf0a592e409a2cf43197d7b8c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b2b9da6a9c9698b488a294a59890ce25, type: 2}

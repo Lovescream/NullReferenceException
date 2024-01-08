@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GiantFly
+  m_Controller: {fileID: 9100000, guid: f06c44acb1e1df34eadc2654ed5b0aea, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 6476a749213f14a47acfdc05a320b227, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 369df8d3ac6aa6f4197c89794f810d41, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a25acb8ccbdb04c46ade4aa311d200ef, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cdbfb16edf4dbb6409a8a6e1c3b84a25, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 327a128110c62b54d84cc67c6061fcc0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f2d1cdbc7b97a2a4ca7ce19d99731317, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d66cab5a5b5edfd4bbbee7fc8563e94b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 75be13965b089534a8ea238bf6220435, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9bbe39caf0a592e409a2cf43197d7b8c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 194bc1b711dc00e43bc4854905dd01b8, type: 2}

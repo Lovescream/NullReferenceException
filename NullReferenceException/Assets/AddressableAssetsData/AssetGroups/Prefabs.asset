@@ -29,6 +29,30 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15dcd849f5cb074458d159fa3157201e
+    m_Address: Adventurer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fede9b9218b74e84b9c22cf4c5ad5b97
+    m_Address: GaintFly.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 916f6218ab752894e964132431f49b2c
+    m_Address: GoblinMech.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d69063e945796a346a98a8e8d276a311
+    m_Address: RatfolkAxe.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5c837c581ff82a14ab6e8462c45721f9, type: 2}
   m_SchemaSet:

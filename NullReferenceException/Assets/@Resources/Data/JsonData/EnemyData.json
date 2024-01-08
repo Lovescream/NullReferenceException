@@ -58,5 +58,20 @@
     "Range": 5.0,
     "ExistPowerMax": 100.0,
     "Key": "Enemy_03"
+  },
+  {
+    "DetectingRange": 5.0,
+    "Exp": 10.0,
+    "Name": "GoblinMech",
+    "Lv": 1,
+    "HpMax": 100.0,
+    "HpRegen": 0.2,
+    "Damage": 6.0,
+    "Defense": 1.0,
+    "MoveSpeed": 2.5,
+    "AttackSpeed": 1.5,
+    "Range": 5.0,
+    "ExistPowerMax": 100.0,
+    "Key": "GoblinMech"
   }
 ]

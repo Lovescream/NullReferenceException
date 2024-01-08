@@ -23,4 +23,12 @@ public class Enemy : Creature {
         OnChangedHp -= ShowHpBar;
         OnChangedHp += ShowHpBar;
     }
+
+    public override void OnHit(Creature attacker, float damage = 0, KnockbackInfo knockbackInfo = default)
+    {
+        base.OnHit(attacker, damage, knockbackInfo);
+        State.AddOnEntered(CreatureState.Hit, () =>{ 
+            Velocity = Vector2.zero;
+        });
+    }
 }

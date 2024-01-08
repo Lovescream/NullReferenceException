@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class RepeatNode : INode
 {
-    private readonly List<INode> _childs;
+    private readonly INode _childs;
 
-    public RepeatNode(List<INode> childs)
+    public RepeatNode(INode childs)
     {
         _childs = childs;
     }
 
     public INode.ENodeState Evaluate()
     {
-        if (_childs == null || _childs.Count == 0)
+        if (_childs == null)
             return INode.ENodeState.ENS_Failure;
 
-        foreach (var child in _childs)
+       
+        switch (_childs.Evaluate())
         {
-            switch (child.Evaluate())
-            {
-                case INode.ENodeState.ENS_Running:
-                    return INode.ENodeState.ENS_Running;
-                case INode.ENodeState.ENS_Success:
-                    return INode.ENodeState.ENS_Failure;
-                case INode.ENodeState.ENS_Failure:
-                    return INode.ENodeState.ENS_Success;
-            }
+            case INode.ENodeState.ENS_Running:
+                return INode.ENodeState.ENS_Running;
+            case INode.ENodeState.ENS_Success:
+                return INode.ENodeState.ENS_Success;
+            case INode.ENodeState.ENS_Failure:
+                // Evaluate();
+                return _childs.Evaluate();
         }
+
 
         return INode.ENodeState.ENS_Running;
     }

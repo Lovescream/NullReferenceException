@@ -22,10 +22,10 @@ public class EnemyBasicBT : MonoBehaviour
     protected float _movementSpeed;
 
     // CoolTime
-    [Header("CoolTime")]
-    protected bool _isCoolTime = true;
+    [Header("Time")]
     [SerializeField]
     protected float coolTime = 0;
+    protected bool _isCoolTime = true;
     protected float _originCoolTime = 0;
     [SerializeField]
     protected float patrolReadyTime;

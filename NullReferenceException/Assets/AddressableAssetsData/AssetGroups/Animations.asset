@@ -47,6 +47,42 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1544e729c9e9d6242b3ccaa0fff7eb67
+    m_Address: KoboldPriest.animController
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fbc9fffcfcf553042b6983a4f9fdc078
+    m_Address: Adventurer.animController
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b2469a8db285933408e3e9cece22f342
+    m_Address: GaintFly.animController
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58884bb2086af3f43b5cdb6f340a5670
+    m_Address: RatfolkAxe.animController
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1303a9a2fa6c0e24387d2755bea5dac3
+    m_Address: GoblinMech.animController
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f06c44acb1e1df34eadc2654ed5b0aea
+    m_Address: Ratfolk.animController
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5c837c581ff82a14ab6e8462c45721f9, type: 2}
   m_SchemaSet:
