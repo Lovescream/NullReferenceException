@@ -9,7 +9,16 @@ public class Player : Creature {
     #region Properties
 
     public new PlayerData Data => base.Data as PlayerData;
+    public LevelUpSkill lvSkill;
+    
+    bool _isFireball = false;
+    bool _isStealth = false;
 
+
+    public bool isFireball{
+        get { return _isFireball; }
+        set { _isFireball = value; }
+    }
     public float Hunger {
         get => _hunger;
         set {
@@ -25,16 +34,32 @@ public class Player : Creature {
             OnChangedHunger?.Invoke(_hunger);
         }
     }
+    public float Exp {
+        get { return _exp; }
+        set { _exp = value; }
+    }
+    public float MaxExp {
+        get { return _maxExp; }
+        set { _maxExp = value; }
+    }
+    public bool isStealth
+    {
+        get { return _isStealth; }
+        set { _isStealth = value; }
+    }
+    public float fireBallDmg;
 
     #endregion
 
     #region Fields
-
     // State, Status.
     private float _hunger;
+    private float _exp = 0;
+    private float _maxExp =100;
 
     // Callbacks.
     public event Action<float> OnChangedHunger;
+    public event Action<float> OnChangedExp;
 
     #endregion
 
@@ -47,8 +72,19 @@ public class Player : Creature {
         LookDirection = (Camera.main.ScreenToWorldPoint(value.Get<Vector2>()) - this.transform.position).normalized;
     }
     protected void OnFire() {
-        Projectile projectile = Main.Object.SpawnProjectile(this.transform.position).SetInfo(this);
-        projectile.Velocity = LookDirection.normalized * 10f; // TODO::
+        if (_isFireball)
+        {
+            FireBallPRJ fireballProjectile = Main.Object.SpawnFireBall(this.transform.position).SetInfo(this, fireBallDmg) as FireBallPRJ;
+            fireballProjectile.Velocity = LookDirection.normalized * 10f; // 필요에 따라 속도 조절
+            fireBallDmg = 0;
+            Debug.Log("파이어볼 발사");
+            isFireball = false;
+        }
+        else
+        {
+            Projectile projectile = Main.Object.SpawnProjectile(this.transform.position).SetInfo(this, 10f);
+            projectile.Velocity = LookDirection.normalized * 10f; // 필요에 따라 속도 조절
+        }
     }
     protected void OnInteraction() {
         Debug.Log($"[Player] OnInteraction()");
@@ -80,20 +116,24 @@ public class Player : Creature {
         }
     }
 
-    protected void OnKey_Skill1()
+    protected void OnQuick_Skill_Slot()
     {
-        Main.Instance.Skill.qSlot[0].GetComponent<QuickSlot>().UsingQuick();
-    }
-    protected void OnKey_Skill2()
-    {
-        Main.Instance.Skill.qSlot[1].GetComponent<QuickSlot>().UsingQuick();
-    }
-    protected void OnKey_Skill3()
-    {
-        Main.Instance.Skill.qSlot[2].GetComponent<QuickSlot>().UsingQuick();
+        if (Keyboard.current.fKey.wasPressedThisFrame)
+        {
+            Main.Instance.Skill.qSlot[0].GetComponent<QuickSlot>().UsingQuick();
+        }
+
+        if (Keyboard.current.gKey.wasPressedThisFrame)
+        {
+            Main.Instance.Skill.qSlot[1].GetComponent<QuickSlot>().UsingQuick();
+        }
+
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            Main.Instance.Skill.qSlot[2].GetComponent<QuickSlot>().UsingQuick();
+        }
     }
     #endregion
-
     protected override void SetStatus(bool isFullHp = true) {
         this.Status = new(Data);
         if (isFullHp) {
@@ -105,4 +145,15 @@ public class Player : Creature {
         OnChangedHp += ShowHpBar;
     }
 
+    public void AddExp(int exp)
+    {
+        _exp = _exp + exp;
+        while(_exp >= _maxExp)
+        {
+            _exp -= _maxExp;
+            _maxExp *= 1.5f;
+            Data.Lv++;
+            lvSkill.LvUpSkillEvent(Data.Lv);
+        }
+    }
 }

@@ -5,6 +5,7 @@ public class SkillSlotUI : SkillSlot
 {
     public TMP_Text skillNameText;
     public TMP_Text skillCollTxt;
+    public TMP_Text skillExpTxt;
 
     public GameObject marsk;
 
@@ -49,13 +50,24 @@ public class SkillSlotUI : SkillSlot
     {
         if (skillData.Key != null)
         {
-            skillNameText.text = "Name: " + skillData.SkillName + " Lv." + skillData.SkillLv;
-            skillCollTxt.text = "Coll: " + skillData.CoolTime;
+            string[] nameParts = skillData.SkillName.Split('_');
+            string[] keyParts = skillData.Key.Split('_');
+            skillNameText.text = "Name: " + nameParts[0] + " Lv." + skillData.SkillLv;
+            skillCollTxt.text = "Coll: " + skillData.CoolTime.ToString("F2");
+            if (skillData.SkillGetType == SkillGetType.Pickup)
+            {
+                skillExpTxt.text = $"Exp :{skillData.SkillExp}/100 ({skillData.SkillExp % 100}%)";
+            }
+            else
+            {
+                skillExpTxt.text = $"다음 스킬 레벨업 {Main.Object.Player.lvSkill.skillLvUp[int.Parse(keyParts[3]) - 1] - Main.Object.Player.Data.Lv % Main.Object.Player.lvSkill.skillLvUp[int.Parse(keyParts[3])-1]}";
+            }
         }
         else
         {
             skillNameText.text = "Name: -";
             skillCollTxt.text = "Coll: -";
+            skillExpTxt.text = "Exp : -";
         }
         
         if( skillData.SkillLv == 0)

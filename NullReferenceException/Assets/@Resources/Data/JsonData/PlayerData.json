@@ -2,6 +2,7 @@
   {
     "HungerMax": 100.0,
     "Name": "Player",
+    "Lv": 1,
     "HpMax": 100.0,
     "HpRegen": 1.0,
     "Damage": 10.0,
