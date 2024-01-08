@@ -1,11 +1,11 @@
 Key,SkillName,SkillUsingType,SkillGetType,SkillLv,SkillExp,CoolTime,LvUpCollTime
-Skill_A_L_1,강�?_Strong Hit,Active,Lvup,0,0,10,0.3
-Skill_A_L_2,카운??Counter,Active,Lvup,0,0,10,0.3
-Skill_A_L_3,가??Guard,Active,Lvup,0,0,10,0.3
-Skill_A_L_4,?�척_Throw,Active,Lvup,0,0,10,0.3
-Skill_A_G_1,?�??Stealth,Active,Pickup,0,0,30,2
+Skill_A_L_1,강타_Strong Hit,Active,Lvup,0,0,10,0.3
+Skill_A_L_2,카운터_Counter,Active,Lvup,0,0,10,0.3
+Skill_A_L_3,가드_Guard,Active,Lvup,0,0,10,0.3
+Skill_A_L_4,투척_Throw,Active,Lvup,0,0,10,0.3
+Skill_A_G_1,은신_Stealth,Active,Pickup,0,0,30,2
 Skill_A_G_2,리커버리_Recovery,Active,Pickup,0,0,60,3
-Skill_A_G_3,?�링_Healing,Active,Pickup,0,0,30,2
-Skill_A_G_4,?�혼 ?�수_SoulAbsorption,Active,Pickup,0,0,180,10
-Skill_A_G_5,?�이??�?Fireball,Active,Pickup,0,0,20,1.5
-Skill_A_G_6,??Nullreferenceexception,Active,Pickup,0,0,300,0
+Skill_A_G_3,힐링_Healing,Active,Pickup,0,0,30,2
+Skill_A_G_4,영혼 흡수_SoulAbsorption,Active,Pickup,0,0,180,10
+Skill_A_G_5,파이어 볼_Fireball,Active,Pickup,0,0,20,1.5
+Skill_A_G_6,널_Nullreferenceexception,Active,Pickup,0,0,300,0

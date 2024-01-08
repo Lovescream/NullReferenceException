@@ -1,11 +1,13 @@
 [
   {
     "Type": 1,
-    "Name": "막대기",
-    "Description": "나무막대기이다.",
+    "Name": "�����",
+    "Description": "����������̴�.",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 1,
+    "WeaponType": 3,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -18,11 +20,13 @@
   },
   {
     "Type": 1,
-    "Name": "돌검",
-    "Description": "돌로 만든 검",
+    "Name": "����",
+    "Description": "���� ���� ��",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 1,
+    "WeaponType": 3,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -40,11 +44,13 @@
   },
   {
     "Type": 1,
-    "Name": "돌도끼",
-    "Description": "돌로 만든 도끼",
+    "Name": "������",
+    "Description": "���� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 2,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -57,11 +63,13 @@
   },
   {
     "Type": 1,
-    "Name": "돌망치",
-    "Description": "돌로 만든 망치",
+    "Name": "����ġ",
+    "Description": "���� ���� ��ġ",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 2,
+    "WeaponType": 1,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -79,11 +87,13 @@
   },
   {
     "Type": 1,
-    "Name": "돌방패",
-    "Description": "돌로 만든 방패",
+    "Name": "������",
+    "Description": "���� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 1,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 3,
@@ -96,11 +106,13 @@
   },
   {
     "Type": 1,
-    "Name": "돌머리",
-    "Description": "멍청한 머리",
+    "Name": "���Ӹ�",
+    "Description": "��û�� �Ӹ�",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 3,
@@ -113,11 +125,13 @@
   },
   {
     "Type": 1,
-    "Name": "돌갑옷",
-    "Description": "돌로 만든 갑옷",
+    "Name": "������",
+    "Description": "���� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 0,
@@ -130,11 +144,13 @@
   },
   {
     "Type": 1,
-    "Name": "돌부츠",
-    "Description": "돌로 만든 신발",
+    "Name": "������",
+    "Description": "���� ���� �Ź�",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 4,
@@ -147,11 +163,13 @@
   },
   {
     "Type": 1,
-    "Name": "철검",
-    "Description": "철로 만든 검",
+    "Name": "ö��",
+    "Description": "ö�� ���� ��",
     "MaxStack": 10,
     "Recipe": null,
     "EquipType": 1,
+    "WeaponType": 3,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -169,11 +187,13 @@
   },
   {
     "Type": 1,
-    "Name": "철도끼",
-    "Description": "철로 만든 도끼",
+    "Name": "ö����",
+    "Description": "ö�� ���� ����",
     "MaxStack": 1,
     "Recipe": "IronSword||||||||",
     "EquipType": 2,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -186,11 +206,13 @@
   },
   {
     "Type": 1,
-    "Name": "철망치",
-    "Description": "철로 만든 망치",
+    "Name": "ö��ġ",
+    "Description": "ö�� ���� ��ġ",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 2,
+    "WeaponType": 1,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -208,11 +230,13 @@
   },
   {
     "Type": 1,
-    "Name": "철방패",
-    "Description": "철로 만든 방패",
+    "Name": "ö����",
+    "Description": "ö�� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 1,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 3,
@@ -225,11 +249,13 @@
   },
   {
     "Type": 1,
-    "Name": "철모자",
-    "Description": "철로 만든 모자",
+    "Name": "ö����",
+    "Description": "ö�� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 3,
@@ -242,11 +268,13 @@
   },
   {
     "Type": 1,
-    "Name": "철갑옷",
-    "Description": "철로 만든 갑옷",
+    "Name": "ö����",
+    "Description": "ö�� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 0,
@@ -259,11 +287,13 @@
   },
   {
     "Type": 1,
-    "Name": "철부츠",
-    "Description": "철로 만든 부츠",
+    "Name": "ö����",
+    "Description": "ö�� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 4,
@@ -276,11 +306,13 @@
   },
   {
     "Type": 1,
-    "Name": "은검",
-    "Description": "은으로 만든 검",
+    "Name": "����",
+    "Description": "������ ���� ��",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 1,
+    "WeaponType": 3,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -298,11 +330,13 @@
   },
   {
     "Type": 1,
-    "Name": "은도끼",
-    "Description": "은으로 만든 도끼",
+    "Name": "������",
+    "Description": "������ ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 2,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -315,11 +349,13 @@
   },
   {
     "Type": 1,
-    "Name": "은망치",
-    "Description": "은으로 만든 망치",
+    "Name": "����ġ",
+    "Description": "������ ���� ��ġ",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 2,
+    "WeaponType": 1,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -337,11 +373,13 @@
   },
   {
     "Type": 1,
-    "Name": "은방패",
-    "Description": "은으로 만든 방패",
+    "Name": "������",
+    "Description": "������ ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 1,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 3,
@@ -354,11 +392,13 @@
   },
   {
     "Type": 1,
-    "Name": "은모자",
-    "Description": "은으로 만든 모자",
+    "Name": "������",
+    "Description": "������ ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 3,
@@ -371,11 +411,13 @@
   },
   {
     "Type": 1,
-    "Name": "은갑옷",
-    "Description": "은으로 만든 갑옷",
+    "Name": "������",
+    "Description": "������ ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 0,
@@ -388,11 +430,13 @@
   },
   {
     "Type": 1,
-    "Name": "은부츠",
-    "Description": "은으로 만든 부츠",
+    "Name": "������",
+    "Description": "������ ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 4,
@@ -405,11 +449,13 @@
   },
   {
     "Type": 1,
-    "Name": "금검",
-    "Description": "금으로 만든 검",
+    "Name": "�ݰ�",
+    "Description": "������ ���� ��",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 1,
+    "WeaponType": 3,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -427,11 +473,13 @@
   },
   {
     "Type": 1,
-    "Name": "금도끼",
-    "Description": "금으로 만든 도끼",
+    "Name": "�ݵ���",
+    "Description": "������ ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 2,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -444,11 +492,13 @@
   },
   {
     "Type": 1,
-    "Name": "금망치",
-    "Description": "금으로 만든 망치",
+    "Name": "�ݸ�ġ",
+    "Description": "������ ���� ��ġ",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 2,
+    "WeaponType": 1,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -466,11 +516,13 @@
   },
   {
     "Type": 1,
-    "Name": "금방패",
-    "Description": "금으로 만든 방패",
+    "Name": "�ݹ���",
+    "Description": "������ ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 1,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 3,
@@ -483,11 +535,13 @@
   },
   {
     "Type": 1,
-    "Name": "금모자",
-    "Description": "금으로 만든 모자",
+    "Name": "�ݸ���",
+    "Description": "������ ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 3,
@@ -500,11 +554,13 @@
   },
   {
     "Type": 1,
-    "Name": "금갑옷",
-    "Description": "금으로 만든 갑옷",
+    "Name": "�ݰ���",
+    "Description": "������ ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 0,
@@ -517,11 +573,13 @@
   },
   {
     "Type": 1,
-    "Name": "금부츠",
-    "Description": "금으로 만든 부츠",
+    "Name": "�ݺ���",
+    "Description": "������ ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 4,
@@ -534,11 +592,13 @@
   },
   {
     "Type": 1,
-    "Name": "다이아몬드칼",
-    "Description": "다이아몬드로 만든 검",
+    "Name": "���̾Ƹ��Į",
+    "Description": "���̾Ƹ��� ���� ��",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 1,
+    "WeaponType": 3,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -556,11 +616,13 @@
   },
   {
     "Type": 1,
-    "Name": "다이아몬드도끼",
-    "Description": "다이아몬드로 만든 도끼",
+    "Name": "���̾Ƹ�嵵��",
+    "Description": "���̾Ƹ��� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 2,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -578,11 +640,13 @@
   },
   {
     "Type": 1,
-    "Name": "다이아몬드망치",
-    "Description": "다이아몬드로 만든 망치",
+    "Name": "���̾Ƹ���ġ",
+    "Description": "���̾Ƹ��� ���� ��ġ",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 2,
+    "WeaponType": 1,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -595,11 +659,13 @@
   },
   {
     "Type": 1,
-    "Name": "다이아몬드방패",
-    "Description": "다이아몬드로 만든 방패",
+    "Name": "���̾Ƹ�����",
+    "Description": "���̾Ƹ��� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 1,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 3,
@@ -612,11 +678,13 @@
   },
   {
     "Type": 1,
-    "Name": "다이아몬드헬멧",
-    "Description": "다이아몬드로 만든 모자",
+    "Name": "���̾Ƹ�����",
+    "Description": "���̾Ƹ��� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 3,
@@ -629,11 +697,13 @@
   },
   {
     "Type": 1,
-    "Name": "다이아몬드갑옷",
-    "Description": "다이아몬드로 만든 갑옷",
+    "Name": "���̾Ƹ�尩��",
+    "Description": "���̾Ƹ��� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 0,
@@ -646,11 +716,13 @@
   },
   {
     "Type": 1,
-    "Name": "다이아몬드부츠",
-    "Description": "다이아몬드로 만든 부츠",
+    "Name": "���̾Ƹ�����",
+    "Description": "���̾Ƹ��� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 4,
@@ -663,11 +735,13 @@
   },
   {
     "Type": 1,
-    "Name": "별칼",
-    "Description": "별로 만든 칼",
+    "Name": "��Į",
+    "Description": "���� ���� Į",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 1,
+    "WeaponType": 3,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -685,11 +759,13 @@
   },
   {
     "Type": 1,
-    "Name": "별도끼",
-    "Description": "별로 만든 도끼",
+    "Name": "������",
+    "Description": "���� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 2,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -707,11 +783,13 @@
   },
   {
     "Type": 1,
-    "Name": "별망치",
-    "Description": "별로 만든 망치",
+    "Name": "����ġ",
+    "Description": "���� ���� ��ġ",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 2,
+    "WeaponType": 1,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 2,
@@ -729,11 +807,13 @@
   },
   {
     "Type": 1,
-    "Name": "별방패",
-    "Description": "별로 만든 방패",
+    "Name": "������",
+    "Description": "���� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 1,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 3,
@@ -746,11 +826,13 @@
   },
   {
     "Type": 1,
-    "Name": "별모자",
-    "Description": "별로 만든 모자",
+    "Name": "������",
+    "Description": "���� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 3,
@@ -763,11 +845,13 @@
   },
   {
     "Type": 1,
-    "Name": "별갑옷",
-    "Description": "별로 만든 갑옷",
+    "Name": "������",
+    "Description": "���� ���� ����",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 0,
@@ -780,11 +864,13 @@
   },
   {
     "Type": 1,
-    "Name": "별부츠",
-    "Description": "별로 만든 신발",
+    "Name": "������",
+    "Description": "���� ���� �Ź�",
     "MaxStack": 1,
     "Recipe": null,
     "EquipType": 3,
+    "WeaponType": 0,
+    "Sprite": null,
     "Modifiers": [
       {
         "Stat": 4,
