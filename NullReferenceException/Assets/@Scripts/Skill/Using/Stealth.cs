@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Stealth : SkillLogic
-{
-    float skillDuration;
+{    
     protected override void UsingSkill(SkillData skill)
     {
         skillDuration = 9f + skill.SkillLv;
