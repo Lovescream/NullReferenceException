@@ -18,6 +18,8 @@ public class Item {
     public string Recipe => Data.Recipe;
     public EquipType EquipType => Data.EquipType;
     public string Effect => Data.Effect;
+    public WeaponType WeaponType { get; set; }
+    public Sprite Sprite { get; set; }
 
     public int Stack {
         get => _stack;
