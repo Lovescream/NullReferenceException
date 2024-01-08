@@ -37,7 +37,13 @@ public class ObjectManager {
         Enemies.Remove(obj);
         Despawn(obj);
     }
-    public Projectile SpawnProjectile(Vector2 position) {   
+    public Projectile SpawnFireBall(Vector2 position)
+    {
+        FireBallPRJ fireBallPRJ = Spawn<FireBallPRJ>("", position);
+        Projectiles.Add(fireBallPRJ);
+        return fireBallPRJ;
+    }
+    public Projectile SpawnProjectile(Vector2 position) {
         Projectile projectile = Spawn<Projectile>("", position);
         Projectiles.Add(projectile);
         return projectile;
@@ -58,7 +64,7 @@ public class ObjectManager {
         }
         if (string.IsNullOrEmpty(prefabName)) prefabName = "Thing.prefab";
 
-        GameObject obj = Main.Resource.Instantiate($"{prefabName}2.prefab", pooling: true);
+        GameObject obj = Main.Resource.Instantiate($"{prefabName}.prefab", pooling: true);
         obj.transform.position = position;
 
         return obj.GetOrAddComponent<T>();

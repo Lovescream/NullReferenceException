@@ -674,6 +674,7 @@ MonoBehaviour:
   equipSkillSlots: {fileID: 0}
   coolTimeTxt: {fileID: 6144403752994189699}
   panelMarsk: {fileID: 4530184591883935318}
+  skills: {fileID: 0}
 --- !u!114 &928848665945988836
 MonoBehaviour:
   m_ObjectHideFlags: 0
