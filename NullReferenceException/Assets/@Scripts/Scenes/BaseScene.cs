@@ -24,6 +24,7 @@ public class BaseScene : MonoBehaviour {
     }
     protected virtual void OnLoadAsyncCompleted() {
         Main.Data.Initialize();
+        Main.Game.Initialize();
         Initialize();
     }
 
