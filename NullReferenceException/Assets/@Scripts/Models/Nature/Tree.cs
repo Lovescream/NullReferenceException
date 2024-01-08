@@ -5,20 +5,25 @@ using UnityEngine;
 public class Tree : BaseNature, IHarvestable
 {
     [SerializeField] private float _maxHealth = 5f;
+    [SerializeField] private Animator _animator;
+    private static readonly int Attcak = Animator.StringToHash("Attack");
     protected override void Awake()
     {
         base.Awake();
+        _animator = GetComponent<Animator>();
         Init(_maxHealth);
     }
     public void HPDecrease(WeaponType weaponType)
     {
-        if (weaponType == WeaponType.Axe && weaponType == WeaponType.Hand)
+        if (weaponType == WeaponType.Axe || weaponType == WeaponType.Hand)
         {
             Health -= weaponType == WeaponType.Pick ? 2 : 1;
-            AudioSource.Play();
+            Audio.time = 0.2f;
+            Audio.Play();
+            _animator.SetTrigger(Attcak);
             if (Health <= 0)
             {
-                DropItem(); 
+                DropItem(new Vector3(0, 1, 0)); 
                 StartCoroutine(RegrowTree(_maxHealth));
             }
         }

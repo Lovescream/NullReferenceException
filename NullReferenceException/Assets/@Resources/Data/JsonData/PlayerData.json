@@ -2,6 +2,7 @@
   {
     "HungerMax": 100.0,
     "Name": "Player",
+    "Lv": 1,
     "HpMax": 100.0,
     "HpRegen": 1.0,
     "Damage": 10.0,
@@ -11,5 +12,19 @@
     "Range": 5.0,
     "ExistPowerMax": 100.0,
     "Key": "Player_00"
+  },
+  {
+    "HungerMax": 100.0,
+    "Name": "Player",
+    "Lv": 1,
+    "HpMax": 100.0,
+    "HpRegen": 1.0,
+    "Damage": 10.0,
+    "Defense": 5.0,
+    "MoveSpeed": 4.0,
+    "AttackSpeed": 2.0,
+    "Range": 5.0,
+    "ExistPowerMax": 100.0,
+    "Key": "Player"
   }
 ]

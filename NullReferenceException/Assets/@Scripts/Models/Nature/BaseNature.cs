@@ -9,18 +9,17 @@ public interface IHarvestable
 public class BaseNature : MonoBehaviour
 {
     private SpriteRenderer _sprite;
-    private Collider2D _collider;
+    [SerializeField] private Collider2D _collider;
     private AudioSource _audioSource;
     public float Health { get; set; }
     public SpriteRenderer Sprite { get => _sprite;}
-    public AudioSource AudioSource { get => _audioSource; }
+    public AudioSource Audio { get => _audioSource; }
 
     [SerializeField] private GameObject _dropItem;
 
     protected virtual void Awake()
     {
         _sprite = this.GetComponent<SpriteRenderer>();
-        _collider = this.GetComponent<Collider2D>();
         _audioSource = this.GetComponent<AudioSource>();
     }
     protected void Init(float hp)
@@ -29,9 +28,10 @@ public class BaseNature : MonoBehaviour
         _sprite.enabled = true;
         _collider.enabled = true;
     }
-    protected void DropItem()
+    protected void DropItem(Vector3 vector3)
     {
-        Instantiate(_dropItem, transform.position, Quaternion.identity);
+        Debug.Log(transform.position);
+        Instantiate(_dropItem, transform.position - vector3, Quaternion.identity);
         _sprite.enabled = false;
         _collider.enabled = false;
     }

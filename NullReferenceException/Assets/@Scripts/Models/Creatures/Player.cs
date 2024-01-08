@@ -54,6 +54,7 @@ public class Player : Creature {
     [SerializeField] private Transform _chracter;
     [SerializeField] private Transform _armPivot;
     [SerializeField] private Transform _weponRotate;
+    [SerializeField] private SpriteRenderer _wepon;
     [SerializeField] private SpriteRenderer _weponSprite;
     [SerializeField] private Transform _bullet;
 
@@ -94,6 +95,7 @@ public class Player : Creature {
         float rotZ = Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;
         _armPivot.rotation = Quaternion.Euler(0, 0, rotZ);
         _weponSprite.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
+        _wepon.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
     }
     private void AttackCoolTime() //���� ������
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bow : MonoBehaviour, IWeapon
 {
-    private WeaponType _type = WeaponType.Bow;
+    private WeaponType _type = WeaponType.Gun;
     public WeaponType WeponType => _type;
 
     public void Attack()

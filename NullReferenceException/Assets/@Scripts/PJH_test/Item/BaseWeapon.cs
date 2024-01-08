@@ -12,9 +12,16 @@ public enum WeaponType
     Pick,
     Hand,
     Sword,
-    Bow,
+    Gun,
 }
-public class BaseWeapon : MonoBehaviour
+public class BaseWeapon : MonoBehaviour, IWeapon
 {
-    
+    [SerializeField] protected Sprite WeaponImage;
+
+    public WeaponType WeponType => WeaponType.Gun;
+
+    public void Attack()
+    {
+        throw new System.NotImplementedException();
+    }
 }

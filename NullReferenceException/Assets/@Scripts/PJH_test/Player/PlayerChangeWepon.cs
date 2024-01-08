@@ -7,14 +7,21 @@ public class PlayerChangeWepon : MonoBehaviour
 {
     private IWeapon _currentWeapon;
     private Animator _animator;
-    private static readonly int Bow = Animator.StringToHash("Bow");
+    private static readonly int Gun = Animator.StringToHash("Gun");
     private static readonly int Hand = Animator.StringToHash("Hand");
     private static readonly int Axe = Animator.StringToHash("Axe");
-    //무기의 데이터를 받음
+    private static readonly int Pick = Animator.StringToHash("Pick");
+    //인벤토리에서 무기의 데이터를 받음
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        //Test
+        _currentWeapon = GetComponent<BaseWeapon>();
+    }
+    public void OnFire()
+    {
+        Attack();
     }
     public void Attack()
     {
@@ -27,8 +34,11 @@ public class PlayerChangeWepon : MonoBehaviour
             case WeaponType.Hand:
                 _animator.SetTrigger(Hand);
                 break;
-            case WeaponType.Bow:
-                _animator.SetTrigger(Hand);
+            case WeaponType.Gun:
+                _animator.SetTrigger(Gun);
+                break;
+            case WeaponType.Pick:
+                _animator.SetTrigger(Pick);
                 break;
         }
     }
@@ -39,6 +49,7 @@ public class PlayerChangeWepon : MonoBehaviour
         //나무는 5번 때리기, 돌은 7번 때리기
         if (collider != null)
         {
+            Debug.Log("AttackType작동");
             if (collider.CompareTag("Enemy"))
             {
                 //Player의 공격력 데이터에 접근해서 값 가져오기
@@ -47,9 +58,8 @@ public class PlayerChangeWepon : MonoBehaviour
             }
             else if (collider.CompareTag("Nature") && collider.isTrigger != true)//무기 타입은 Axe 도끼 추가, 무기 타입은 Pick 곡괭이 추가
             {
-                //나무의 체력 --
-                collider.GetComponent<IHarvestable>().HPDecrease(WeaponType.Sword);
-                collider.GetComponent<IHarvestable>().HPDecrease(WeaponType.Bow);
+                //타입을 어떤식으로 가져올지
+                collider.GetComponent<IHarvestable>().HPDecrease(_currentWeapon.WeponType);
             }
         }
     }

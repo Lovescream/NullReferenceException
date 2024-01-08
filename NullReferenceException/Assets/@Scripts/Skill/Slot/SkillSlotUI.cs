@@ -48,7 +48,7 @@ public class SkillSlotUI : SkillSlot
 
     public void UpdateUI()
     {
-        if (skillData.Key != null)
+        if (skillExpTxt != null && skillData.Key != null)
         {
             string[] nameParts = skillData.SkillName.Split('_');
             string[] keyParts = skillData.Key.Split('_');
@@ -60,7 +60,7 @@ public class SkillSlotUI : SkillSlot
             }
             else
             {
-                skillExpTxt.text = $"���� ��ų ������ {Main.Object.Player.lvSkill.skillLvUp[int.Parse(keyParts[3]) - 1] - Main.Object.Player.Data.Lv % Main.Object.Player.lvSkill.skillLvUp[int.Parse(keyParts[3])-1]}";
+               // skillExpTxt.text = $"다음 스킬 레벨업 {Main.Object.Player.lvSkill.skillLvUp[int.Parse(keyParts[3]) - 1] - Main.Object.Player.Data.Lv % Main.Object.Player.lvSkill.skillLvUp[int.Parse(keyParts[3])-1]}";
             }
         }
         else
