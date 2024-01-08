@@ -27,8 +27,28 @@ public class Enemy : Creature {
     public override void OnHit(Creature attacker, float damage = 0, KnockbackInfo knockbackInfo = default)
     {
         base.OnHit(attacker, damage, knockbackInfo);
-        State.AddOnEntered(CreatureState.Hit, () =>{ 
+
+        if (Hp > 0)
+            _animator.SetTrigger("IsHit");
+
+        if (Hp <= 0)
+        {
             Velocity = Vector2.zero;
-        });
+            _collider.enabled = false;
+            _rigidbody.simulated = false;
+            _animator.SetTrigger("IsDead");
+            StartCoroutine(DeadTime());
+            
+        }
+    }
+
+    IEnumerator DeadTime()
+    {
+        var normalizedTime = _animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+        //float time = 1f;
+
+        yield return new WaitForSeconds(normalizedTime);
+
+        gameObject.SetActive(false);
     }
 }

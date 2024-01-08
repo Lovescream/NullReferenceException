@@ -401,6 +401,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96dcf79b7dce2544c8e6712ea0c9d840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GoblinMech: {fileID: 1212628083945861286, guid: 916f6218ab752894e964132431f49b2c, type: 3}
+  Adventurer: {fileID: 4799273147558555441, guid: 15dcd849f5cb074458d159fa3157201e, type: 3}
+  GiantFly: {fileID: 4317452119561572290, guid: fede9b9218b74e84b9c22cf4c5ad5b97, type: 3}
+  RatfolkAxe: {fileID: 6843801846306457344, guid: d69063e945796a346a98a8e8d276a311, type: 3}
 --- !u!4 &878448971
 Transform:
   m_ObjectHideFlags: 0

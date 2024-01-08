@@ -108,6 +108,7 @@ public class NearEnemyBT : EnemyBasicBT
             {
                 return INode.ENodeState.ENS_Failure;
             }
+            FlipSprite(transform.position, _detectedPlayer.position);
             _animator.SetBool(_ATTACK_ANIM_Bool_NAME, true);
             return INode.ENodeState.ENS_Success;
         }

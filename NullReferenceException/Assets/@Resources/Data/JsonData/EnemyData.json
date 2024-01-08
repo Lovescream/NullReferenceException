@@ -73,5 +73,50 @@
     "Range": 5.0,
     "ExistPowerMax": 100.0,
     "Key": "GoblinMech"
+  },
+  {
+    "DetectingRange": 5.0,
+    "Exp": 10.0,
+    "Name": "Adventurer",
+    "Lv": 1,
+    "HpMax": 50.0,
+    "HpRegen": 0.2,
+    "Damage": 6.0,
+    "Defense": 1.0,
+    "MoveSpeed": 2.5,
+    "AttackSpeed": 1.5,
+    "Range": 5.0,
+    "ExistPowerMax": 100.0,
+    "Key": "Adventurer"
+  },
+  {
+    "DetectingRange": 5.0,
+    "Exp": 10.0,
+    "Name": "GiantFly",
+    "Lv": 1,
+    "HpMax": 30.0,
+    "HpRegen": 0.2,
+    "Damage": 6.0,
+    "Defense": 1.0,
+    "MoveSpeed": 2.5,
+    "AttackSpeed": 1.5,
+    "Range": 5.0,
+    "ExistPowerMax": 100.0,
+    "Key": "GiantFly"
+  },
+  {
+    "DetectingRange": 5.0,
+    "Exp": 10.0,
+    "Name": "RatfolkAxe",
+    "Lv": 1,
+    "HpMax": 80.0,
+    "HpRegen": 0.2,
+    "Damage": 6.0,
+    "Defense": 1.0,
+    "MoveSpeed": 2.5,
+    "AttackSpeed": 1.5,
+    "Range": 5.0,
+    "ExistPowerMax": 100.0,
+    "Key": "RatfolkAxe"
   }
 ]
