@@ -9,6 +9,7 @@ public class RandomPrefabSpawner : MonoBehaviour
 
     public void SpawnPrefabs()
     {
+        SoundManager.Instance.PlayMusic(SoundType.DEAD);
         DeleteExistingPrefabs(); // 기존 프리팹 삭제
 
         foreach (var spawnerData in prefabSpawnerData)
