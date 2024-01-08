@@ -2,31 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Popup_Inventory : UI_Popup {
+public class UI_Popup_Crafting : UI_Popup {
 
     #region Enums
 
     enum Objects {
-        Content,
+        CraftingSlots,
+        ResultSlot,
     }
     enum Buttons {
         btnClose,
     }
-    enum Texts {
-        txtCount,
-    }
 
     #endregion
 
-    #region Fields
+    private CraftingInventory _inventory;
 
-    private CreatureInventory _inventory;
-
+    private UI_InventorySlot _resultSlot;
     private readonly List<UI_InventorySlot> _slots = new();
 
     private Transform _content;
-
-    #endregion
 
     #region MonoBehaviours
 
@@ -48,9 +43,9 @@ public class UI_Popup_Inventory : UI_Popup {
 
         BindObject(typeof(Objects));
         BindButton(typeof(Buttons));
-        BindText(typeof(Texts));
 
-        _content = GetObject((int)Objects.Content).transform;
+        _resultSlot = GetObject((int)Objects.ResultSlot).GetComponent<UI_InventorySlot>();
+        _content = GetObject((int)Objects.CraftingSlots).transform;
         _content.gameObject.DestroyChilds();
 
         GetButton((int)Buttons.btnClose).onClick.AddListener(OnBtnClose);
@@ -58,10 +53,10 @@ public class UI_Popup_Inventory : UI_Popup {
         return true;
     }
 
-    public void SetInfo(CreatureInventory inventory) {
+    public void SetInfo() {
         Initialize();
 
-        this._inventory = inventory;
+        this._inventory = Main.Game.CraftingInventory;
         Refresh();
 
         if (_inventory != null) {
@@ -72,11 +67,7 @@ public class UI_Popup_Inventory : UI_Popup {
 
     #endregion
 
-    public void Refresh() {
-        float ratio = _inventory.NotEmptyCount / (float)_inventory.Count;
-        string color = ratio >= 0.75f ? (ratio >= 0.9f ? "red" : "yellow") : "white";
-        GetText((int)Texts.txtCount).text = $"<color={color}>{_inventory.NotEmptyCount}</color> / {_inventory.Count}";
-
+    private void Refresh() {
         for (int i = 0; i < _inventory.Count; i++) {
             UI_InventorySlot slot;
             if (i >= _slots.Count) {
@@ -93,6 +84,8 @@ public class UI_Popup_Inventory : UI_Popup {
                 Main.Resource.Destroy(slot.gameObject);
             }
         }
+
+        _resultSlot.SetInfo(_inventory, _inventory.ResultSlot);
     }
 
     #region OnButtons
