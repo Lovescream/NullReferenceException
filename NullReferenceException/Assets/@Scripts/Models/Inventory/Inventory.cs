@@ -43,7 +43,8 @@ public class Inventory {
             return _slots[index];
         }
     }
-    
+
+    public List<InventorySlot> GetAllSlots() => _slots;
     public InventorySlot GetEmptySlot() => _slots.FirstOrDefault(slot => slot.IsEmpty());
     public List<InventorySlot> GetEmptySlots() => _slots.Where(slot => slot.IsEmpty()).ToList();
     public InventorySlot GetSlot(ItemData data) => _slots.FirstOrDefault(slot => slot.IsItem(data));

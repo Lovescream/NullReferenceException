@@ -48,6 +48,13 @@ public class UI_CursorSlot : UI_Scene {
         Initialize();
         ClearSlot();
         SelectedSlot = slot;
+        if (SelectedSlot.IsCraftingResultSlot) {
+            CursorSlot.SetItem(SelectedSlot.Item);
+            SelectedSlot.OnGetCraftingResult?.Invoke();
+            _slotUI.SetInfo(null, CursorSlot);
+            _slotUI.gameObject.SetActive(!CursorSlot.IsEmpty());
+            return;
+        }
         SelectedSlot.SwapSlot(CursorSlot);
         _slotUI.SetInfo(null, CursorSlot);
         _slotUI.gameObject.SetActive(!CursorSlot.IsEmpty());

@@ -172,7 +172,7 @@
     "Name": "철도끼",
     "Description": "철로 만든 도끼",
     "MaxStack": 1,
-    "Recipe": null,
+    "Recipe": "IronSword||||||||",
     "EquipType": 2,
     "Modifiers": [
       {

@@ -28,6 +28,7 @@ public class InventorySlot {
         }
     }
     public int Stack => Item == null ? -1 : Item.Stack;
+    public bool IsCraftingResultSlot { get; set; } = false;
 
     #endregion
 
@@ -36,6 +37,7 @@ public class InventorySlot {
     private Item _item;
 
     // Callbacks.
+    public Action OnGetCraftingResult;
     public event Action<InventorySlot> OnChanged;
 
     #endregion
@@ -78,6 +80,9 @@ public class InventorySlot {
         else return this.Item.TryAddStack(item.Stack);
     }
 
+    public void Remove() {
+        this.Item = null;
+    }
     public int TryRemove(int stack = 1) {
         if (this.Item == null) return -1;
         return this.Item.TryRemoveStack(stack);

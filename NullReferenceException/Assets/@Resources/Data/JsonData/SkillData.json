@@ -90,7 +90,7 @@
     "Key": "Skill_A_G_5"
   },
   {
-    "SkillName": "널_Nullreferenceexception",
+    "SkillName": "널_nullreferenceexception",
     "SkillUsingType": 0,
     "SkillGetType": 1,
     "SkillLv": 0,
