@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PrefabSpawner
   m_EditorClassIdentifier: 
   prefab: {fileID: 4281739857716521720, guid: 2bcfc2366c0969e429ed05101eba22b4, type: 3}
-  spawnProbability: 0.1
+  spawnProbability: 0.01
   count: 30
-  random: 0
+  random: 1

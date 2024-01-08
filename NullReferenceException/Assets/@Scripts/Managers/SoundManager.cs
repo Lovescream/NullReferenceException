@@ -92,36 +92,7 @@ public class SoundManager : MonoBehaviour
             source.loop = loop;
             sources[key] = source;
         }
-        return source;
+        return sources[key];
     }
 
-    // ¹è°æÀ½¾Ç º¼·ý Á¶Àý
-    public void SetMusicVolume(float volume)
-    {
-        foreach (var source in musicSources.Values)
-        {
-            source.volume = volume;
-        }
-    }
-
-    // È¿°úÀ½ º¼·ý Á¶Àý
-    public void SetEffectVolume(float volume)
-    {
-        foreach (var source in effectSources.Values)
-        {
-            source.volume = volume;
-        }
-    }
-
-    public void ToggleMusic()
-    {
-        isMusicMuted = !isMusicMuted;
-        SetMusicVolume(isMusicMuted ? 0 : 1);
-    }
-
-    public void ToggleEffects()
-    {
-        isEffectsMuted = !isEffectsMuted;
-        SetEffectVolume(isEffectsMuted ? 0 : 1);
-    }
 }
