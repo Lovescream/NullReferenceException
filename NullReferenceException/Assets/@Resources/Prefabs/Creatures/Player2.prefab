@@ -259,12 +259,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvSkill: {fileID: 0}
-  _chracter: {fileID: 2626010514309660420}
   _armPivot: {fileID: 1886419371963153549}
-  _weaponRotate: {fileID: 2180949797119906150}
-  _weapon: {fileID: 1407406887377588989}
+  _weaponAnimation: {fileID: 1407406887377588989}
   _weaponSprite: {fileID: 8625484408635700514}
-  _bulletPosition: {fileID: 2871813157697984174}
 --- !u!114 &-578256101307490269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +274,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272e2c640ab9d654facf1c99dc4e90e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentSprite: {fileID: 8625484408635700514}
+  _bulletPosition: {fileID: 2871813157697984174}
+  _time: 1
+  sdfk: {fileID: -353751291, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
 --- !u!114 &6680674681164593833
 MonoBehaviour:
   m_ObjectHideFlags: 0

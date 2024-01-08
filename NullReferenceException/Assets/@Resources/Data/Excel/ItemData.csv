@@ -1,44 +1,44 @@
-ï»¿Key,Type,Name,Description,MaxStack,Recipe,EquipType,Modifiers,Effect
-Stick,Equipments,ë§‰ëŒ€ê¸°,ë‚˜ë¬´ë§‰ëŒ€ê¸°ì´ë‹¤.,1,,OneHanded,Damage_Add_1,
-StoneSword,Equipments,ëŒê²€,ëŒë¡œ ë§Œë“  ê²€,1,,OneHanded,Damage_Add_5|AttackSpeed_Add_0.2,
-StoneAxe,Equipments,ëŒë„ë¼,ëŒë¡œ ë§Œë“  ë„ë¼,1,,TwoHanded,Damage_Add_7,
-StoneHammer,Equipments,ëŒë§ì¹˜,ëŒë¡œ ë§Œë“  ë§ì¹˜,1,,TwoHanded,Damage_Add_9|AttackSpeed_Add_-0.2,
-StoneShield,Equipments,ëŒë°©íŒ¨,ëŒë¡œ ë§Œë“  ë°©íŒ¨,1,,OneHanded,Defense_Add_5,
-StoneHelmet,Equipments,ëŒë¨¸ë¦¬,ë©ì²­í•œ ë¨¸ë¦¬,1,,Armor,Defense_Add_5,
-StoneArmor,Equipments,ëŒê°‘ì˜·,ëŒë¡œ ë§Œë“  ê°‘ì˜·,1,,Armor,HpMax_Add_20,
-StoneBoots,Equipments,ëŒë¶€ì¸ ,ëŒë¡œ ë§Œë“  ì‹ ë°œ,1,,Armor,MoveSpeed_Add_1,
-IronSword,Equipments,ì² ê²€,ì² ë¡œ ë§Œë“  ê²€,1,,OneHanded,Damage_Add_10|AttackSpeed_Add_0.25,
-IronAxe,Equipments,ì² ë„ë¼,ì² ë¡œ ë§Œë“  ë„ë¼,1,,TwoHanded,Damage_Add_12.5,
-IronHammer,Equipments,ì² ë§ì¹˜,ì² ë¡œ ë§Œë“  ë§ì¹˜,1,,TwoHanded,Damage_Add_15|AttackSpeed_Add_-0.21,
-IronShield,Equipments,ì² ë°©íŒ¨,ì² ë¡œ ë§Œë“  ë°©íŒ¨,1,,OneHanded,Defense_Add_10,
-IronHelmet,Equipments,ì² ëª¨ì,ì² ë¡œ ë§Œë“  ëª¨ì,1,,Armor,Defense_Add_10,
-IronArmor,Equipments,ì² ê°‘ì˜·,ì² ë¡œ ë§Œë“  ê°‘ì˜·,1,,Armor,HpMax_Add_50,
-IronBoots,Equipments,ì² ë¶€ì¸ ,ì² ë¡œ ë§Œë“  ë¶€ì¸ ,1,,Armor,MoveSpeed_Add_1.5,
-SilverSword,Equipments,ì€ê²€,ì€ìœ¼ë¡œ ë§Œë“  ê²€,1,,OneHanded,Damage_Add_20|AttackSpeed_Add_0.3,
-SilverAxe,Equipments,ì€ë„ë¼,ì€ìœ¼ë¡œ ë§Œë“  ë„ë¼,1,,TwoHanded,Damage_Add_23,
-SilverHammer,Equipments,ì€ë§ì¹˜,ì€ìœ¼ë¡œ ë§Œë“  ë§ì¹˜,1,,TwoHanded,Damage_Add_26|AttackSpeed_Add_-0.22,
-SilverShield,Equipments,ì€ë°©íŒ¨,ì€ìœ¼ë¡œ ë§Œë“  ë°©íŒ¨,1,,OneHanded,Defense_Add_20,
-SilverHelmet,Equipments,ì€ëª¨ì,ì€ìœ¼ë¡œ ë§Œë“  ëª¨ì,1,,Armor,Defense_Add_20,
-SilverArmor,Equipments,ì€ê°‘ì˜·,ì€ìœ¼ë¡œ ë§Œë“  ê°‘ì˜·,1,,Armor,HpMax_Add_100,
-SilverBoots,Equipments,ì€ë¶€ì¸ ,ì€ìœ¼ë¡œ ë§Œë“  ë¶€ì¸ ,1,,Armor,MoveSpeed_Add_2,
-GoldSword,Equipments,ê¸ˆê²€,ê¸ˆìœ¼ë¡œ ë§Œë“  ê²€,1,,OneHanded,Damage_Add_30|AttackSpeed_Add_0.4,
-GoldAxe,Equipments,ê¸ˆë„ë¼,ê¸ˆìœ¼ë¡œ ë§Œë“  ë„ë¼,1,,TwoHanded,Damage_Add_35,
-GoldHammer,Equipments,ê¸ˆë§ì¹˜,ê¸ˆìœ¼ë¡œ ë§Œë“  ë§ì¹˜,1,,TwoHanded,Damage_Add_40|AttackSpeed_Add_-0.25,
-GoldShield,Equipments,ê¸ˆë°©íŒ¨,ê¸ˆìœ¼ë¡œ ë§Œë“  ë°©íŒ¨,1,,OneHanded,Defense_Add_30,
-GoldHelmet,Equipments,ê¸ˆëª¨ì,ê¸ˆìœ¼ë¡œ ë§Œë“  ëª¨ì,1,,Armor,Defense_Add_30,
-GoldArmor,Equipments,ê¸ˆê°‘ì˜·,ê¸ˆìœ¼ë¡œ ë§Œë“  ê°‘ì˜·,1,,Armor,HpMax_Add_200,
-GoldBoots,Equipments,ê¸ˆë¶€ì¸ ,ê¸ˆìœ¼ë¡œ ë§Œë“  ë¶€ì¸ ,1,,Armor,MoveSpeed_Add_2.5,
-DiamondSword,Equipments,ë‹¤ì´ì•„ëª¬ë“œì¹¼,ë‹¤ì´ì•„ëª¬ë“œë¡œ ë§Œë“  ê²€,1,,OneHanded,Damage_Add_55|AttackSpeed_Add_0.5,
-DiamondAxe,Equipments,ë‹¤ì´ì•„ëª¬ë“œë„ë¼,ë‹¤ì´ì•„ëª¬ë“œë¡œ ë§Œë“  ë„ë¼,1,,TwoHanded,Damage_Add_60|AttackSpeed_Add_0.125,
-DiamondHammer,Equipments,ë‹¤ì´ì•„ëª¬ë“œë§ì¹˜,ë‹¤ì´ì•„ëª¬ë“œë¡œ ë§Œë“  ë§ì¹˜,1,,TwoHanded,Damage_Add_70,
-DiamondShield,Equipments,ë‹¤ì´ì•„ëª¬ë“œë°©íŒ¨,ë‹¤ì´ì•„ëª¬ë“œë¡œ ë§Œë“  ë°©íŒ¨,1,,OneHanded,Defense_Add_55,
-DiamondHelmet,Equipments,ë‹¤ì´ì•„ëª¬ë“œí—¬ë©§,ë‹¤ì´ì•„ëª¬ë“œë¡œ ë§Œë“  ëª¨ì,1,,Armor,Defense_Add_55,
-DiamondArmor,Equipments,ë‹¤ì´ì•„ëª¬ë“œê°‘ì˜·,ë‹¤ì´ì•„ëª¬ë“œë¡œ ë§Œë“  ê°‘ì˜·,1,,Armor,HpMax_Add_500,
-DiamondBoots,Equipments,ë‹¤ì´ì•„ëª¬ë“œë¶€ì¸ ,ë‹¤ì´ì•„ëª¬ë“œë¡œ ë§Œë“  ë¶€ì¸ ,1,,Armor,MoveSpeed_Add_3,
-StarSword,Equipments,ë³„ì¹¼,ë³„ë¡œ ë§Œë“  ì¹¼,1,,OneHanded,Damage_Add_100|AttackSpeed_Add_0.85,
-StarAxe,Equipments,ë³„ë„ë¼,ë³„ë¡œ ë§Œë“  ë„ë¼,1,,TwoHanded,Damage_Add_111|AttackSpeed_Add_0.5,
-StarHammer,Equipments,ë³„ë§ì¹˜,ë³„ë¡œ ë§Œë“  ë§ì¹˜,1,,TwoHanded,Damage_Add_123|AttackSpeed_Add_0.25,
-StarShield,Equipments,ë³„ë°©íŒ¨,ë³„ë¡œ ë§Œë“  ë°©íŒ¨,1,,OneHanded,Defense_Add_100,
-StarHelmet,Equipments,ë³„ëª¨ì,ë³„ë¡œ ë§Œë“  ëª¨ì,1,,Armor,Defense_Add_100,
-StarArmor,Equipments,ë³„ê°‘ì˜·,ë³„ë¡œ ë§Œë“  ê°‘ì˜·,1,,Armor,HpMax_Add_1000,
-StarBoots,Equipments,ë³„ë¶€ì¸ ,ë³„ë¡œ ë§Œë“  ì‹ ë°œ,1,,Armor,MoveSpeed_Add_4,
+Key,Type,Name,Description,MaxStack,Recipe,EquipType,Modifiers,Effect,WeaponType
+Stick,Equipments,¸·´ë±â,³ª¹«¸·´ë±âÀÌ´Ù.,1,,OneHanded,Damage_Add_1,,Sword
+StoneSword,Equipments,µ¹°Ë,µ¹·Î ¸¸µç °Ë,1,,OneHanded,Damage_Add_5|AttackSpeed_Add_0.2,,Sword
+StoneAxe,Equipments,µ¹µµ³¢,µ¹·Î ¸¸µç µµ³¢,1,,TwoHanded,Damage_Add_7,,Axe
+StoneHammer,Equipments,µ¹¸ÁÄ¡,µ¹·Î ¸¸µç ¸ÁÄ¡,1,,TwoHanded,Damage_Add_9|AttackSpeed_Add_-0.2,,Pick
+StoneShield,Equipments,µ¹¹æÆĞ,µ¹·Î ¸¸µç ¹æÆĞ,1,,OneHanded,Defense_Add_5,,
+StoneHelmet,Equipments,µ¹¸Ó¸®,¸ÛÃ»ÇÑ ¸Ó¸®,1,,Armor,Defense_Add_5,,
+StoneArmor,Equipments,µ¹°©¿Ê,µ¹·Î ¸¸µç °©¿Ê,1,,Armor,HpMax_Add_20,,
+StoneBoots,Equipments,µ¹ºÎÃ÷,µ¹·Î ¸¸µç ½Å¹ß,1,,Armor,MoveSpeed_Add_1,,
+IronSword,Equipments,Ã¶°Ë,Ã¶·Î ¸¸µç °Ë,1,,OneHanded,Damage_Add_10|AttackSpeed_Add_0.25,,Sword
+IronAxe,Equipments,Ã¶µµ³¢,Ã¶·Î ¸¸µç µµ³¢,1,,TwoHanded,Damage_Add_12.5,,Axe
+IronHammer,Equipments,Ã¶¸ÁÄ¡,Ã¶·Î ¸¸µç ¸ÁÄ¡,1,,TwoHanded,Damage_Add_15|AttackSpeed_Add_-0.21,,Pick
+IronShield,Equipments,Ã¶¹æÆĞ,Ã¶·Î ¸¸µç ¹æÆĞ,1,,OneHanded,Defense_Add_10,,
+IronHelmet,Equipments,Ã¶¸ğÀÚ,Ã¶·Î ¸¸µç ¸ğÀÚ,1,,Armor,Defense_Add_10,,
+IronArmor,Equipments,Ã¶°©¿Ê,Ã¶·Î ¸¸µç °©¿Ê,1,,Armor,HpMax_Add_50,,
+IronBoots,Equipments,Ã¶ºÎÃ÷,Ã¶·Î ¸¸µç ºÎÃ÷,1,,Armor,MoveSpeed_Add_1.5,,
+SilverSword,Equipments,Àº°Ë,ÀºÀ¸·Î ¸¸µç °Ë,1,,OneHanded,Damage_Add_20|AttackSpeed_Add_0.3,,Sword
+SilverAxe,Equipments,Àºµµ³¢,ÀºÀ¸·Î ¸¸µç µµ³¢,1,,TwoHanded,Damage_Add_23,,Axe
+SilverHammer,Equipments,Àº¸ÁÄ¡,ÀºÀ¸·Î ¸¸µç ¸ÁÄ¡,1,,TwoHanded,Damage_Add_26|AttackSpeed_Add_-0.22,,Pick
+SilverShield,Equipments,Àº¹æÆĞ,ÀºÀ¸·Î ¸¸µç ¹æÆĞ,1,,OneHanded,Defense_Add_20,,
+SilverHelmet,Equipments,Àº¸ğÀÚ,ÀºÀ¸·Î ¸¸µç ¸ğÀÚ,1,,Armor,Defense_Add_20,,
+SilverArmor,Equipments,Àº°©¿Ê,ÀºÀ¸·Î ¸¸µç °©¿Ê,1,,Armor,HpMax_Add_100,,
+SilverBoots,Equipments,ÀººÎÃ÷,ÀºÀ¸·Î ¸¸µç ºÎÃ÷,1,,Armor,MoveSpeed_Add_2,,
+GoldSword,Equipments,±İ°Ë,±İÀ¸·Î ¸¸µç °Ë,1,,OneHanded,Damage_Add_30|AttackSpeed_Add_0.4,,Sword
+GoldAxe,Equipments,±İµµ³¢,±İÀ¸·Î ¸¸µç µµ³¢,1,,TwoHanded,Damage_Add_35,,Axe
+GoldHammer,Equipments,±İ¸ÁÄ¡,±İÀ¸·Î ¸¸µç ¸ÁÄ¡,1,,TwoHanded,Damage_Add_40|AttackSpeed_Add_-0.25,,Pick
+GoldShield,Equipments,±İ¹æÆĞ,±İÀ¸·Î ¸¸µç ¹æÆĞ,1,,OneHanded,Defense_Add_30,,
+GoldHelmet,Equipments,±İ¸ğÀÚ,±İÀ¸·Î ¸¸µç ¸ğÀÚ,1,,Armor,Defense_Add_30,,
+GoldArmor,Equipments,±İ°©¿Ê,±İÀ¸·Î ¸¸µç °©¿Ê,1,,Armor,HpMax_Add_200,,
+GoldBoots,Equipments,±İºÎÃ÷,±İÀ¸·Î ¸¸µç ºÎÃ÷,1,,Armor,MoveSpeed_Add_2.5,,Sword
+DiamondSword,Equipments,´ÙÀÌ¾Æ¸óµåÄ®,´ÙÀÌ¾Æ¸óµå·Î ¸¸µç °Ë,1,,OneHanded,Damage_Add_55|AttackSpeed_Add_0.5,,Axe
+DiamondAxe,Equipments,´ÙÀÌ¾Æ¸óµåµµ³¢,´ÙÀÌ¾Æ¸óµå·Î ¸¸µç µµ³¢,1,,TwoHanded,Damage_Add_60|AttackSpeed_Add_0.125,,Pick
+DiamondHammer,Equipments,´ÙÀÌ¾Æ¸óµå¸ÁÄ¡,´ÙÀÌ¾Æ¸óµå·Î ¸¸µç ¸ÁÄ¡,1,,TwoHanded,Damage_Add_70,,
+DiamondShield,Equipments,´ÙÀÌ¾Æ¸óµå¹æÆĞ,´ÙÀÌ¾Æ¸óµå·Î ¸¸µç ¹æÆĞ,1,,OneHanded,Defense_Add_55,,
+DiamondHelmet,Equipments,´ÙÀÌ¾Æ¸óµåÇï¸ä,´ÙÀÌ¾Æ¸óµå·Î ¸¸µç ¸ğÀÚ,1,,Armor,Defense_Add_55,,
+DiamondArmor,Equipments,´ÙÀÌ¾Æ¸óµå°©¿Ê,´ÙÀÌ¾Æ¸óµå·Î ¸¸µç °©¿Ê,1,,Armor,HpMax_Add_500,,
+DiamondBoots,Equipments,´ÙÀÌ¾Æ¸óµåºÎÃ÷,´ÙÀÌ¾Æ¸óµå·Î ¸¸µç ºÎÃ÷,1,,Armor,MoveSpeed_Add_3,,
+StarSword,Equipments,º°Ä®,º°·Î ¸¸µç Ä®,1,,OneHanded,Damage_Add_100|AttackSpeed_Add_0.85,,Sword
+StarAxe,Equipments,º°µµ³¢,º°·Î ¸¸µç µµ³¢,1,,TwoHanded,Damage_Add_111|AttackSpeed_Add_0.5,,Axe
+StarHammer,Equipments,º°¸ÁÄ¡,º°·Î ¸¸µç ¸ÁÄ¡,1,,TwoHanded,Damage_Add_123|AttackSpeed_Add_0.25,,Pick
+StarShield,Equipments,º°¹æÆĞ,º°·Î ¸¸µç ¹æÆĞ,1,,OneHanded,Defense_Add_100,,
+StarHelmet,Equipments,º°¸ğÀÚ,º°·Î ¸¸µç ¸ğÀÚ,1,,Armor,Defense_Add_100,,
+StarArmor,Equipments,º°°©¿Ê,º°·Î ¸¸µç °©¿Ê,1,,Armor,HpMax_Add_1000,,
+StarBoots,Equipments,º°ºÎÃ÷,º°·Î ¸¸µç ½Å¹ß,1,,Armor,MoveSpeed_Add_4,,

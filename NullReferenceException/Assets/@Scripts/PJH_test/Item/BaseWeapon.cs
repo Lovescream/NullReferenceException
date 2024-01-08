@@ -6,26 +6,14 @@ public interface IWeapon
     void Attack();
     WeaponType WeponType { get; }
 }
-public enum WeaponType
-{
-    Axe,
-    Pick,
-    Hand,
-    Sword,
-    Gun,
-}
-public class BaseWeapon : MonoBehaviour, IWeapon
+public class BaseWeapon : MonoBehaviour
 {
     [SerializeField] protected Sprite WeaponImage;
 
-    public WeaponType WeponType => WeaponType.Gun;
+    public WeaponType WeponType => WeaponType.Hand;
 
     public Sprite Image()
     {
         return WeaponImage;
-    }
-    public void Attack()
-    {
-        throw new System.NotImplementedException();
     }
 }

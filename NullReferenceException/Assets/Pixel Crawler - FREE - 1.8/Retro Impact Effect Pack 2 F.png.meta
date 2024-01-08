@@ -2903,7 +2903,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Retro Impact Effect Pack 2 F_133
+      name: Sword0
       rect:
         serializedVersion: 2
         x: 336
@@ -2945,7 +2945,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Retro Impact Effect Pack 2 F_135
+      name: Sword1
       rect:
         serializedVersion: 2
         x: 400
@@ -2987,7 +2987,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Retro Impact Effect Pack 2 F_137
+      name: Sword2
       rect:
         serializedVersion: 2
         x: 456
@@ -3113,7 +3113,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Retro Impact Effect Pack 2 F_143
+      name: Sword3
       rect:
         serializedVersion: 2
         x: 528
@@ -3213,27 +3213,6 @@ TextureImporter:
       bones: []
       spriteID: e84e2ea85505a524d8c3c7298a5be9c6
       internalID: 1842177322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retro Impact Effect Pack 2 F_148
-      rect:
-        serializedVersion: 2
-        x: 592
-        y: 521
-        width: 26
-        height: 97
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb4daee8d2a76d8438e4b5f1c722e830
-      internalID: 99971370
       vertices: []
       indices: 
       edges: []
@@ -4864,7 +4843,7 @@ TextureImporter:
         width: 43
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5704,7 +5683,7 @@ TextureImporter:
         width: 64
         height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5725,7 +5704,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5746,7 +5725,7 @@ TextureImporter:
         width: 42
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5767,7 +5746,7 @@ TextureImporter:
         width: 43
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5775,6 +5754,27 @@ TextureImporter:
       bones: []
       spriteID: 0fe94c3067d9f0a4ab4ddb24619a5679
       internalID: 2059472562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword4
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 595
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c7e29a5141096418ca161145de1fda
+      internalID: 285306267
       vertices: []
       indices: 
       edges: []
@@ -5840,18 +5840,14 @@ TextureImporter:
       Retro Impact Effect Pack 2 F_130: -802651652
       Retro Impact Effect Pack 2 F_131: -2100168945
       Retro Impact Effect Pack 2 F_132: -725246072
-      Retro Impact Effect Pack 2 F_133: 807371872
       Retro Impact Effect Pack 2 F_134: -389520666
-      Retro Impact Effect Pack 2 F_135: 1594177844
       Retro Impact Effect Pack 2 F_136: 219140997
-      Retro Impact Effect Pack 2 F_137: -1132558175
       Retro Impact Effect Pack 2 F_138: 1771298732
       Retro Impact Effect Pack 2 F_139: -644390829
       Retro Impact Effect Pack 2 F_14: 1175567800
       Retro Impact Effect Pack 2 F_140: 2076604490
       Retro Impact Effect Pack 2 F_141: -1870671603
       Retro Impact Effect Pack 2 F_142: -161068569
-      Retro Impact Effect Pack 2 F_143: -366080345
       Retro Impact Effect Pack 2 F_144: 169921667
       Retro Impact Effect Pack 2 F_145: -617744249
       Retro Impact Effect Pack 2 F_146: 1485958147
@@ -6101,6 +6097,11 @@ TextureImporter:
       Retro Impact Effect Pack 2 F_97: -477622357
       Retro Impact Effect Pack 2 F_98: 2116255336
       Retro Impact Effect Pack 2 F_99: -1068423202
+      Sword0: 807371872
+      Sword1: 1594177844
+      Sword2: -1132558175
+      Sword3: -366080345
+      Sword4: 285306267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

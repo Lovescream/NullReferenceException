@@ -52,12 +52,9 @@ public class Player : Creature {
     #endregion
 
     #region Input
-    [SerializeField] private Transform _chracter;
     [SerializeField] private Transform _armPivot;
-    [SerializeField] private Transform _weaponRotate;
-    [SerializeField] private SpriteRenderer _weapon;
+    [SerializeField] private SpriteRenderer _weaponAnimation;
     [SerializeField] private SpriteRenderer _weaponSprite;
-    [SerializeField] private Transform _bulletPosition;
 
     protected void OnMove(InputValue value) {
         Velocity = value.Get<Vector2>().normalized * Status[StatType.MoveSpeed].Value;
@@ -86,7 +83,7 @@ public class Player : Creature {
         float rotZ = Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;
         _armPivot.rotation = Quaternion.Euler(0, 0, rotZ);
         _weaponSprite.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
-        _weapon.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
+        _weaponAnimation.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
     }
 
     protected void OnKey_K(){

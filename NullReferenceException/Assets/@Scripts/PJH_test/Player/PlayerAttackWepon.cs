@@ -5,22 +5,22 @@ using UnityEngine;
 
 public class PlayerAttackWepon : MonoBehaviour
 {
-    private IWeapon _currentWeapon;
+    private WeaponType _currentWeapon;
+    [SerializeField] private SpriteRenderer _currentSprite;
+    [SerializeField] private Transform _bulletPosition;
+
     private Animator _animator;
     private static readonly int Gun = Animator.StringToHash("Gun");
     private static readonly int Hand = Animator.StringToHash("Hand");
     private static readonly int Axe = Animator.StringToHash("Axe");
     private static readonly int Pick = Animator.StringToHash("Pick");
-    private float _time = 1;
+    [SerializeField] private float _time = 1;
     private float _coolTime = float.MaxValue;
-
-    //인벤토리에서 무기의 데이터를 받음
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        //Test
-        _currentWeapon = GetComponent<BaseWeapon>();
+        _currentWeapon = WeaponType.Hand;
     }
     public void OnFire()
     {
@@ -34,14 +34,13 @@ public class PlayerAttackWepon : MonoBehaviour
     {
         AttackCoolTime();
     }
-    public void ChangeWeapon(GameObject weaponObject)
+    public void ChangeWeapon(Item item)
     {
-        //플레이어의 공격력 -= _playerAttackWeapon.;
-        //_weaponSprite = weaponObject.sprite;
-        //_time = weaponObject.coolTime;
-        //플레이어의 공격력 += weaponObject;
+        _currentWeapon = item.WeaponType;//아이템 타입
+        _time = item.Modifiers[1].Value; //아이템 공격속도
+        _currentSprite.sprite = item.Sprite;
     }
-    private void AttackCoolTime() //���� ������
+    private void AttackCoolTime()
     {
         if (_coolTime >= _time)
         {
@@ -55,7 +54,7 @@ public class PlayerAttackWepon : MonoBehaviour
     public void Attack()
     {
         //타입별 행동할 Animation 작동
-        switch (_currentWeapon.WeponType) 
+        switch (_currentWeapon) 
         {
             case WeaponType.Axe:
                 _animator.SetTrigger(Axe);
@@ -64,6 +63,9 @@ public class PlayerAttackWepon : MonoBehaviour
                 _animator.SetTrigger(Hand);
                 break;
             case WeaponType.Gun:
+                _animator.SetTrigger(Gun);
+                break;
+            case WeaponType.Sword:
                 _animator.SetTrigger(Gun);
                 break;
             case WeaponType.Pick:
@@ -86,7 +88,7 @@ public class PlayerAttackWepon : MonoBehaviour
             }
             else if (collider.CompareTag("Nature") && collider.isTrigger != true)
             {
-                collider.GetComponent<IHarvestable>().HPDecrease(_currentWeapon.WeponType);
+                collider.GetComponent<IHarvestable>().HPDecrease(_currentWeapon);
             }
         }
     }

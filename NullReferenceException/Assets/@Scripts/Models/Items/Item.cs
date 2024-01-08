@@ -17,6 +17,8 @@ public class Item {
     public string Recipe => Data.Recipe;
     public EquipType EquipType => Data.EquipType;
     public string Effect => Data.Effect;
+    public WeaponType WeaponType { get; set; }
+    public Sprite Sprite { get; set; }
     public List<StatModifier> Modifiers { get; protected set; }
 
     #endregion
