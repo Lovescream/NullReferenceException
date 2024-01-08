@@ -7,6 +7,7 @@ public class SkillManager : MonoBehaviour
     public GameObject SkillUI;
     public GameObject SkillList;
     public GameObject[] qSlot;
+    public GameObject[] screenMarsk;
 
     public bool isSkillList = false;
 

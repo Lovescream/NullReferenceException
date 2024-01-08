@@ -36,6 +36,17 @@ public class Player : Creature {
         get { return _maxExp; }
         set { _maxExp = value; }
     }
+    public bool isFireball
+    {
+        get { return _isFireball; }
+        set { _isFireball = value; }
+    }
+    public bool isStealth
+    {
+        get { return _isStealth; }
+        set { _isStealth = value; }
+    }
+    public float fireBallDmg;
 
     #endregion
 
@@ -44,6 +55,10 @@ public class Player : Creature {
     private float _hunger;
     private float _exp = 0;
     private float _maxExp =100;
+
+    bool _isFireball = false;
+    bool _isStealth = false;
+
 
     // Callbacks.
     public event Action<float> OnChangedHunger;
@@ -63,6 +78,22 @@ public class Player : Creature {
     protected void OnLook(InputValue value) {
         LookDirection = (Camera.main.ScreenToWorldPoint(value.Get<Vector2>()) - this.transform.position).normalized;
         AimDirection();
+    }
+    protected void OnFire()
+    {
+        if (_isFireball)
+        {
+            FireBallPRJ fireballProjectile = Main.Object.SpawnFireBall(this.transform.position).SetInfo(this, fireBallDmg) as FireBallPRJ;
+            fireballProjectile.Velocity = LookDirection.normalized * 10f; // 필요에 따라 속도 조절
+            fireBallDmg = 0;
+            Debug.Log("파이어볼 발사");
+            isFireball = false;
+        }
+        else
+        {
+            Projectile projectile = Main.Object.SpawnProjectile(this.transform.position).SetInfo(this, 10f);
+            projectile.Velocity = LookDirection.normalized * 10f; // 필요에 따라 속도 조절
+        }
     }
     protected void OnInteraction() {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, 2f);
@@ -93,7 +124,7 @@ public class Player : Creature {
 
     public void Projectile() 
     {
-        Projectile projectile = Main.Object.SpawnProjectile(_bulletPosition.position).SetInfo(this);
+        Projectile projectile = Main.Object.SpawnProjectile(_bulletPosition.position).SetInfo(this, 10);
         projectile.Velocity = LookDirection.normalized * 10f; // 필요에 따라 속도 조절
     }
 

@@ -89,7 +89,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1.1111112}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &2814390021486891026
@@ -198,7 +198,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvSkill: {fileID: 0}
-  fireBallDmg: 0
+  _armPivot: {fileID: 0}
+  _weaponAnimation: {fileID: 0}
+  _weaponSprite: {fileID: 0}
+  _bulletPosition: {fileID: 0}
 --- !u!114 &8565354451978246702
 MonoBehaviour:
   m_ObjectHideFlags: 0
