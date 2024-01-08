@@ -22,7 +22,7 @@ public class SkillSlotUI : SkillSlot
         int selectedSlotIndex = Main.Instance.Skill.selectSolot;
         if (skillData.SkillLv == 0 || string.IsNullOrEmpty(skillData.Key))
         {
-            Debug.Log("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È¤ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ ï¿½Ø±İµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+            Debug.Log("ºó ½½·Ô È¤Àº ½ºÅ³ÀÌ ÇØ±İµÇÁö ¾ÊÀº »óÅÂÀÔ´Ï´Ù.");
         }
         else
         {
@@ -35,11 +35,11 @@ public class SkillSlotUI : SkillSlot
             }
             else if (equipSkillSlots[selectedSlotIndex].skillData.Key == skillData.Key)
             {
-                Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+                Debug.Log("µ¿ÀÏÇÑ ½ºÅ³ µ¥ÀÌÅÍ");
             }
             else
             {
-                Debug.Log("ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+                Debug.Log("´Ù¸¥ ½½·Ô¿¡¼­ ÀÌ¹Ì µ¿ÀÏÇÑ ½ºÅ³ µ¥ÀÌÅÍ¸¦ »ç¿ë ÁßÀÔ´Ï´Ù.");
             }
         }
 
@@ -48,7 +48,7 @@ public class SkillSlotUI : SkillSlot
 
     public void UpdateUI()
     {
-        if (skillExpTxt != null && skillData.Key != null)
+        if (skillData.Key != null)
         {
             string[] nameParts = skillData.SkillName.Split('_');
             string[] keyParts = skillData.Key.Split('_');
@@ -60,7 +60,7 @@ public class SkillSlotUI : SkillSlot
             }
             else
             {
-               // skillExpTxt.text = $"ë‹¤ìŒ ìŠ¤í‚¬ ë ˆë²¨ì—… {Main.Object.Player.lvSkill.skillLvUp[int.Parse(keyParts[3]) - 1] - Main.Object.Player.Data.Lv % Main.Object.Player.lvSkill.skillLvUp[int.Parse(keyParts[3])-1]}";
+                skillExpTxt.text = $"´ÙÀ½ ½ºÅ³ ·¹º§¾÷ {Main.Object.Player.lvSkill.skillLvUp[int.Parse(keyParts[3]) - 1] - Main.Object.Player.Data.Lv % Main.Object.Player.lvSkill.skillLvUp[int.Parse(keyParts[3])-1]}";
             }
         }
         else
