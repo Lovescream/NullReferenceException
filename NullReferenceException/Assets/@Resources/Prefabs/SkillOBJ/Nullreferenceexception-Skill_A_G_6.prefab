@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2916785400266599918}
   - component: {fileID: 3264345240979752150}
   m_Layer: 6
-  m_Name: Fireball-Skill_A_G_5
+  m_Name: Nullreferenceexception-Skill_A_G_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
