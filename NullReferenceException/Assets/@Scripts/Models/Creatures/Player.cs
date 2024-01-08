@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.TextCore.Text;
 
 public class Player : Creature {
 
@@ -10,15 +11,7 @@ public class Player : Creature {
 
     public new PlayerData Data => base.Data as PlayerData;
     public LevelUpSkill lvSkill;
-    
-    bool _isFireball = false;
-    bool _isStealth = false;
 
-
-    public bool isFireball{
-        get { return _isFireball; }
-        set { _isFireball = value; }
-    }
     public float Hunger {
         get => _hunger;
         set {
@@ -42,12 +35,6 @@ public class Player : Creature {
         get { return _maxExp; }
         set { _maxExp = value; }
     }
-    public bool isStealth
-    {
-        get { return _isStealth; }
-        set { _isStealth = value; }
-    }
-    public float fireBallDmg;
 
     #endregion
 
@@ -64,27 +51,29 @@ public class Player : Creature {
     #endregion
 
     #region Input
+    [SerializeField] private Transform _chracter;
+    [SerializeField] private Transform _armPivot;
+    [SerializeField] private Transform _weponRotate;
+    [SerializeField] private SpriteRenderer _wepon;
+    [SerializeField] private SpriteRenderer _weponSprite;
+    [SerializeField] private Transform _bullet;
 
+    private float _time = 1;
+    private float _coolTime = float.MaxValue;
+
+    private void Update()
+    {
+        AttackCoolTime();
+    }
     protected void OnMove(InputValue value) {
         Velocity = value.Get<Vector2>().normalized * Status[StatType.MoveSpeed].Value;
     }
     protected void OnLook(InputValue value) {
         LookDirection = (Camera.main.ScreenToWorldPoint(value.Get<Vector2>()) - this.transform.position).normalized;
+        AimDirection();
     }
     protected void OnFire() {
-        if (_isFireball)
-        {
-            FireBallPRJ fireballProjectile = Main.Object.SpawnFireBall(this.transform.position).SetInfo(this, fireBallDmg) as FireBallPRJ;
-            fireballProjectile.Velocity = LookDirection.normalized * 10f; // ÇÊ¿ä¿¡ µû¶ó ¼Óµµ Á¶Àý
-            fireBallDmg = 0;
-            Debug.Log("ÆÄÀÌ¾îº¼ ¹ß»ç");
-            isFireball = false;
-        }
-        else
-        {
-            Projectile projectile = Main.Object.SpawnProjectile(this.transform.position).SetInfo(this, 10f);
-            projectile.Velocity = LookDirection.normalized * 10f; // ÇÊ¿ä¿¡ µû¶ó ¼Óµµ Á¶Àý
-        }
+        
     }
     protected void OnInteraction() {
         Debug.Log($"[Player] OnInteraction()");
@@ -101,7 +90,24 @@ public class Player : Creature {
     protected void OnKey_V() {
         Inventory.Add(new(Main.Data.Items["IronBoots"]));
     }
-
+    public void AimDirection()
+    {
+        float rotZ = Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;
+        _armPivot.rotation = Quaternion.Euler(0, 0, rotZ);
+        _weponSprite.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
+        _wepon.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
+    }
+    private void AttackCoolTime() //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    {
+        if (_coolTime >= _time)
+        {
+            _coolTime = float.MaxValue;
+        }
+        else
+        {
+            _coolTime += Time.deltaTime;
+        }
+    }
     protected void OnKey_K(){
         if(Main.Instance.Skill.isSkillList == true)
         {
