@@ -1,0 +1,798 @@
+[
+  {
+    "Type": 1,
+    "Name": "막대기",
+    "Description": "나무막대기이다.",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 1,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 1.0
+      }
+    ],
+    "Effect": null,
+    "Key": "Stick"
+  },
+  {
+    "Type": 1,
+    "Name": "돌검",
+    "Description": "돌로 만든 검",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 1,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 5.0
+      },
+      {
+        "Stat": 5,
+        "Type": 0,
+        "Value": 0.2
+      }
+    ],
+    "Effect": null,
+    "Key": "StoneSword"
+  },
+  {
+    "Type": 1,
+    "Name": "돌도끼",
+    "Description": "돌로 만든 도끼",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 2,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 7.0
+      }
+    ],
+    "Effect": null,
+    "Key": "StoneAxe"
+  },
+  {
+    "Type": 1,
+    "Name": "돌망치",
+    "Description": "돌로 만든 망치",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 2,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 9.0
+      },
+      {
+        "Stat": 5,
+        "Type": 0,
+        "Value": -0.2
+      }
+    ],
+    "Effect": null,
+    "Key": "StoneHammer"
+  },
+  {
+    "Type": 1,
+    "Name": "돌방패",
+    "Description": "돌로 만든 방패",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 1,
+    "Modifiers": [
+      {
+        "Stat": 3,
+        "Type": 0,
+        "Value": 5.0
+      }
+    ],
+    "Effect": null,
+    "Key": "StoneShield"
+  },
+  {
+    "Type": 1,
+    "Name": "돌머리",
+    "Description": "멍청한 머리",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 3,
+        "Type": 0,
+        "Value": 5.0
+      }
+    ],
+    "Effect": null,
+    "Key": "StoneHelmet"
+  },
+  {
+    "Type": 1,
+    "Name": "돌갑옷",
+    "Description": "돌로 만든 갑옷",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 0,
+        "Type": 0,
+        "Value": 20.0
+      }
+    ],
+    "Effect": null,
+    "Key": "StoneArmor"
+  },
+  {
+    "Type": 1,
+    "Name": "돌부츠",
+    "Description": "돌로 만든 신발",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 4,
+        "Type": 0,
+        "Value": 1.0
+      }
+    ],
+    "Effect": null,
+    "Key": "StoneBoots"
+  },
+  {
+    "Type": 1,
+    "Name": "철검",
+    "Description": "철로 만든 검",
+    "MaxStack": 10,
+    "Recipe": null,
+    "EquipType": 1,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 10.0
+      },
+      {
+        "Stat": 5,
+        "Type": 0,
+        "Value": 0.25
+      }
+    ],
+    "Effect": null,
+    "Key": "IronSword"
+  },
+  {
+    "Type": 1,
+    "Name": "철도끼",
+    "Description": "철로 만든 도끼",
+    "MaxStack": 1,
+    "Recipe": "IronSword||||||||",
+    "EquipType": 2,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 12.5
+      }
+    ],
+    "Effect": null,
+    "Key": "IronAxe"
+  },
+  {
+    "Type": 1,
+    "Name": "철망치",
+    "Description": "철로 만든 망치",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 2,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 15.0
+      },
+      {
+        "Stat": 5,
+        "Type": 0,
+        "Value": -0.21
+      }
+    ],
+    "Effect": null,
+    "Key": "IronHammer"
+  },
+  {
+    "Type": 1,
+    "Name": "철방패",
+    "Description": "철로 만든 방패",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 1,
+    "Modifiers": [
+      {
+        "Stat": 3,
+        "Type": 0,
+        "Value": 10.0
+      }
+    ],
+    "Effect": null,
+    "Key": "IronShield"
+  },
+  {
+    "Type": 1,
+    "Name": "철모자",
+    "Description": "철로 만든 모자",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 3,
+        "Type": 0,
+        "Value": 10.0
+      }
+    ],
+    "Effect": null,
+    "Key": "IronHelmet"
+  },
+  {
+    "Type": 1,
+    "Name": "철갑옷",
+    "Description": "철로 만든 갑옷",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 0,
+        "Type": 0,
+        "Value": 50.0
+      }
+    ],
+    "Effect": null,
+    "Key": "IronArmor"
+  },
+  {
+    "Type": 1,
+    "Name": "철부츠",
+    "Description": "철로 만든 부츠",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 4,
+        "Type": 0,
+        "Value": 1.5
+      }
+    ],
+    "Effect": null,
+    "Key": "IronBoots"
+  },
+  {
+    "Type": 1,
+    "Name": "은검",
+    "Description": "은으로 만든 검",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 1,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 20.0
+      },
+      {
+        "Stat": 5,
+        "Type": 0,
+        "Value": 0.3
+      }
+    ],
+    "Effect": null,
+    "Key": "SilverSword"
+  },
+  {
+    "Type": 1,
+    "Name": "은도끼",
+    "Description": "은으로 만든 도끼",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 2,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 23.0
+      }
+    ],
+    "Effect": null,
+    "Key": "SilverAxe"
+  },
+  {
+    "Type": 1,
+    "Name": "은망치",
+    "Description": "은으로 만든 망치",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 2,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 26.0
+      },
+      {
+        "Stat": 5,
+        "Type": 0,
+        "Value": -0.22
+      }
+    ],
+    "Effect": null,
+    "Key": "SilverHammer"
+  },
+  {
+    "Type": 1,
+    "Name": "은방패",
+    "Description": "은으로 만든 방패",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 1,
+    "Modifiers": [
+      {
+        "Stat": 3,
+        "Type": 0,
+        "Value": 20.0
+      }
+    ],
+    "Effect": null,
+    "Key": "SilverShield"
+  },
+  {
+    "Type": 1,
+    "Name": "은모자",
+    "Description": "은으로 만든 모자",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 3,
+        "Type": 0,
+        "Value": 20.0
+      }
+    ],
+    "Effect": null,
+    "Key": "SilverHelmet"
+  },
+  {
+    "Type": 1,
+    "Name": "은갑옷",
+    "Description": "은으로 만든 갑옷",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 0,
+        "Type": 0,
+        "Value": 100.0
+      }
+    ],
+    "Effect": null,
+    "Key": "SilverArmor"
+  },
+  {
+    "Type": 1,
+    "Name": "은부츠",
+    "Description": "은으로 만든 부츠",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 4,
+        "Type": 0,
+        "Value": 2.0
+      }
+    ],
+    "Effect": null,
+    "Key": "SilverBoots"
+  },
+  {
+    "Type": 1,
+    "Name": "금검",
+    "Description": "금으로 만든 검",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 1,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 30.0
+      },
+      {
+        "Stat": 5,
+        "Type": 0,
+        "Value": 0.4
+      }
+    ],
+    "Effect": null,
+    "Key": "GoldSword"
+  },
+  {
+    "Type": 1,
+    "Name": "금도끼",
+    "Description": "금으로 만든 도끼",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 2,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 35.0
+      }
+    ],
+    "Effect": null,
+    "Key": "GoldAxe"
+  },
+  {
+    "Type": 1,
+    "Name": "금망치",
+    "Description": "금으로 만든 망치",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 2,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 40.0
+      },
+      {
+        "Stat": 5,
+        "Type": 0,
+        "Value": -0.25
+      }
+    ],
+    "Effect": null,
+    "Key": "GoldHammer"
+  },
+  {
+    "Type": 1,
+    "Name": "금방패",
+    "Description": "금으로 만든 방패",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 1,
+    "Modifiers": [
+      {
+        "Stat": 3,
+        "Type": 0,
+        "Value": 30.0
+      }
+    ],
+    "Effect": null,
+    "Key": "GoldShield"
+  },
+  {
+    "Type": 1,
+    "Name": "금모자",
+    "Description": "금으로 만든 모자",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 3,
+        "Type": 0,
+        "Value": 30.0
+      }
+    ],
+    "Effect": null,
+    "Key": "GoldHelmet"
+  },
+  {
+    "Type": 1,
+    "Name": "금갑옷",
+    "Description": "금으로 만든 갑옷",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 0,
+        "Type": 0,
+        "Value": 200.0
+      }
+    ],
+    "Effect": null,
+    "Key": "GoldArmor"
+  },
+  {
+    "Type": 1,
+    "Name": "금부츠",
+    "Description": "금으로 만든 부츠",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 4,
+        "Type": 0,
+        "Value": 2.5
+      }
+    ],
+    "Effect": null,
+    "Key": "GoldBoots"
+  },
+  {
+    "Type": 1,
+    "Name": "다이아몬드칼",
+    "Description": "다이아몬드로 만든 검",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 1,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 55.0
+      },
+      {
+        "Stat": 5,
+        "Type": 0,
+        "Value": 0.5
+      }
+    ],
+    "Effect": null,
+    "Key": "DiamondSword"
+  },
+  {
+    "Type": 1,
+    "Name": "다이아몬드도끼",
+    "Description": "다이아몬드로 만든 도끼",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 2,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 60.0
+      },
+      {
+        "Stat": 5,
+        "Type": 0,
+        "Value": 0.125
+      }
+    ],
+    "Effect": null,
+    "Key": "DiamondAxe"
+  },
+  {
+    "Type": 1,
+    "Name": "다이아몬드망치",
+    "Description": "다이아몬드로 만든 망치",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 2,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 70.0
+      }
+    ],
+    "Effect": null,
+    "Key": "DiamondHammer"
+  },
+  {
+    "Type": 1,
+    "Name": "다이아몬드방패",
+    "Description": "다이아몬드로 만든 방패",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 1,
+    "Modifiers": [
+      {
+        "Stat": 3,
+        "Type": 0,
+        "Value": 55.0
+      }
+    ],
+    "Effect": null,
+    "Key": "DiamondShield"
+  },
+  {
+    "Type": 1,
+    "Name": "다이아몬드헬멧",
+    "Description": "다이아몬드로 만든 모자",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 3,
+        "Type": 0,
+        "Value": 55.0
+      }
+    ],
+    "Effect": null,
+    "Key": "DiamondHelmet"
+  },
+  {
+    "Type": 1,
+    "Name": "다이아몬드갑옷",
+    "Description": "다이아몬드로 만든 갑옷",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 0,
+        "Type": 0,
+        "Value": 500.0
+      }
+    ],
+    "Effect": null,
+    "Key": "DiamondArmor"
+  },
+  {
+    "Type": 1,
+    "Name": "다이아몬드부츠",
+    "Description": "다이아몬드로 만든 부츠",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 4,
+        "Type": 0,
+        "Value": 3.0
+      }
+    ],
+    "Effect": null,
+    "Key": "DiamondBoots"
+  },
+  {
+    "Type": 1,
+    "Name": "별칼",
+    "Description": "별로 만든 칼",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 1,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 100.0
+      },
+      {
+        "Stat": 5,
+        "Type": 0,
+        "Value": 0.85
+      }
+    ],
+    "Effect": null,
+    "Key": "StarSword"
+  },
+  {
+    "Type": 1,
+    "Name": "별도끼",
+    "Description": "별로 만든 도끼",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 2,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 111.0
+      },
+      {
+        "Stat": 5,
+        "Type": 0,
+        "Value": 0.5
+      }
+    ],
+    "Effect": null,
+    "Key": "StarAxe"
+  },
+  {
+    "Type": 1,
+    "Name": "별망치",
+    "Description": "별로 만든 망치",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 2,
+    "Modifiers": [
+      {
+        "Stat": 2,
+        "Type": 0,
+        "Value": 123.0
+      },
+      {
+        "Stat": 5,
+        "Type": 0,
+        "Value": 0.25
+      }
+    ],
+    "Effect": null,
+    "Key": "StarHammer"
+  },
+  {
+    "Type": 1,
+    "Name": "별방패",
+    "Description": "별로 만든 방패",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 1,
+    "Modifiers": [
+      {
+        "Stat": 3,
+        "Type": 0,
+        "Value": 100.0
+      }
+    ],
+    "Effect": null,
+    "Key": "StarShield"
+  },
+  {
+    "Type": 1,
+    "Name": "별모자",
+    "Description": "별로 만든 모자",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 3,
+        "Type": 0,
+        "Value": 100.0
+      }
+    ],
+    "Effect": null,
+    "Key": "StarHelmet"
+  },
+  {
+    "Type": 1,
+    "Name": "별갑옷",
+    "Description": "별로 만든 갑옷",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 0,
+        "Type": 0,
+        "Value": 1000.0
+      }
+    ],
+    "Effect": null,
+    "Key": "StarArmor"
+  },
+  {
+    "Type": 1,
+    "Name": "별부츠",
+    "Description": "별로 만든 신발",
+    "MaxStack": 1,
+    "Recipe": null,
+    "EquipType": 3,
+    "Modifiers": [
+      {
+        "Stat": 4,
+        "Type": 0,
+        "Value": 4.0
+      }
+    ],
+    "Effect": null,
+    "Key": "StarBoots"
+  }
+]

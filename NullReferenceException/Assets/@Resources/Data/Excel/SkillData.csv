@@ -1,0 +1,11 @@
+Key,SkillName,SkillUsingType,SkillGetType,SkillLv,SkillExp,CoolTime,LvUpCollTime
+Skill_A_L_1,Í∞ïÌ?_Strong Hit,Active,Lvup,0,0,10,0.3
+Skill_A_L_2,Ïπ¥Ïö¥??Counter,Active,Lvup,0,0,10,0.3
+Skill_A_L_3,Í∞Ä??Guard,Active,Lvup,0,0,10,0.3
+Skill_A_L_4,?¨Ï≤ô_Throw,Active,Lvup,0,0,10,0.3
+Skill_A_G_1,?Ä??Stealth,Active,Pickup,0,0,30,2
+Skill_A_G_2,Î¶¨Ïª§Î≤ÑÎ¶¨_Recovery,Active,Pickup,0,0,60,3
+Skill_A_G_3,?êÎßÅ_Healing,Active,Pickup,0,0,30,2
+Skill_A_G_4,?ÅÌòº ?°Ïàò_SoulAbsorption,Active,Pickup,0,0,180,10
+Skill_A_G_5,?åÏù¥??Î≥?Fireball,Active,Pickup,0,0,20,1.5
+Skill_A_G_6,??Nullreferenceexception,Active,Pickup,0,0,300,0

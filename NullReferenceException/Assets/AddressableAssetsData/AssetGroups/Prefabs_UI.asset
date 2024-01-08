@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Prefabs_UI
+  m_EditorClassIdentifier: 
+  m_GroupName: Prefabs_UI
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5f094ad5fddd7f04f83154e5f828dfdd
+  m_SerializeEntries:
+  - m_GUID: 83f059801f09e1d4f93cbfc644deca25
+    m_Address: '@EventSystem.prefab'
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a51f3df97128bd4abead64c01ea4eb3
+    m_Address: UI_GameScene.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4efb4717595f6d1429f4018dff3672f3
+    m_Address: UI_Popup_Inventory.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0bfa236254ba9334bb11cb69909b1486
+    m_Address: UI_Popup_ConfirmEquip.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 41c43af2ad6fa1b47bbbcf0471eb6386
+    m_Address: UI_HpInfo.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 02d9af76bef37d24d91b89f9e6381ca9
+    m_Address: UI_ItemSlot_Inventory.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d43ced9856735484e83bd37b11acf3b9
+    m_Address: UI_StatInfo.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b2626d8f8fadfa1468bb3b886e92c103
+    m_Address: UI_StatModifierInfo.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5bc23875c53fd0a499e8d6754fa0a7f8
+    m_Address: UI_StatusInfo.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c44e9768f8d6604791a2d143334eaeb
+    m_Address: DamageText.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d17be19b1b767de46bd9de5898edc687
+    m_Address: UI_HpBar.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4cd7a47dc6337bc4caa2bf95d1a0ea42
+    m_Address: UI_InventorySlot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b53a9658c2333754eadf9d610560cfd2
+    m_Address: UI_Popup_Crafting.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4597cf23b3bf9b54d87fb4178591eaad
+    m_Address: UI_CursorSlot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ae8204fb0f54e141a582318d06d541f
+    m_Address: UI_Popup_ChestInventory.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5c837c581ff82a14ab6e8462c45721f9, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 19952c2b8b8a8ce46ac922645e5d6bc1, type: 2}
+    - {fileID: 11400000, guid: 572f85630291c094e8466a37f868f804, type: 2}

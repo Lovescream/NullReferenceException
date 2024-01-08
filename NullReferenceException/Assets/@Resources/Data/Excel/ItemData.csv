@@ -1,0 +1,44 @@
+Key,Type,Name,Description,MaxStack,Recipe,EquipType,Modifiers,Effect,WeaponType
+Stick,Equipments,막대기,나무막대기이다.,1,,OneHanded,Damage_Add_1,,Sword
+StoneSword,Equipments,돌검,돌로 만든 검,1,,OneHanded,Damage_Add_5|AttackSpeed_Add_0.2,,Sword
+StoneAxe,Equipments,돌도끼,돌로 만든 도끼,1,,TwoHanded,Damage_Add_7,,Axe
+StoneHammer,Equipments,돌망치,돌로 만든 망치,1,,TwoHanded,Damage_Add_9|AttackSpeed_Add_-0.2,,Pick
+StoneShield,Equipments,돌방패,돌로 만든 방패,1,,OneHanded,Defense_Add_5,,
+StoneHelmet,Equipments,돌머리,멍청한 머리,1,,Armor,Defense_Add_5,,
+StoneArmor,Equipments,돌갑옷,돌로 만든 갑옷,1,,Armor,HpMax_Add_20,,
+StoneBoots,Equipments,돌부츠,돌로 만든 신발,1,,Armor,MoveSpeed_Add_1,,
+IronSword,Equipments,철검,철로 만든 검,10,,OneHanded,Damage_Add_10|AttackSpeed_Add_0.25,,Sword
+IronAxe,Equipments,철도끼,철로 만든 도끼,1,IronSword||||||||,TwoHanded,Damage_Add_12.5,,Axe
+IronHammer,Equipments,철망치,철로 만든 망치,1,,TwoHanded,Damage_Add_15|AttackSpeed_Add_-0.21,,Pick
+IronShield,Equipments,철방패,철로 만든 방패,1,,OneHanded,Defense_Add_10,,
+IronHelmet,Equipments,철모자,철로 만든 모자,1,,Armor,Defense_Add_10,,
+IronArmor,Equipments,철갑옷,철로 만든 갑옷,1,,Armor,HpMax_Add_50,,
+IronBoots,Equipments,철부츠,철로 만든 부츠,1,,Armor,MoveSpeed_Add_1.5,,
+SilverSword,Equipments,은검,은으로 만든 검,1,,OneHanded,Damage_Add_20|AttackSpeed_Add_0.3,,Sword
+SilverAxe,Equipments,은도끼,은으로 만든 도끼,1,,TwoHanded,Damage_Add_23,,Axe
+SilverHammer,Equipments,은망치,은으로 만든 망치,1,,TwoHanded,Damage_Add_26|AttackSpeed_Add_-0.22,,Pick
+SilverShield,Equipments,은방패,은으로 만든 방패,1,,OneHanded,Defense_Add_20,,
+SilverHelmet,Equipments,은모자,은으로 만든 모자,1,,Armor,Defense_Add_20,,
+SilverArmor,Equipments,은갑옷,은으로 만든 갑옷,1,,Armor,HpMax_Add_100,,
+SilverBoots,Equipments,은부츠,은으로 만든 부츠,1,,Armor,MoveSpeed_Add_2,,
+GoldSword,Equipments,금검,금으로 만든 검,1,,OneHanded,Damage_Add_30|AttackSpeed_Add_0.4,,Sword
+GoldAxe,Equipments,금도끼,금으로 만든 도끼,1,,TwoHanded,Damage_Add_35,,Axe
+GoldHammer,Equipments,금망치,금으로 만든 망치,1,,TwoHanded,Damage_Add_40|AttackSpeed_Add_-0.25,,Pick
+GoldShield,Equipments,금방패,금으로 만든 방패,1,,OneHanded,Defense_Add_30,,
+GoldHelmet,Equipments,금모자,금으로 만든 모자,1,,Armor,Defense_Add_30,,
+GoldArmor,Equipments,금갑옷,금으로 만든 갑옷,1,,Armor,HpMax_Add_200,,
+GoldBoots,Equipments,금부츠,금으로 만든 부츠,1,,Armor,MoveSpeed_Add_2.5,,
+DiamondSword,Equipments,다이아몬드칼,다이아몬드로 만든 검,1,,OneHanded,Damage_Add_55|AttackSpeed_Add_0.5,,Sword
+DiamondAxe,Equipments,다이아몬드도끼,다이아몬드로 만든 도끼,1,,TwoHanded,Damage_Add_60|AttackSpeed_Add_0.125,,Axe
+DiamondHammer,Equipments,다이아몬드망치,다이아몬드로 만든 망치,1,,TwoHanded,Damage_Add_70,,Pick
+DiamondShield,Equipments,다이아몬드방패,다이아몬드로 만든 방패,1,,OneHanded,Defense_Add_55,,
+DiamondHelmet,Equipments,다이아몬드헬멧,다이아몬드로 만든 모자,1,,Armor,Defense_Add_55,,
+DiamondArmor,Equipments,다이아몬드갑옷,다이아몬드로 만든 갑옷,1,,Armor,HpMax_Add_500,,
+DiamondBoots,Equipments,다이아몬드부츠,다이아몬드로 만든 부츠,1,,Armor,MoveSpeed_Add_3,,
+StarSword,Equipments,별칼,별로 만든 칼,1,,OneHanded,Damage_Add_100|AttackSpeed_Add_0.85,,Sword
+StarAxe,Equipments,별도끼,별로 만든 도끼,1,,TwoHanded,Damage_Add_111|AttackSpeed_Add_0.5,,Axe
+StarHammer,Equipments,별망치,별로 만든 망치,1,,TwoHanded,Damage_Add_123|AttackSpeed_Add_0.25,,Pick
+StarShield,Equipments,별방패,별로 만든 방패,1,,OneHanded,Defense_Add_100,,
+StarHelmet,Equipments,별모자,별로 만든 모자,1,,Armor,Defense_Add_100,,
+StarArmor,Equipments,별갑옷,별로 만든 갑옷,1,,Armor,HpMax_Add_1000,,
+StarBoots,Equipments,별부츠,별로 만든 신발,1,,Armor,MoveSpeed_Add_4,,
