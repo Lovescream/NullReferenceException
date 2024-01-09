@@ -58,10 +58,10 @@ public class Projectile : Thing {
         return true;
     }
 
-    public virtual Projectile SetInfo(Creature owner) {
+    public virtual Projectile SetInfo(Creature owner, float dmg) {
         this.Owner = owner;
         Duration = 5; // TODO::
-        Damage = 10; // TODO::
+        Damage = dmg; // TODO::
 
         if (_coDestroy != null) StopCoroutine(this._coDestroy);
         _coDestroy = StartCoroutine(CoDestroy());

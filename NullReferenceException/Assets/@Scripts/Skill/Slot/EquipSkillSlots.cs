@@ -6,6 +6,7 @@ public class EquipSkillSlots : SkillSlot
     public int index;
     public GameObject marsk;
     public GameObject returnIndex;
+    public bool isCool = false;
 
     private void Update()
     {
