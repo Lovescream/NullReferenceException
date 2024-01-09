@@ -101,6 +101,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ae8204fb0f54e141a582318d06d541f
+    m_Address: UI_Popup_ChestInventory.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5c837c581ff82a14ab6e8462c45721f9, type: 2}
   m_SchemaSet:
