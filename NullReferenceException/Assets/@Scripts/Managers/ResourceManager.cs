@@ -101,7 +101,6 @@ public class ResourceManager {
         }
         Addressables.Release(resource);
         _resources.Remove(key);
-
     }
 
     public GameObject Instantiate(string key, Transform parent = null, bool pooling = false) {

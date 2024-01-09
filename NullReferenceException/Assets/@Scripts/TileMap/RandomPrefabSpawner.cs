@@ -5,11 +5,10 @@ public class RandomPrefabSpawner : MonoBehaviour
 {
     [SerializeField] private PrefabSpawner[] prefabSpawnerData; // Unity 에디터에서 할당
 
-    private List<GameObject> spawnedPrefabs = new List<GameObject>(); // 생성된 프리팹을 추적하기 위한 리스트
-
     public void SpawnPrefabs()
     {
-        SoundManager.Instance.PlayMusic(SoundType.DEAD);
+        if (Main.Object == null) return;
+
         DeleteExistingPrefabs(); // 기존 프리팹 삭제
 
         foreach (var spawnerData in prefabSpawnerData)
@@ -48,18 +47,24 @@ public class RandomPrefabSpawner : MonoBehaviour
 
         foreach (Vector2Int position in selectedPositions)
         {
-            GameObject newPrefab = Instantiate(spawnerData.prefab, new Vector3(position.x, position.y, 0), Quaternion.identity);
-            spawnedPrefabs.Add(newPrefab); // 새 프리팹을 리스트에 추가
+            // Main.Object를 사용하여 프리팹 생성
+            switch (spawnerData.prefabType)
+            {
+                case PrefabType.Enemy:
+                    Main.Object.SpawnEnemy(spawnerData.key, position);
+                    break;
+                case PrefabType.Chest:
+                    Main.Object.SpawnChest(position);
+                    break;
+                    // 기타 다른 프리팹 타입에 대한 처리...
+            }
         }
     }
 
     private void DeleteExistingPrefabs()
     {
-        foreach (GameObject prefab in spawnedPrefabs)
-        {
-            Destroy(prefab);
-        }
-        spawnedPrefabs.Clear(); // 리스트 초기화
+        // Main.Object를 사용하여 기존 프리팹 삭제
+        Main.Object.Clear();
     }
 
     List<Vector2Int> SelectRandomPositions(int count)
@@ -76,9 +81,12 @@ public class RandomPrefabSpawner : MonoBehaviour
 
             int randomIndex = Random.Range(0, randomPositions.Count);
             selectedPositions.Add(randomPositions[randomIndex]);
-            randomPositions.RemoveAt(randomIndex); // 같은 위치가 두 번 선택되는 것을 방지하기 위해 리스트에서 위치를 제거
+            randomPositions.RemoveAt(randomIndex);
         }
 
         return selectedPositions;
     }
 }
+
+// 추가적인 enum이나 클래스가 필요할 수 있습니다.
+public enum PrefabType { Enemy, Chest /*, 기타 타입... */ }

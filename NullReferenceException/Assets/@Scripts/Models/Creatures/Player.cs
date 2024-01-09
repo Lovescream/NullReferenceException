@@ -85,10 +85,10 @@ public class Player : Creature {
     }
     private void AimDirection()
     {
-        float rotZ = Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;
+      /*  float rotZ = Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg;
         _armPivot.rotation = Quaternion.Euler(0, 0, rotZ);
         _weaponSprite.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
-        _weaponAnimation.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;
+        _weaponAnimation.flipY = (Mathf.Abs(rotZ) > 90) ? true : false;*/
     }
 
     public void Projectile() 
