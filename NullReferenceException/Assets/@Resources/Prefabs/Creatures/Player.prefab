@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvSkill: {fileID: 0}
+  fireBallDmg: 0
   _armPivot: {fileID: 0}
   _weaponAnimation: {fileID: 0}
   _weaponSprite: {fileID: 0}
@@ -344,4 +345,4 @@ MonoBehaviour:
   radius: 0
   targetLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
